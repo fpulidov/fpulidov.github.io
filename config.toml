@@ -1,0 +1,40 @@
+baseURL = "https://fpulidov.github.io/"
+languageCode = "en-us"
+title = "The Hidden Port"
+theme = "fixit"  # Using the FixIt theme
+paginate = 10  # Number of posts per page
+disqusShortname = "your-disqus-shortname"  # Optional: for Disqus integration
+googleAnalytics = "UA-XXXXXXXX-X"  # Optional: for Google Analytics integration
+
+[params]
+  # Basic site settings
+  description = "A blog about cloud security, cybersecurity, and compliance."
+  author = "Javier Pulido"
+  favicon = "/images/favicon.ico"
+  enableSocialIcons = true  # Enable social media icons
+  enableToc = true  # Enable Table of Contents in posts
+  enableSidebar = true  # Enable sidebar
+
+  # Customization options for FixIt theme
+  themeStyle = "dark"  # Choose between 'dark' or 'light' theme style
+  enableSearch = true  # Enable search functionality
+
+[menu]
+  [[menu.main]]
+    name = "Home"
+    url = "/"
+    weight = 1
+
+  [[menu.main]]
+    name = "About"
+    url = "/about/"
+    weight = 2
+
+  [[menu.main]]
+    name = "Contact"
+    url = "/contact/"
+    weight = 3
+
+[params.social]
+  github = "https://github.com/fpulidov/"
+  linkedin = "https://www.linkedin.com/in/ejher/"
