@@ -1,6 +1,0 @@
-[submodule "themes/fixit"]
-	path = themes/fixit
-	url = https://github.com/hugo-fixit/FixIt.git
-[submodule "themes/PaperMod"]
-	path = themes/PaperMod
-	url = https://github.com/adityatelange/hugo-PaperMod.git
