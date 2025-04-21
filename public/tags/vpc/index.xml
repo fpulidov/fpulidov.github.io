@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Vpc on The Hidden Port</title>
+    <link>http://localhost:35365/tags/vpc/</link>
+    <description>Recent content in Vpc on The Hidden Port</description>
+    <generator>Hugo -- 0.146.5</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 19 Apr 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:35365/tags/vpc/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>5 Critical AWS Security Misconfigurations (2025 Edition) – How to Find &amp; Fix Them</title>
+      <link>http://localhost:35365/posts/aws-security-misconfigurations-guide/</link>
+      <pubDate>Sat, 19 Apr 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:35365/posts/aws-security-misconfigurations-guide/</guid>
+      <description>A practical guide to the five most common AWS security misconfigurations in 2025 and how to fix them using the AWS Console and Terraform.</description>
+    </item>
+  </channel>
+</rss>

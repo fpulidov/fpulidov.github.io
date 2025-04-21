@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Checklist on The Hidden Port</title>
+    <link>http://localhost:35365/tags/checklist/</link>
+    <description>Recent content in Checklist on The Hidden Port</description>
+    <generator>Hugo -- 0.146.5</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 20 Apr 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:35365/tags/checklist/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>AWS Security Checklist 2025: 10 Critical Steps to Secure Your Cloud</title>
+      <link>http://localhost:35365/posts/aws-security-checklist-2025/</link>
+      <pubDate>Sun, 20 Apr 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:35365/posts/aws-security-checklist-2025/</guid>
+      <description>The definitive AWS security checklist for 2025. Follow these 10 steps to protect your cloud environment from common vulnerabilities and misconfigurations.</description>
+    </item>
+  </channel>
+</rss>
