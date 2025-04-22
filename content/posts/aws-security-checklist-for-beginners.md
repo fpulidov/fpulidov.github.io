@@ -4,7 +4,7 @@ date: 2025-04-20T00:00:00Z
 tags: ["aws", "cloud-security", "checklist", "beginner-guide", "iam", "s3", "cloudtrail"]
 categories: ["Cloud Security"]
 description: "The definitive AWS security checklist for 2025. Follow these 10 steps to protect your cloud environment from common vulnerabilities and misconfigurations."
-summary: "A clean and practical checklist of 10 security controls every AWS user should apply in 2025—from S3 bucket lockdown to IAM hardening, logging, and real-time alerts."
+summary: "A step-by-step checklist to secure your AWS account in 2025 — includes IAM hardening, S3 lockdown, logging, and budget alerts. Beginner to intermediate friendly."
 slug: "aws-security-checklist-2025"
 image: "/images/checklist.png"
 draft: false

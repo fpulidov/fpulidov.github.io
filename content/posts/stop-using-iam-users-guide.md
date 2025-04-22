@@ -4,7 +4,7 @@ date: 2025-04-20T00:00:00Z
 tags: ["aws", "iam", "zero-trust", "sso", "sts", "ci-cd"]
 categories: ["Cloud Security"]
 description: "Why AWS IAM users are obsolete in 2025 - and how to implement secure, scalable alternatives with Identity Center, OIDC, and temporary credentials."
-summary: "In 2025, IAM users are no longer best practice in AWS. This guide shows how to migrate to secure, modern alternatives like IAM Identity Center, STS, and OIDC federation."
+summary: "Stop using IAM users in AWS. This guide explains why they're risky and how to migrate to Identity Center, STS, and OIDC-based access — step-by-step."
 slug: "aws-iam-users-alternatives"
 image: "/images/iamsts.png"
 draft: false

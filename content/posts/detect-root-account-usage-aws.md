@@ -3,7 +3,7 @@ title: "How to Detect AWS Root Account Usage (And Respond to It)"
 date: 2025-04-21
 tags: ["aws", "security", "root-account", "eventbridge", "monitoring", "sns", "cloudtrail"]
 categories: ["Cloud Security", "Detection"]
-summary: "Root account usage in AWS is rare—and dangerous. Learn how to detect it in real time and set up alerts using EventBridge, SNS, and optional Lambda or Slack integration."
+summary: "Detect and alert on AWS root account usage using CloudTrail, EventBridge, SNS, and optional Slack notifications. Step-by-step setup and Terraform included."
 description: "This guide walks you through detecting and responding to AWS root account usage using CloudTrail, EventBridge, SNS, and optionally Lambda or Slack. Includes Terraform examples and AWS Console workflows."
 slug: "detect-root-account-usage"
 draft: false

@@ -4,7 +4,7 @@ date: 2025-04-19T00:00:00Z
 tags: ["aws", "cloud-security", "iam", "s3", "vpc", "compliance"]
 categories: ["Cloud Security"]
 description: "A practical guide to the five most common AWS security misconfigurations in 2025 and how to fix them using the AWS Console and Terraform."
-summary: "Still leaving your S3 buckets public or IAM policies overly broad? This guide covers five high-impact AWS security mistakes—and exactly how to eliminate them in your environment today."
+summary: "Five AWS misconfigurations still causing breaches in 2025 — includes fixes for public S3 buckets, over-permissive IAM, open security groups, and missing monitoring."
 slug: "aws-security-misconfigurations-guide"
 image: "/images/misconfigurations.png"
 draft: false
