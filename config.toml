@@ -23,6 +23,15 @@ theme = "PaperMod"
   enableRobotsTXT = true
   injectHead = true
 
+  [params.seo]
+    canonicalURL = true
+    twitterCard = "summary_large_image"
+    # Add default preview image (can override per post)
+    image = "/images/default-preview.png"
+    # These will populate OpenGraph metadata for home/index
+    title = "The Hidden Port"
+    description = "A blog about cloud security, automation, best practices, and beyond."
+
   [params.assets]
     favicon = "/images/avatar.ico"
 
@@ -105,15 +114,6 @@ theme = "PaperMod"
 
 [pagination]
   pagerSize = 10
-
-[params.seo]
-  canonicalURL = true
-  twitterCard = "summary_large_image"
-  # Add default preview image (can override per post)
-  image = "/images/default-preview.png"
-  # These will populate OpenGraph metadata for home/index
-  title = "The Hidden Port"
-  description = "A blog about cloud security, automation, best practices, and beyond."
 
 [mediaTypes]
   [mediaTypes."text/plain"]
