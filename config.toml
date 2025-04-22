@@ -30,7 +30,7 @@ theme = "PaperMod"
     image = "/images/default-preview.png"
     # These will populate OpenGraph metadata for home/index
     title = "The Hidden Port"
-    description = "A blog about cloud security, automation, best practices, and beyond."
+    description = "The Hidden Port is a blog about cloud security, automation, compliance, and best practices. Learn how to protect your AWS accounts and infrastructure, the right way."
 
   [params.assets]
     favicon = "/images/avatar.ico"

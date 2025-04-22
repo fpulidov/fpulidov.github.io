@@ -1,12 +1,22 @@
-{{/* Prepare variables outside of the tags */}}
+{{/* Set base defaults */}}
 {{ $title := .Title }}
 {{ $url := .Permalink }}
-{{ $description := cond (isset .Params "description") .Params.description (cond (isset .Params "summary") .Params.summary .Summary) }}
-{{ $image := cond (isset .Params "image") (.Params.image | absURL) (site.Params.seo.image | absURL) }}
+{{ $description := .Summary }}
+{{ $image := site.Params.seo.image | absURL }}
+
+{{ if .Params.description }}
+  {{ $description = .Params.description }}
+{{ else if .Params.summary }}
+  {{ $description = .Params.summary }}
+{{ end }}
+
+{{ if and (.Params.image) (ne .Params.image "") }}
+  {{ $image = .Params.image | absURL }}
+{{ end }}
 
 {{ if .IsHome }}
   {{ $title = site.Title }}
-  {{ $description = site.Params.description }}
+  {{ $description = site.Params.seo.description }}
   {{ $url = site.BaseURL }}
   {{ $image = site.Params.seo.image | absURL }}
 {{ end }}
