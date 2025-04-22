@@ -8,7 +8,7 @@ theme = "PaperMod"
   category = "categories"
 
 [params]
-  description = "A blog about cloud security, cybersecurity, and compliance."
+  description = "The Hidden Port is a blog about cloud security, automation, compliance, and best practices. Learn how to protect your AWS accounts and infrastructure, the right way."
   themeStyle = "dark"
   enableCDN = false
   securityHeaders = true
@@ -22,6 +22,7 @@ theme = "PaperMod"
   ShowTaxonomies = true
   enableRobotsTXT = true
   injectHead = true
+  author = ["Javier Pulido"]
 
   [params.seo]
     canonicalURL = true
@@ -41,9 +42,6 @@ theme = "PaperMod"
 
   [params.search]
     enable = true
-
-  [params.author]
-    name = "Javier Pulido"
 
   [params.home]
     enable = true
