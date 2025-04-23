@@ -52,6 +52,10 @@ Use [Access Analyzer for S3](https://docs.aws.amazon.com/AmazonS3/latest/usergui
 
 Too often, IAM policies grant `Action: *` or `Resource: *` access—even for automation or dev roles.
 
+Want to fix IAM permissions more precisely?  
+Check out [Building Least-Privilege IAM Roles with IAM Access Analyzer](https://thehiddenport.dev/iam-access-analyzer-least-privilege) — with CLI examples and Terraform.
+
+
 ### Why It Matters
 
 - Violates least privilege.
@@ -151,6 +155,11 @@ By leveraging services like **AWS CloudTrail**, **AWS Config**, **Amazon GuardDu
 
 **Cost Tip:**  
 Set retention on CloudWatch logs to avoid unnecessary spend.
+
+---
+
+Need a full checklist to audit your environment?  
+Read the [AWS Security Checklist 2025](https://thehiddenport.dev/aws-security-checklist-2025) — 10 critical steps, all in one post.
 
 ---
 

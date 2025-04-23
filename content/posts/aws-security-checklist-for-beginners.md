@@ -124,6 +124,11 @@ Use these reports to catch drift and stale resources early.
 
 ---
 
+Want to go deeper on IAM strategy?  
+Check out [Why You Should Stop Using IAM Users in AWS](https://thehiddenport.dev/aws-iam-users-alternatives) — a full guide on modern access control in 2025.
+
+---
+
 ## Final Thoughts
 
 Security isn't just about avoiding breaches—it's about building systems that are *resilient by design*.
