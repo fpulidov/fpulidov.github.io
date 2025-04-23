@@ -7,6 +7,11 @@ theme = "PaperMod"
   tag = "tags"
   category = "categories"
 
+[deployment]
+  [[deployment.targets]]
+    name = "github"
+    url = "https://thehiddenport.dev"
+
 [params]
   description = "The Hidden Port is a blog about cloud security, automation, compliance, and best practices. Learn how to protect your AWS accounts and infrastructure, the right way."
   themeStyle = "dark"
@@ -134,7 +139,6 @@ theme = "PaperMod"
   home = ["HTML", "RSS", "JSON", "Robots"]
   section = ["HTML"]
   taxonomy = ["HTML"]
-  taxonomyTerm = ["HTML"]
   page = ["HTML"]
   404 = ["HTML"]
 
