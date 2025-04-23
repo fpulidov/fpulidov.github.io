@@ -6,7 +6,6 @@ categories: ["Cloud Security"]
 description: "Why AWS IAM users are obsolete in 2025 - and how to implement secure, scalable alternatives with Identity Center, OIDC, and temporary credentials."
 summary: "Stop using IAM users in AWS. This guide explains why they're risky and how to migrate to Identity Center, STS, and OIDC-based access — step-by-step."
 slug: "aws-iam-users-alternatives"
-image: "/images/iamsts.png"
 draft: false
 author: "Javier Pulido"
 canonicalURL: "https://thehiddenport.dev/aws-iam-users-alternatives"

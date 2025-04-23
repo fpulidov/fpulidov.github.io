@@ -6,7 +6,6 @@ categories: ["Cloud Security"]
 description: "A practical guide to the five most common AWS security misconfigurations in 2025 and how to fix them using the AWS Console and Terraform."
 summary: "Five AWS misconfigurations still causing breaches in 2025 — includes fixes for public S3 buckets, over-permissive IAM, open security groups, and missing monitoring."
 slug: "aws-security-misconfigurations-guide"
-image: "/images/misconfigurations.png"
 draft: false
 author: "Javier Pulido"
 canonicalURL: "https://thehiddenport.dev/aws-security-misconfigurations-guide"
