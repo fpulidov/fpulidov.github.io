@@ -7,7 +7,7 @@ searchHidden: true
 
 Hi! I’m **Javier Pulido**, a Cloud Security Engineer with a passion for making complex infrastructure safe, automated, and compliant. Over the past several years, I’ve helped my company build and secure their AWS environment using infrastructure-as-code, identity federation, and proactive monitoring.
 
-## 🔑 Core Expertise
+## Core Expertise
 - **AWS Governance & Landing Zones**  
   Designing multi-account structures with AWS Control Tower, Service Catalog and Secure Baselines to enforce least‑privilege and separation of duties.
 
