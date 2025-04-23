@@ -5,7 +5,7 @@ author: "Javier Pulido"
 searchHidden: true
 ---
 
-Hi! I’m **Javier Pulido**, a Cloud Security Engineer with a passion for making complex infrastructure safe, automated, and compliant. Over the past several years, I’ve helped my companu build and secure their AWS environment using infrastructure-as-code, identity federation, and proactive monitoring.
+Hi! I’m **Javier Pulido**, a Cloud Security Engineer with a passion for making complex infrastructure safe, automated, and compliant. Over the past several years, I’ve helped my company build and secure their AWS environment using infrastructure-as-code, identity federation, and proactive monitoring.
 
 ## 🔑 Core Expertise
 - **AWS Governance & Landing Zones**  
