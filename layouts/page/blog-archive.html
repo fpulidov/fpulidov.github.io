@@ -1,0 +1,26 @@
+{{ define "main" }}
+  <h1 class="text-3xl font-bold mb-6">All Blog Posts</h1>
+
+  {{ range $name, $taxonomy := .Site.Taxonomies.categories }}
+    <section class="mb-12">
+      <h2 style="margin-top: 10px;" class="text-2xl font-semibold border-b border-gray-600 pb-2 mb-6">{{ $name | title }}</h2>
+
+      {{ range $taxonomy.Pages.ByDate.Reverse }}
+        <article class="mb-10 pl-4 border-l-2 border-gray-700">
+          <h3 style="margin-top: 10px;text-indent: 10px;"><u><a href="{{ .RelPermalink }}" class="block text-xl font-semibold text-primary hover:underline mb-1">
+            {{ .Title }}
+          </a></u></h3>
+          <p style="text-indent: 10px;" class="text-sm text-gray-400 mb-1">
+            {{ .Date.Format "Jan 2, 2006" }} • {{ .ReadingTime }} min read
+          </p>
+          {{ with .Params.summary }}
+            <p style="text-indent: 10px;" class="text-sm text-gray-300 leading-relaxed mt-2">
+              {{ . }}
+            </p>
+          {{ end }}
+        </article>
+      {{ end }}
+    </section>
+    <hr class="border-t border-gray-700 my-8">
+  {{ end }}
+{{ end }}
