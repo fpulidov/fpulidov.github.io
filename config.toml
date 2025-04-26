@@ -107,14 +107,9 @@ theme = "PaperMod"
     weight = 4
 
   [[menu.main]]
-    name = "Tags"
-    url = "/tags/"
+    name = "Blog"
+    url = "/blog/"
     weight = 30
-
-  [[menu.main]]
-    name = "Categories"
-    url = "/categories/"
-    weight = 40
 
 [pagination]
   pagerSize = 10

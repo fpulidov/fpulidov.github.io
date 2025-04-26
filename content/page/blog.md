@@ -7,4 +7,5 @@ layout: "blog-archive"
 summary: "Browse all articles grouped by category."
 url: "/blog/"
 draft: false
+searchHidden: true
 ---
