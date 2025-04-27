@@ -1,0 +1,13 @@
+{{/* layouts/partials/related.html */}}
+{{ $related := .Site.RegularPages.Related . | first 3 }}
+{{ if $related }}
+<hr>
+<section class="mt-10">
+  <h2 style="padding-bottom: 10px;" class="text-2xl font-semibold mb-4">Related Posts by tags</h2>
+  <br>
+    {{ range $related }}
+        <span><a style="font-size: 17px;" href="{{ .Permalink }}" class="title next hover:text-primary">{{ .Title }}</a></span></br>
+    {{ end }}
+</section>
+<hr>
+{{ end }}
