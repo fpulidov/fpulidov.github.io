@@ -158,7 +158,7 @@ Set retention on CloudWatch logs to avoid unnecessary spend.
 
 ---
 
-Need a full checklist to audit your environment?  
+📄 Need a full checklist to audit your environment?  
 Read the [AWS Security Checklist 2025](https://thehiddenport.dev/aws-security-checklist-2025) — 10 critical steps, all in one post.
 
 ---
@@ -170,6 +170,9 @@ Misconfigurations like these are often easy to fix—but also easy to miss.
 By tackling these five areas, you significantly reduce the likelihood of breaches, increase visibility, and build a security-first cloud foundation.
 
 Coming up: deeper dives into automation, policy generation, and detection workflows in AWS.
+
+📄 Handling misconfigurations is one thing. Responding to them fast is another.
+[Check out the AWS Incident Response Playbook →](https://thehiddenport.dev/incident-response-aws-guide)
 
 ---
 

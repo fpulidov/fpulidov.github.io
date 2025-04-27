@@ -50,6 +50,8 @@ AWS now enables these protections by default—but older accounts may still be v
 
 Use tools like **IAM Access Analyzer** and **Policy Simulator** to refine access.
 
+To delve deeper into IAM permissions, learn how to [analyze and reduce excessive IAM permissions](https://thehiddenport.dev/iam-access-analyzer-least-privilege).
+
 ---
 
 ## 4. Enable Logging Everywhere
