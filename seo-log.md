@@ -1,6 +1,7 @@
 # The Hidden Port SEO Growth Log
 
-## 2025-04-30
+## 2025-04-28
+- SCS-C02 article published with first affiliate link
 - Internal linking enhanced across all existing posts
 - Tags and Categories pages updated with descriptions
 - RSS feed fully active and linked in `<head>`
