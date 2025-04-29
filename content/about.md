@@ -23,8 +23,8 @@ Hi! I’m **Javier Pulido**, a Cloud Security Engineer with a passion for making
 - **DevSecOps Integrations**  
   Building Slack bots and daily Lambdas to ingest Security Hub findings, correlate authorship via AWS Config, and proactively notify responsible parties.
 
-- **ISO 27001:2022 compliance**  
-  By leveraging AWS services, custom automated remediation, and tailored alerting based on continuous monitoring, I help ensure my company's infrastructure remains compliant with the latest ISO 27001:2022 standards.
+- **ISO 27001:2023 compliance**  
+  By leveraging AWS services, custom automated remediation, and tailored alerting based on continuous monitoring, I help ensure my company's infrastructure remains compliant with the latest ISO 27001:2023 standards.
 
 ## Writing & Community
 With **The Hidden Port**, I want to share knowledge and experiences in:
