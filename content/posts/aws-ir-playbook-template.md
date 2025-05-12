@@ -6,7 +6,6 @@ categories: ["Guides"]
 description: "A ready-to-use template for small security teams handling security incidents in AWS. Includes triage checklists, memory capture steps, and reporting structure."
 summary: "A downloadable AWS incident response playbook for small teams, including isolation workflows, evidence handling, and post-incident reporting guidance."
 slug: "aws-ir-playbook-template"
-image: "/images/incident-response.png"
 draft: false
 author: "Javier Pulido"
 ---
