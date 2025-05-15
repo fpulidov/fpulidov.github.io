@@ -50,7 +50,7 @@ AWS now enables these protections by default—but older accounts may still be v
 
 Use tools like **IAM Access Analyzer** and **Policy Simulator** to refine access.
 
-To delve deeper into IAM permissions, learn how to [analyze and reduce excessive IAM permissions](https://thehiddenport.dev/iam-access-analyzer-least-privilege).
+To delve deeper into IAM permissions, learn how to [analyze and reduce excessive IAM permissions](../iam-access-analyzer-least-privilege).
 
 ---
 
@@ -127,7 +127,7 @@ Use these reports to catch drift and stale resources early.
 ---
 
 Want to go deeper on IAM strategy?  
-Check out [Why You Should Stop Using IAM Users in AWS](./aws-iam-users-alternatives) — a full guide on modern access control in 2025.
+Check out [Why You Should Stop Using IAM Users in AWS](../aws-iam-users-alternatives) — a full guide on modern access control in 2025.
 
 ---
 

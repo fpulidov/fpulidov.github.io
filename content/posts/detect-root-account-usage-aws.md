@@ -109,7 +109,7 @@ You should see an alert shortly after in your email or Slack.
 - **Regularly review CloudTrail and GuardDuty findings**
 
 This all starts with proper access control.  
-Read [Why IAM Users Are Obsolete in 2025](./aws-iam-users-alternatives) to modernize your identity model.
+Read [Why IAM Users Are Obsolete in 2025](../aws-iam-users-alternatives) to modernize your identity model.
 
 
 ---

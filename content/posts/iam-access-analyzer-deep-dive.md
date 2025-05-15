@@ -171,7 +171,7 @@ Use it to:
 - Detect risky cross-account access
 - Generate scoped policies from real CloudTrail usage
 
-For a comprehensive overview of securing your AWS environment, refer to our [broader AWS security checklist](https://thehiddenport.dev/aws-security-checklist-2025).
+For a comprehensive overview of securing your AWS environment, refer to our [broader AWS security checklist](../aws-security-checklist-2025).
 
 ---
 

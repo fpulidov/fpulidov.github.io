@@ -53,7 +53,7 @@ Use [Access Analyzer for S3](https://docs.aws.amazon.com/AmazonS3/latest/usergui
 Too often, IAM policies grant `Action: *` or `Resource: *` access—even for automation or dev roles.
 
 Want to fix IAM permissions more precisely?  
-Check out [Building Least-Privilege IAM Roles with IAM Access Analyzer](https://thehiddenport.dev/iam-access-analyzer-least-privilege) — with CLI examples and Terraform.
+Check out [Building Least-Privilege IAM Roles with IAM Access Analyzer](../iam-access-analyzer-least-privilege) — with CLI examples and Terraform.
 
 
 ### Why It Matters
