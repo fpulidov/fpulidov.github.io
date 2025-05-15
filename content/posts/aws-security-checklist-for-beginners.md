@@ -9,7 +9,7 @@ slug: "aws-security-checklist-2025"
 image: "/images/checklist.png"
 draft: false
 author: "Javier Pulido"
-canonicalURL: "https://thehiddenport.dev/aws-security-checklist-2025"
+canonicalURL: "https://thehiddenport.dev/posts/aws-security-checklist-2025"
 ---
 
 Misconfigurations continue to be the leading cause of cloud breaches. This **2025 checklist** covers the most critical AWS security controls you should implement—whether you're running a side project or managing production workloads.
@@ -127,7 +127,7 @@ Use these reports to catch drift and stale resources early.
 ---
 
 Want to go deeper on IAM strategy?  
-Check out [Why You Should Stop Using IAM Users in AWS](https://thehiddenport.dev/aws-iam-users-alternatives) — a full guide on modern access control in 2025.
+Check out [Why You Should Stop Using IAM Users in AWS](./aws-iam-users-alternatives) — a full guide on modern access control in 2025.
 
 ---
 

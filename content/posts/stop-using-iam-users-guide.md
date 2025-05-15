@@ -8,7 +8,7 @@ summary: "Stop using IAM users in AWS. This guide explains why they're risky and
 slug: "aws-iam-users-alternatives"
 draft: false
 author: "Javier Pulido"
-canonicalURL: "https://thehiddenport.dev/aws-iam-users-alternatives"
+canonicalURL: "https://thehiddenport.dev/posts/aws-iam-users-alternatives"
 ---
 
 IAM users once helped us bootstrap AWS environments, but in 2025 they are outdated and dangerous. This guide breaks down the risks, modern alternatives, and how to migrate securely—step by step.

@@ -8,7 +8,7 @@ summary: "Five AWS misconfigurations still causing breaches in 2025 — includes
 slug: "aws-security-misconfigurations-guide"
 draft: false
 author: "Javier Pulido"
-canonicalURL: "https://thehiddenport.dev/aws-security-misconfigurations-guide"
+canonicalURL: "https://thehiddenport.dev/posts/aws-security-misconfigurations-guide"
 ---
 
 Misconfigurations remain the top cause of cloud security incidents. While AWS has improved defaults over the years, many organizations still leave critical gaps open to attackers.
