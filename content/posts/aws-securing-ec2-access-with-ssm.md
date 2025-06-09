@@ -3,7 +3,7 @@ title: "Securing EC2 Access with AWS Systems Manager Session Manager: Eliminatin
 date: 2025-06-03
 description: "A comprehensive guide to replacing SSH access with AWS Systems Manager Session Manager for EC2 instances, enhancing security and compliance."
 tags: ["AWS", "EC2", "Security", "Session Manager", "SSM", "IAM", "Cloud Security"]
-canonicalURL: "https://thehiddenport.dev/securing-ec2-access-with-ssm"
+canonicalURL: "https://thehiddenport.dev/posts/securing-ec2-access-with-ssm"
 ---
 
 ## Introduction

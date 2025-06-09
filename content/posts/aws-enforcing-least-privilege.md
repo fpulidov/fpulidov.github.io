@@ -4,7 +4,7 @@ description: "A practical guide on enforcing least privilege in AWS IAM by using
 summary: "This article shows how to audit and refine IAM permissions using Access Analyzer, CloudTrail, and service access history — enforcing least privilege the right way in AWS."
 date: 2025-06-09
 tags: ["AWS", "IAM", "Least Privilege", "Access Analyzer", "Security"]
-canonicalURL: "https://thehiddenport.dev/enforcing-least-privilege-iam-access-analyzer"
+canonicalURL: "https://thehiddenport.dev/posts/enforcing-least-privilege-iam-access-analyzer"
 ---
 
 # Enforcing Least Privilege in AWS IAM with Access Analyzer and Last Access Data
