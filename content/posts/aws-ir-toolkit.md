@@ -8,7 +8,7 @@ tags: ["aws", "security", "incident-response", "toolkit"]
 
 ## Why I Built This Toolkit
 
-After sharing my [Incident Response in AWS article](../incident-response-small-teams) and a free downloadable checklist, I received a lot of feedback — mostly from engineers saying the same thing:
+After sharing my [Incident Response in AWS article](../incident-response-aws-guide/) and a free downloadable checklist, I received a lot of feedback — mostly from engineers saying the same thing:
 
 > *“This is helpful, but I still have to piece everything together.”*
 
