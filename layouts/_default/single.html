@@ -61,8 +61,8 @@
     {{- end }}
   </footer>
 
-  {{- if (.Param "comments") }}
-  {{- partial "comments.html" . }}
+  {{ if .Params.enable_comments }}
+    {{ partial "comments-giscus.html" . }}
   {{- end }}
 </article>
 

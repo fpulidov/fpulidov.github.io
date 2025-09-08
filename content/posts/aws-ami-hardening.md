@@ -5,6 +5,7 @@ summary: "Step-by-step guide to build a hardened Amazon Linux 2 AMI with EC2 Ima
 date: 2025-06-09
 tags: ["AWS", "EC2", "AMI", "Hardening", "Security", "Image Builder"]
 canonicalURL: "https://thehiddenport.dev/posts/building-hardened-amazon-linux-2-ami-secure-ec2"
+enable_comments: true
 ---
 
 # Building a Hardened Amazon Linux 2 AMI for Secure EC2 Deployments

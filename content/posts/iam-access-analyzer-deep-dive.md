@@ -9,6 +9,7 @@ slug: "iam-access-analyzer-least-privilege"
 draft: false
 author: "Javier Pulido"
 canonicalURL: "https://thehiddenport.dev/posts/iam-access-analyzer-least-privilege"
+enable_comments: true
 ---
 
 ## Why Least Privilege Matters

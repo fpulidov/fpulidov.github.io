@@ -9,6 +9,7 @@ slug: "aws-security-misconfigurations-guide"
 draft: false
 author: "Javier Pulido"
 canonicalURL: "https://thehiddenport.dev/posts/aws-security-misconfigurations-guide"
+enable_comments: true
 ---
 
 Misconfigurations remain the top cause of cloud security incidents. While AWS has improved defaults over the years, many organizations still leave critical gaps open to attackers.

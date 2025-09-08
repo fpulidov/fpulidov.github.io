@@ -5,6 +5,7 @@ summary: "A deep technical guide to setting up AWS-native detection for privileg
 date: 2025-06-20
 tags: ["AWS", "IAM", "CloudTrail", "EventBridge", "Detection", "Security"]
 canonicalURL: "https://thehiddenport.dev/posts/aws-detecting-privilege-escalation-cloudtrail-eventbridge/"
+enable_comments: true
 ---
 
 # Detecting Privilege Escalation in AWS Using CloudTrail and EventBridge

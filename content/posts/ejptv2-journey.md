@@ -7,6 +7,7 @@ slug: "ejptv2-journey"
 tags: ["ejpt", "ethical hacking", "cloud security", "pentesting", "career development"]
 keywords: ["ejptv2", "penetration testing", "cloud security career", "obsidian notes", "tryhackme", "ine ejpt"]
 aliases: ["/ejpt-journey/"]
+enable_comments: true
 ---
 
 For the past years, most of my focus has been on **cloud security** — hardening AWS environments, responding to incidents, and making sure access is tightly controlled. But lately, I’ve felt the urge to explore a different side of the equation: **ethical hacking**.

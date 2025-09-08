@@ -7,6 +7,7 @@ slug: "aws-temporary-credentials-security"
 tags: ["aws", "cloud security", "iam", "sts", "temporary credentials"]
 keywords: ["aws sts", "iam roles", "temporary credentials", "cloud security", "assume role", "least privilege"]
 aliases: ["/aws-temp-creds-security/"]
+enable_comments: true
 ---
 
 Temporary credentials are one of the most powerful — and misunderstood — access mechanisms in AWS. They’re essential for enabling short-lived, tightly scoped access without the long-term baggage of static IAM user credentials. But with this flexibility comes a new surface for mistakes, misuse, and oversights.

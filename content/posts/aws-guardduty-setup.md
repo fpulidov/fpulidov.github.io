@@ -5,6 +5,7 @@ summary: "A comprehensive guide to setting up Amazon GuardDuty, interpreting its
 date: 2025-06-24
 tags: ["AWS", "Security", "GuardDuty", "SIEM", "Threat Detection"]
 canonicalURL: "https://thehiddenport.dev/posts/aws-guardduty-setup-findings-siem-integration/"
+enable_comments: true
 ---
 
 # Getting Started with Amazon GuardDuty: Setup, Findings, and SIEM Integration

@@ -9,6 +9,7 @@ slug: "detect-root-account-usage"
 draft: false
 author: "Javier Pulido"
 canonicalURL: "https://thehiddenport.dev/posts/detect-root-account-usage"
+enable_comments: true
 ---
 
 ## Why Root Account Usage Should Raise an Alarm

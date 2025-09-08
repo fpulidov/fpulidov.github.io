@@ -8,6 +8,7 @@ slug: "affordable-aws-security-monitoring"
 tags: ["aws", "cloud security", "monitoring", "siem", "cloudtrail", "eventbridge", "wazuh"]
 keywords: ["aws monitoring cost", "cloudtrail security events", "affordable aws siem", "eventbridge alerting", "aws security best practices"]
 aliases: ["/aws-cost-effective-monitoring/"]
+enable_comments: true
 ---------------------------------------------
 
 > Monitoring in AWS doesn’t have to be expensive. In this guide, we’ll walk through real-world strategies to detect and respond to security events in AWS without blowing your budget — using a mix of native tooling, automation, and open-source solutions.

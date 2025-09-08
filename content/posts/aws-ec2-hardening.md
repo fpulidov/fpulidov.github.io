@@ -6,6 +6,7 @@ tags: ["AWS", "EC2", "Security", "Hardening", "Cloud Security"]
 categories: ["Cloud Security", "Guides"]
 summary: "This guide delves into the technical aspects of hardening EC2 instances, covering topics from instance selection to monitoring and automation, aligning with AWS's security recommendations."
 canonicalURL: "https://thehiddenport.dev/posts/aws-ec2-hardening"
+enable_comments: true
 ---
 
 # Hardening EC2 Instances for AWS Security: A Practical Guide

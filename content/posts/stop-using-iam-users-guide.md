@@ -9,6 +9,7 @@ slug: "aws-iam-users-alternatives"
 draft: false
 author: "Javier Pulido"
 canonicalURL: "https://thehiddenport.dev/posts/aws-iam-users-alternatives"
+enable_comments: true
 ---
 
 IAM users once helped us bootstrap AWS environments, but in 2025 they are outdated and dangerous. This guide breaks down the risks, modern alternatives, and how to migrate securely—step by step.

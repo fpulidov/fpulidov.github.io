@@ -8,6 +8,7 @@ summary: "Learn how to run an effective incident response process in AWS using a
 slug: "incident-response-aws-guide"
 draft: false
 author: "Javier Pulido"
+enable_comments: true
 ---
 
 Cloud breaches are no longer a question of if — but when. For small teams, this means preparing lightweight yet effective incident response workflows that work in the cloud, with the tools you already have.

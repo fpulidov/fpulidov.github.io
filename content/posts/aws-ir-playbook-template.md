@@ -8,6 +8,7 @@ summary: "A downloadable AWS incident response playbook for small teams, includi
 slug: "aws-ir-playbook-template"
 draft: false
 author: "Javier Pulido"
+enable_comments: true
 ---
 
 

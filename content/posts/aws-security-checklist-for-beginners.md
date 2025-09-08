@@ -10,6 +10,7 @@ image: "/images/checklist.png"
 draft: false
 author: "Javier Pulido"
 canonicalURL: "https://thehiddenport.dev/posts/aws-security-checklist-2025"
+enable_comments: true
 ---
 
 Misconfigurations continue to be the leading cause of cloud breaches. This **2025 checklist** covers the most critical AWS security controls you should implement—whether you're running a side project or managing production workloads.

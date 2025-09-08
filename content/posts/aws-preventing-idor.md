@@ -5,6 +5,7 @@ summary: "Learn what IDOR is, why it's so common (and dangerous), see real AWS-r
 date: 2025-06-27
 tags: ["Bug Bounty", "Security", "Web", "AWS", "API", "IDOR"]
 canonicalURL: "https://thehiddenport.dev/posts/what-is-idor-aws-apis/"
+enable_comments: true
 ---
 
 # What Is IDOR? Finding and Preventing Insecure Direct Object References in AWS APIs
