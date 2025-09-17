@@ -1,9 +1,9 @@
 ---
-title: "AWS Incident Response Playbook Template"
+title: "AWS Incident Response Playbook Template (Free Download)"
 date: 2025-05-04
 tags: ["aws", "incident-response", "cloud-security", "forensics", "checklists"]
 categories: ["Guides"]
-description: "A ready-to-use template for small security teams handling security incidents in AWS. Includes triage checklists, memory capture steps, and reporting structure."
+description: "Download a free AWS Incident Response Playbook Template. Step-by-step guide to handle security incidents effectively in AWS."
 summary: "A downloadable AWS incident response playbook for small teams, including isolation workflows, evidence handling, and post-incident reporting guidance."
 slug: "aws-ir-playbook-template"
 draft: false

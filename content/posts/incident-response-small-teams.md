@@ -1,9 +1,9 @@
 ---
-title: "Incident Response in AWS: A Playbook for Small Security Teams"
+title: "Incident Response in AWS: A Practical Guide"
 date: 2025-05-04
 tags: ["aws", "incident-response", "cloud-security", "forensics", "ssm", "security-hub"]
 categories: ["Cloud Security", "Guides"]
-description: "A practical guide to incident response in AWS for small teams. Includes step-by-step playbook, memory acquisition techniques, and evidence handling in the cloud."
+description: "Learn how to build an incident response plan in AWS. Covers detection, playbooks, automation & response best practices."
 summary: "Learn how to run an effective incident response process in AWS using automation and forensic best practices — without needing a separate IR account."
 slug: "incident-response-aws-guide"
 draft: false

@@ -1,6 +1,7 @@
 ---
 
-title: "I Built an AWS Incident Response Toolkit (and You Can Use It)"
+title: "AWS Incident Response Toolkit: Resources & Templates"
+description: "Complete AWS incident response toolkit. Includes playbooks, templates, tools, and guidance for cloud security teams."
 date: 2025-05-20
 summary: "After publishing my free AWS IR checklist, I decided to go one step further — a full incident response toolkit with Terraform code, automation scripts, and ready-to-use templates. Here’s what’s inside."
 tags: ["aws", "security", "incident-response", "toolkit"]
