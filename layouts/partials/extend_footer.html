@@ -29,26 +29,29 @@
   <script>
     const form = document.getElementById('newsletter-form');
     const successMessage = document.getElementById('subscribe-success');
-  
-    form.addEventListener('submit', async function (e) {
-      e.preventDefault();
-  
-      const data = new FormData(form);
-      const response = await fetch(form.action, {
-        method: form.method,
-        body: data
+
+    if (form) {
+      form.addEventListener('submit', async function (e) {
+        e.preventDefault();
+
+        const data = new FormData(form);
+        const response = await fetch(form.action, {
+          method: form.method,
+          body: data
+        });
+
+        if (response.ok) {
+          form.reset();
+          successMessage.classList.add('show');
+          successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+          // Fade out after 5 seconds
+          setTimeout(() => {
+            successMessage.classList.remove('show');
+            successMessage.classList.add('hide');
+          }, 5000);
+        }
       });
-  
-      if (response.ok) {
-        form.reset();
-        successMessage.classList.add('show');
-        successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
-  
-        // Fade out after 5 seconds
-        setTimeout(() => {
-          successMessage.classList.remove('show');
-          successMessage.classList.add('hide');
-        }, 5000);
-      }
-    });
+    }
   </script>
+  <script async src="https://eocampaign1.com/form/fbc81a40-4aea-11f0-aff3-45842a94a714.js" data-form="fbc81a40-4aea-11f0-aff3-45842a94a714"></script>
