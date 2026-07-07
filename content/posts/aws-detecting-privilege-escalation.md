@@ -172,7 +172,7 @@ If this post interests you, check these out:
 * [Enforcing Least Privilege in AWS IAM](/posts/aws-enforcing-least-privilege/)
 * [AWS Incident Response Toolkit](/posts/aws-ir-toolkit/)
 * [Securing EC2 Access with AWS Systems Manager](/posts/aws-securing-ec2-access-with-ssm/)
-* [AWS Security Checklist 2025](/posts/aws-security-checklist-2025/)
+* [AWS Security Checklist 2026](/posts/aws-security-checklist-2026/)
 
 ---
 

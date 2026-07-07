@@ -1,10 +1,10 @@
 ---
-title: "5 Critical AWS Security Misconfigurations (2025 Edition) – How to Find & Fix Them"
-date: 2025-04-19T00:00:00Z
+title: "5 Critical AWS Security Misconfigurations (2026 Edition) – How to Find & Fix Them"
+date: 2026-07-07
 tags: ["aws", "cloud-security", "iam", "s3", "vpc", "compliance"]
 categories: ["Cloud Security"]
-description: "A practical guide to the five most common AWS security misconfigurations in 2025 and how to fix them using the AWS Console and Terraform."
-summary: "Five AWS misconfigurations still causing breaches in 2025 — includes fixes for public S3 buckets, over-permissive IAM, open security groups, and missing monitoring."
+description: "A practical guide to the five most common AWS security misconfigurations in 2026 and how to fix them using the AWS Console and Terraform."
+summary: "Five AWS misconfigurations still causing breaches in 2026 — includes fixes for public S3 buckets, over-permissive IAM, open security groups, and missing monitoring."
 slug: "aws-security-misconfigurations-guide"
 draft: false
 author: "Javier Pulido"
@@ -14,7 +14,7 @@ enable_comments: true
 
 Misconfigurations remain the top cause of cloud security incidents. While AWS has improved defaults over the years, many organizations still leave critical gaps open to attackers.
 
-This guide outlines **five high-impact AWS security misconfigurations**, explains *why they matter*, and shows *how to fix them* with both Console and Terraform examples. These are based on real-world findings from security audits in 2024–2025.
+This guide outlines **five high-impact AWS security misconfigurations**, explains *why they matter*, and shows *how to fix them* with both Console and Terraform examples. These are based on real-world findings from security audits in 2025–2026.
 
 ---
 
@@ -90,7 +90,7 @@ Use [IAM Access Analyzer](https://docs.aws.amazon.com/IAM/latest/UserGuide/acces
 
 ## 3. IAM Users Without MFA (or Still Using IAM Users at All)
 
-IAM users should no longer be used for human access in 2025.
+IAM users should no longer be used for human access in 2026.
 
 ### Why It Matters
 
@@ -160,7 +160,7 @@ Set retention on CloudWatch logs to avoid unnecessary spend.
 ---
 
 📄 Need a full checklist to audit your environment?  
-Read the [AWS Security Checklist 2025](https://thehiddenport.dev/aws-security-checklist-2025) — 10 critical steps, all in one post.
+Read the [AWS Security Checklist 2026](/posts/aws-security-checklist-2026/) — 10 critical steps, all in one post.
 
 ---
 

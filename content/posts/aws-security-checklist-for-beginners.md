@@ -1,19 +1,20 @@
 ---
-title: "AWS Security Checklist 2025: Best Practices Guide"
-date: 2025-04-20T00:00:00Z
+title: "AWS Security Checklist 2026: Best Practices Guide"
+date: 2026-07-07
 tags: ["aws", "cloud-security", "checklist", "beginner-guide", "iam", "s3", "cloudtrail"]
 categories: ["Cloud Security"]
-description: "Free AWS Security Checklist (2025). Covers IAM, EC2, S3, monitoring & compliance. Practical steps to secure your AWS cloud."
-summary: "A step-by-step checklist to secure your AWS account in 2025 — includes IAM hardening, S3 lockdown, logging, and budget alerts. Beginner to intermediate friendly."
-slug: "aws-security-checklist-2025"
+description: "Free AWS Security Checklist (2026). Covers IAM, EC2, S3, monitoring & compliance. Practical steps to secure your AWS cloud."
+summary: "A step-by-step checklist to secure your AWS account in 2026 — includes IAM hardening, S3 lockdown, logging, and budget alerts. Beginner to intermediate friendly."
+slug: "aws-security-checklist-2026"
+aliases: ["/posts/aws-security-checklist-2025/"]
 image: "/images/checklist.png"
 draft: false
 author: "Javier Pulido"
-canonicalURL: "https://thehiddenport.dev/posts/aws-security-checklist-2025"
+canonicalURL: "https://thehiddenport.dev/posts/aws-security-checklist-2026"
 enable_comments: true
 ---
 
-Misconfigurations continue to be the leading cause of cloud breaches. This **2025 checklist** covers the most critical AWS security controls you should implement—whether you're running a side project or managing production workloads.
+Misconfigurations continue to be the leading cause of cloud breaches. This **2026 checklist** covers the most critical AWS security controls you should implement—whether you're running a side project or managing production workloads.
 
 Use it to review your setup, catch vulnerabilities early, and build security in by default.
 
@@ -128,7 +129,7 @@ Use these reports to catch drift and stale resources early.
 ---
 
 Want to go deeper on IAM strategy?  
-Check out [Why You Should Stop Using IAM Users in AWS](../aws-iam-users-alternatives) — a full guide on modern access control in 2025.
+Check out [Why You Should Stop Using IAM Users in AWS](../aws-iam-users-alternatives) — a full guide on modern access control in 2026.
 
 ---
 

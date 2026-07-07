@@ -1,9 +1,9 @@
 ---
-title: "IAM Users Are Dead: Modern AWS Access Control for 2025"
-date: 2025-04-20T00:00:00Z
+title: "IAM Users Are Dead: Modern AWS Access Control for 2026"
+date: 2026-07-07
 tags: ["aws", "iam", "zero-trust", "sso", "sts", "ci-cd"]
 categories: ["Cloud Security"]
-description: "Why AWS IAM users are obsolete in 2025 - and how to implement secure, scalable alternatives with Identity Center, OIDC, and temporary credentials."
+description: "Why AWS IAM users are obsolete in 2026 - and how to implement secure, scalable alternatives with Identity Center, OIDC, and temporary credentials."
 summary: "Stop using IAM users in AWS. This guide explains why they're risky and how to migrate to Identity Center, STS, and OIDC-based access — step-by-step."
 slug: "aws-iam-users-alternatives"
 draft: false
@@ -12,11 +12,11 @@ canonicalURL: "https://thehiddenport.dev/posts/aws-iam-users-alternatives"
 enable_comments: true
 ---
 
-IAM users once helped us bootstrap AWS environments, but in 2025 they are outdated and dangerous. This guide breaks down the risks, modern alternatives, and how to migrate securely—step by step.
+IAM users once helped us bootstrap AWS environments, but in 2026 they are outdated and dangerous. This guide breaks down the risks, modern alternatives, and how to migrate securely—step by step.
 
 ---
 
-## Why IAM Users Are a Problem in 2025
+## Why IAM Users Are a Problem in 2026
 
 | Risk | Impact | Frequency |
 |------|--------|-----------|
@@ -131,7 +131,7 @@ If you have legacy apps that require IAM users:
 
 ## Final Thoughts
 
-IAM users served their time—but in 2025, they are no longer secure or scalable.
+IAM users served their time—but in 2026, they are no longer secure or scalable.
 
 By transitioning to **Identity Center for users**, **STS for automation**, and **OIDC for pipelines**, you're moving toward a modern, zero-trust access model that scales with your org.
 
