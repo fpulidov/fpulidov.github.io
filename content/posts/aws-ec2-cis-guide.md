@@ -9,6 +9,7 @@ keywords: ["CIS benchmarks EC2", "AWS compliance", "secure EC2 instances", "CIS 
 categories: ["Cloud Security", "Compliance", "Guides"]
 aliases: ["/ec2-cis-guide/"]
 summary: "How to map, audit, and automate CIS Benchmark compliance for EC2 instances using AWS Config, Security Hub, SSM, and open-source scanners."
+canonicalURL: "https://thehiddenport.dev/posts/ec2-cis-benchmarks-guide/"
 enable_comments: true
 ---
 

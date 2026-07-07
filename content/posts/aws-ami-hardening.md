@@ -4,6 +4,7 @@ description: "Build a CIS-compliant Amazon Linux 2 AMI using EC2 Image Builder. 
 summary: "Step-by-step guide to build a hardened Amazon Linux 2 AMI with EC2 Image Builder including CIS benchmarks, IMDSv2 enforcement, auditd, and logging configuration."
 date: 2025-06-09
 tags: ["AWS", "EC2", "AMI", "Hardening", "Security", "Image Builder"]
+keywords: ["hardened ami", "amazon linux 2 ami", "ec2 image builder", "ami hardening", "secure ami aws"]
 canonicalURL: "https://thehiddenport.dev/posts/building-hardened-amazon-linux-2-ami-secure-ec2"
 enable_comments: true
 ---

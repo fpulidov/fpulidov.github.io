@@ -2,6 +2,7 @@
 title: "5 Critical AWS Security Misconfigurations (2026 Edition) – How to Find & Fix Them"
 date: 2026-07-07
 tags: ["aws", "cloud-security", "iam", "s3", "vpc", "compliance"]
+keywords: ["aws security misconfigurations", "aws misconfiguration fix", "s3 public access", "iam misconfiguration", "aws security audit"]
 categories: ["Cloud Security"]
 description: "A practical guide to the five most common AWS security misconfigurations in 2026 and how to fix them using the AWS Console and Terraform."
 summary: "Five AWS misconfigurations still causing breaches in 2026 — includes fixes for public S3 buckets, over-permissive IAM, open security groups, and missing monitoring."

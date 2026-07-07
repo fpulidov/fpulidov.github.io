@@ -9,6 +9,7 @@ categories: ["Cloud Security", "Guides"]
 keywords: ["eks security", "eks security best practices", "eks security monitoring", "kubernetes security aws", "falco eks", "eks audit logs"]
 enable_comments: true
 summary: "How to monitor EKS for security threats using CloudWatch, GuardDuty, audit logs, and Falco. Covers AWS-native tools, open-source options, and best practices."
+canonicalURL: "https://thehiddenport.dev/posts/eks-security-monitoring/"
 ---
 
 Monitoring Kubernetes on AWS (EKS) brings challenges beyond traditional EC2 or IAM setups — pods, containers, control plane, node behavior, runtime threats — all need attention. This guide walks you through what to monitor, which tools matter, and how to build a monitoring strategy for EKS that balances depth, cost, and security.

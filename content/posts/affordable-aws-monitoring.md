@@ -9,6 +9,7 @@ tags: ["aws", "cloud security", "monitoring", "siem", "cloudtrail", "eventbridge
 keywords: ["aws monitoring cost", "cloudtrail security events", "affordable aws siem", "eventbridge alerting", "aws security best practices"]
 aliases: ["/aws-cost-effective-monitoring/"]
 summary: "How to build a real AWS security monitoring stack without overspending — using CloudTrail, EventBridge, GuardDuty, and open-source tools like Wazuh and OpenSearch."
+canonicalURL: "https://thehiddenport.dev/posts/affordable-aws-security-monitoring/"
 enable_comments: true
 ---
 

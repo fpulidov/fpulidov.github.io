@@ -5,7 +5,10 @@ description: "Complete AWS incident response toolkit. Includes playbooks, templa
 date: 2025-05-20
 summary: "After publishing my free AWS IR checklist, I decided to go one step further — a full incident response toolkit with Terraform code, automation scripts, and ready-to-use templates. Here’s what’s inside."
 tags: ["aws", "security", "incident-response", "toolkit"]
-----------------------------------------------------------
+keywords: ["aws incident response toolkit", "aws ir tools", "incident response templates", "aws security toolkit", "ir automation aws"]
+slug: "aws-ir-toolkit"
+canonicalURL: "https://thehiddenport.dev/posts/aws-ir-toolkit/"
+---
 
 ## Why I Built This Toolkit
 

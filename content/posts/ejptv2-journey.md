@@ -7,6 +7,7 @@ slug: "ejptv2-journey"
 tags: ["ejpt", "ethical hacking", "cloud security", "pentesting", "career development"]
 keywords: ["ejptv2", "penetration testing", "cloud security career", "obsidian notes", "tryhackme", "ine ejpt"]
 aliases: ["/ejpt-journey/"]
+canonicalURL: "https://thehiddenport.dev/posts/ejptv2-journey/"
 enable_comments: true
 ---
 

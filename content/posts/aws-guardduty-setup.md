@@ -4,6 +4,7 @@ description: "Enable GuardDuty, understand finding types, set up alerting, and i
 summary: "Set up Amazon GuardDuty from scratch: enable the service, understand finding severity, configure alerts via EventBridge, and integrate with SIEM systems."
 date: 2025-06-24
 tags: ["AWS", "Security", "GuardDuty", "SIEM", "Threat Detection"]
+keywords: ["amazon guardduty setup", "guardduty findings", "guardduty siem integration", "aws threat detection", "guardduty alerts"]
 canonicalURL: "https://thehiddenport.dev/posts/aws-guardduty-setup-findings-siem-integration/"
 enable_comments: true
 ---

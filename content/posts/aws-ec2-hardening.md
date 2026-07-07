@@ -3,6 +3,7 @@ title: "EC2 Hardening Guide: Secure AWS Instances Step by Step"
 description: "Harden EC2 instances with IAM least privilege, OS lockdown, encryption, logging, and CIS benchmark checks. Practical guide with console and Terraform examples."
 date: 2025-05-29
 tags: ["AWS", "EC2", "Security", "Hardening", "Cloud Security", "AWS Security Best Practices", "EC2 Compliance", "CIS Benchmark AWS"]
+keywords: ["ec2 hardening", "secure ec2 instance", "aws ec2 security best practices", "ec2 cis benchmark", "aws instance hardening"]
 categories: ["Cloud Security", "Guides"]
 summary: "This guide delves into the technical aspects of hardening EC2 instances, covering topics from instance selection to monitoring and automation, aligning with AWS's security recommendations."
 canonicalURL: "https://thehiddenport.dev/posts/aws-ec2-hardening"

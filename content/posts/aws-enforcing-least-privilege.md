@@ -4,6 +4,7 @@ description: "Audit and tighten IAM permissions using Access Analyzer, CloudTrai
 summary: "How to audit and refine IAM permissions using Access Analyzer, CloudTrail, and service access history — enforcing least privilege the right way in AWS."
 date: 2025-06-09
 tags: ["AWS", "IAM", "Least Privilege", "Access Analyzer", "Security"]
+keywords: ["iam least privilege", "aws access analyzer", "iam policy generator", "least privilege aws", "iam access analyzer guide"]
 canonicalURL: "https://thehiddenport.dev/posts/enforcing-least-privilege-iam-access-analyzer"
 enable_comments: true
 ---

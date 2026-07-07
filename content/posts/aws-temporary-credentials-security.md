@@ -8,6 +8,7 @@ tags: ["aws", "cloud security", "iam", "sts", "temporary credentials"]
 keywords: ["aws sts", "iam roles", "temporary credentials", "cloud security", "assume role", "least privilege"]
 aliases: ["/aws-temp-creds-security/"]
 summary: "How to use IAM roles, STS, and temporary credentials securely — covering least privilege, session policies, credential expiration, and common mistakes."
+canonicalURL: "https://thehiddenport.dev/posts/aws-temporary-credentials-security/"
 enable_comments: true
 ---
 

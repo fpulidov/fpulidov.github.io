@@ -2,12 +2,14 @@
 title: "AWS Incident Response Playbook Template (Free)"
 date: 2025-05-04
 tags: ["aws", "incident-response", "cloud-security", "forensics", "checklists"]
+keywords: ["aws incident response playbook", "ir playbook template", "aws forensics checklist", "incident response template", "aws security playbook"]
 categories: ["Guides"]
 description: "Free AWS incident response playbook with isolation workflows, evidence collection steps, and post-incident reporting checklists. Ready to use."
 summary: "A downloadable AWS incident response playbook for small teams, including isolation workflows, evidence handling, and post-incident reporting guidance."
 slug: "aws-ir-playbook-template"
 draft: false
 author: "Javier Pulido"
+canonicalURL: "https://thehiddenport.dev/posts/aws-ir-playbook-template/"
 enable_comments: true
 ---
 

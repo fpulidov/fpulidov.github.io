@@ -2,12 +2,14 @@
 title: "AWS Incident Response Guide for Small Security Teams"
 date: 2025-05-04
 tags: ["aws", "incident-response", "cloud-security", "forensics", "ssm", "security-hub"]
+keywords: ["aws incident response", "cloud incident response guide", "aws forensics", "small team incident response", "aws ir automation"]
 categories: ["Cloud Security", "Guides"]
 description: "Build an AWS incident response process using CloudTrail, GuardDuty, and automation. Includes free playbook template, forensic steps, and Terraform code."
 summary: "Run effective incident response in AWS with automation and forensic best practices. Free playbook template included — no dedicated IR account needed."
 slug: "incident-response-aws-guide"
 draft: false
 author: "Javier Pulido"
+canonicalURL: "https://thehiddenport.dev/posts/incident-response-aws-guide/"
 enable_comments: true
 ---
 

@@ -3,11 +3,13 @@ title: "How I Passed the AWS Certified Security – Specialty (SCS-C02) Exam in 
 date: 2025-04-28
 slug: "aws-scs-c02-exam-experience"
 tags: ["aws", "certification", "security-specialty", "cloud-security", "study-tips"]
+keywords: ["aws scs-c02", "aws security specialty exam", "scs-c02 study guide", "aws security certification", "scs-c02 experience"]
 categories: ["Certification", "Guides"]
 description: "How I passed the AWS Security Specialty (SCS-C02) exam. Study strategies, resources, mistakes to avoid, and honest tips for future candidates."
 summary: "My real-world journey passing the AWS Certified Security – Specialty (SCS-C02) exam. Study strategies, mistakes, resources, and tips for future candidates."
 author: "Javier Pulido"
 draft: false
+canonicalURL: "https://thehiddenport.dev/posts/aws-scs-c02-exam-experience/"
 enable_comments: true
 ---
 
