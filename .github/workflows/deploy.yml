@@ -15,9 +15,10 @@ jobs:
       - name: Checkout source
         uses: actions/checkout@v3
 
-      - name: Install PaperMod theme
+      - name: Install PaperMod theme (pinned to pre-v8)
         run: |
-          git clone --depth=1 https://github.com/adityatelange/hugo-PaperMod.git themes/PaperMod
+          git clone https://github.com/adityatelange/hugo-PaperMod.git themes/PaperMod
+          cd themes/PaperMod && git checkout 7cf752f
 
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2
