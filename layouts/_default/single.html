@@ -61,6 +61,8 @@
     {{- end }}
   </footer>
 
+  {{ partial "subscribe-cta.html" . }}
+
   {{ if .Params.enable_comments }}
     {{ partial "comments-giscus.html" . }}
   {{- end }}
