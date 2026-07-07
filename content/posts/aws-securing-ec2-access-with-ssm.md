@@ -19,7 +19,7 @@ Before proceeding, ensure the following:
 
 * **SSM Agent Installed**: Amazon EC2 instances must have the SSM Agent installed. Amazon Linux 2 and Ubuntu 16.04 or later come with the agent pre-installed. For other operating systems, refer to the [SSM Agent installation guide](https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-agent.html).
 
-* **IAM Role with SSM Permissions**: Instances require an IAM role with the `AmazonSSMManagedInstanceCore` policy attached. This policy grants the necessary permissions for Systems Manager to manage the instance.
+* **IAM Role with SSM Permissions**: Instances require an IAM role with the `AmazonSSMManagedInstanceCore` policy attached. This policy grants the necessary permissions for Systems Manager to manage the instance. For a full breakdown of what this policy allows and how to scope it down for production, see [AmazonSSMManagedInstanceCore Explained](/posts/amazonssmmanagedinstancecore-iam-policy-explained/).
 
 * **Outbound Internet Access or VPC Endpoints**: Instances must be able to communicate with Systems Manager endpoints. This can be achieved via outbound internet access (e.g., through a NAT gateway) or by configuring [VPC endpoints for Systems Manager](https://docs.aws.amazon.com/systems-manager/latest/userguide/setup-create-vpc.html).
 
