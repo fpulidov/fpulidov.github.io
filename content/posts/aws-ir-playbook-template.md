@@ -128,6 +128,8 @@ security incidents in AWS. It assumes limited team size and leverages AWS-native
 
 **Note:** Adapt this playbook to your environment. Test it in advance. Incident response is a skill — rehearse it regularly.
 
+> For scenario-specific containment steps (compromised keys, public S3, cryptomining, privilege escalation), see [AWS Incident Response: 5 Scenarios & How to Contain Them](/posts/aws-incident-response-scenarios/).
+
 ---
 
 ## Want a downloadable version in PDF?

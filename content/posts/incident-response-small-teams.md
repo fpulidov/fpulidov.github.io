@@ -215,6 +215,12 @@ Includes:
 
 ---
 
+## Real-World Scenarios
+
+This guide covers the process framework. For step-by-step containment commands for specific incidents — compromised credentials, public S3 buckets, cryptomining, privilege escalation — see [AWS Incident Response: 5 Scenarios & How to Contain Them](/posts/aws-incident-response-scenarios/).
+
+---
+
 ## Final Thoughts
 
 You don’t need a massive budget to handle incidents well in AWS. With preparation and automation, even small teams can contain breaches quickly and gather clean forensic evidence.
