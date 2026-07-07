@@ -8,11 +8,9 @@ tags: ["AWS", "EC2", "CIS Benchmark", "Compliance", "Cloud Security", "GRC"]
 keywords: ["CIS benchmarks EC2", "AWS compliance", "secure EC2 instances", "CIS AWS Foundations", "CIS Linux benchmark"]
 categories: ["Cloud Security", "Compliance", "Guides"]
 aliases: ["/ec2-cis-guide/"]
+summary: "How to map, audit, and automate CIS Benchmark compliance for EC2 instances using AWS Config, Security Hub, SSM, and open-source scanners."
 enable_comments: true
 ---
-
-# Meeting CIS Benchmarks for EC2: A Practical Guide
-
 
 ## Introduction
 

@@ -8,24 +8,11 @@ slug: "affordable-aws-security-monitoring"
 tags: ["aws", "cloud security", "monitoring", "siem", "cloudtrail", "eventbridge", "wazuh"]
 keywords: ["aws monitoring cost", "cloudtrail security events", "affordable aws siem", "eventbridge alerting", "aws security best practices"]
 aliases: ["/aws-cost-effective-monitoring/"]
+summary: "How to build a real AWS security monitoring stack without overspending — using CloudTrail, EventBridge, GuardDuty, and open-source tools like Wazuh and OpenSearch."
 enable_comments: true
----------------------------------------------
+---
 
 > Monitoring in AWS doesn’t have to be expensive. In this guide, we’ll walk through real-world strategies to detect and respond to security events in AWS without blowing your budget — using a mix of native tooling, automation, and open-source solutions.
-
-## Table of Contents
-
-1. [Introduction](#introduction)
-2. [Why AWS Monitoring Costs Spiral](#why-aws-monitoring-costs-spiral)
-3. [Key Principles for Cost-Effective Monitoring](#key-principles-for-cost-effective-monitoring)
-4. [Low-Cost Native AWS Tools for Security Monitoring](#low-cost-native-aws-tools-for-security-monitoring)
-5. [Open-Source Solutions That Complement AWS](#open-source-solutions-that-complement-aws)
-6. [Example Architectures & Pricing](#example-architectures--pricing)
-7. [Automation Snippets for Cost-Efficient Alerts](#automation-snippets-for-cost-efficient-alerts)
-8. [Common Pitfalls to Avoid](#common-pitfalls-to-avoid)
-9. [Conclusion](#conclusion)
-
----
 
 ## Introduction
 
@@ -251,8 +238,9 @@ If this helped you rethink your AWS monitoring setup, consider subscribing to [T
 
 ---
 
-**You may also like:**
+**Related guides:**
 
-* [Incident Response in AWS + Free PDF Playbook](../incident-response-aws-guide/)
-* [Stop Using IAM Users (And What to Do Instead)](../stop-using-iam-users/)
-* [5 Common AWS Security Misconfigurations (And How to Fix Them)](../aws-security-misconfigurations/)
+* [AWS Incident Response Guide for Small Security Teams](/posts/incident-response-aws-guide/)
+* [IAM Users Are Dead: Modern AWS Access Control for 2026](/posts/aws-iam-users-alternatives)
+* [Amazon GuardDuty Setup: Findings, Alerts & SIEM Integration](/posts/aws-guardduty-setup/)
+* [AWS Security Checklist 2026: 30+ Controls for IAM, EC2 & S3](/posts/aws-security-checklist-2026/)

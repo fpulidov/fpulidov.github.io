@@ -11,10 +11,6 @@ author: "Javier Pulido"
 enable_comments: true
 ---
 
-
-
-# AWS Incident Response Playbook Template
-
 ## Incident Response Playbook Overview
 This template provides a structured outline for detecting, investigating, and responding to 
 security incidents in AWS. It assumes limited team size and leverages AWS-native services.

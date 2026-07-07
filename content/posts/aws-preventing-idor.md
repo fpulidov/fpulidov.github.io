@@ -1,20 +1,18 @@
 ---
-title: "What Is IDOR? Finding and Preventing Insecure Direct Object References in AWS APIs"
-description: "A technical deep-dive into IDOR vulnerabilities, real bug-bounty cases, AWS API examples, detection, prevention strategies, and how to secure your AWS services."
-summary: "Learn what IDOR is, why it's so common (and dangerous), see real AWS-related examples, and discover prevention and detection methods for robust API security."
+title: "IDOR Vulnerabilities in AWS APIs: How to Find & Prevent Them"
+description: "What IDOR is, why it's dangerous in AWS APIs and Lambda functions, and how to detect and prevent insecure direct object references. Includes real bug bounty examples."
+summary: "Deep dive into IDOR vulnerabilities with real AWS API examples, bug bounty cases, and prevention strategies for Lambda, API Gateway, and internal tooling."
 date: 2025-06-27
 tags: ["Bug Bounty", "Security", "Web", "AWS", "API", "IDOR"]
 canonicalURL: "https://thehiddenport.dev/posts/what-is-idor-aws-apis/"
 enable_comments: true
 ---
 
-# What Is IDOR? Finding and Preventing Insecure Direct Object References in AWS APIs
-
 In bug bounty and pentesting, **IDOR (Insecure Direct Object Reference)** remains one of the most frequent and dangerous vulnerabilities—even today. OWASP defines it as a classic **Broken Access Control** issue, overwhelming APIs that use predictable or guessable object identifiers ([cheatsheetseries.owasp.org](https://cheatsheetseries.owasp.org/cheatsheets/Insecure_Direct_Object_Reference_Prevention_Cheat_Sheet.html )). But its real impact goes beyond HTTP—IDOR can silently appear in **AWS APIs**, Lambda functions, and internal tooling. This post examines how that happens, how bounty hunters find them, and how AWS developers can prevent and detect IDOR effectively.
 
 ---
 
-# Personal Note
+## Personal Note
 
 I'm currently starting my journey into bug bounty hunting. Given my background in AWS security, I realized there’s a natural overlap between the two worlds—especially when it comes to misconfigurations, permission boundaries, and API behavior. This article is my first step into exploring that intersection.
 

@@ -11,8 +11,6 @@ enable_comments: true
 summary: "How to monitor EKS for security threats using CloudWatch, GuardDuty, audit logs, and Falco. Covers AWS-native tools, open-source options, and best practices."
 ---
 
-# EKS Security Monitoring: Visibility, Runtime Detection & Best Practices
-
 Monitoring Kubernetes on AWS (EKS) brings challenges beyond traditional EC2 or IAM setups — pods, containers, control plane, node behavior, runtime threats — all need attention. This guide walks you through what to monitor, which tools matter, and how to build a monitoring strategy for EKS that balances depth, cost, and security.
 
 > For hardening your cluster before you monitor it — RBAC, network policies, pod security, image scanning — see [EKS Security Best Practices: Hardening Your Cluster](/posts/eks-security-best-practices/).

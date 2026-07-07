@@ -1,14 +1,12 @@
 ---
-title: "Building a Hardened Amazon Linux 2 AMI for Secure EC2 Deployments"
-description: "Learn how to create a hardened, compliant Amazon Linux 2 AMI using EC2 Image Builder with CIS benchmarks, security tools, and automation for production-ready AWS environments."
+title: "Hardened Amazon Linux 2 AMI with EC2 Image Builder"
+description: "Build a CIS-compliant Amazon Linux 2 AMI using EC2 Image Builder. Covers IMDSv2 enforcement, auditd, CloudWatch logging, and automated security hardening."
 summary: "Step-by-step guide to build a hardened Amazon Linux 2 AMI with EC2 Image Builder including CIS benchmarks, IMDSv2 enforcement, auditd, and logging configuration."
 date: 2025-06-09
 tags: ["AWS", "EC2", "AMI", "Hardening", "Security", "Image Builder"]
 canonicalURL: "https://thehiddenport.dev/posts/building-hardened-amazon-linux-2-ami-secure-ec2"
 enable_comments: true
 ---
-
-# Building a Hardened Amazon Linux 2 AMI for Secure EC2 Deployments
 
 In cloud environments, spinning up secure, hardened EC2 instances rapidly and consistently is a critical security and operational requirement. Manually configuring instances after launch is error-prone and inefficient. The solution? Automate the creation of hardened, compliant AMIs using AWS EC2 Image Builder.
 

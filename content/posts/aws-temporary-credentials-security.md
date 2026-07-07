@@ -7,6 +7,7 @@ slug: "aws-temporary-credentials-security"
 tags: ["aws", "cloud security", "iam", "sts", "temporary credentials"]
 keywords: ["aws sts", "iam roles", "temporary credentials", "cloud security", "assume role", "least privilege"]
 aliases: ["/aws-temp-creds-security/"]
+summary: "How to use IAM roles, STS, and temporary credentials securely — covering least privilege, session policies, credential expiration, and common mistakes."
 enable_comments: true
 ---
 
@@ -100,3 +101,8 @@ Temporary credentials are meant to improve security — not complicate it. But l
 If you stick to short lifespans, minimal permissions, solid monitoring, and tight boundaries, they’ll serve you well.
 
 If not, they’ll become just another attack surface.
+
+**Related guides:**
+- [IAM Users Are Dead: Modern AWS Access Control for 2026](/posts/aws-iam-users-alternatives)
+- [IAM Least Privilege in AWS: Access Analyzer Guide](/posts/enforcing-least-privilege-iam-access-analyzer)
+- [Detect AWS IAM Privilege Escalation with CloudTrail](/posts/aws-detecting-privilege-escalation-cloudtrail-eventbridge/)

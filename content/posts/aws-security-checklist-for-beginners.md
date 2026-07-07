@@ -128,8 +128,13 @@ Use these reports to catch drift and stale resources early.
 
 ---
 
-Want to go deeper on IAM strategy?  
-Check out [Why You Should Stop Using IAM Users in AWS](../aws-iam-users-alternatives) — a full guide on modern access control in 2026.
+**Go deeper on specific areas:**
+- [IAM Users Are Dead: Modern AWS Access Control for 2026](/posts/aws-iam-users-alternatives)
+- [EC2 Hardening Guide: Secure AWS Instances Step by Step](/posts/aws-ec2-hardening)
+- [Meeting CIS Benchmarks for EC2](/posts/ec2-cis-benchmarks-guide/)
+- [How to Detect AWS Root Account Usage](/posts/detect-root-account-usage)
+- [AWS Incident Response: 5 Scenarios & How to Contain Them](/posts/aws-incident-response-scenarios/)
+- [How I Passed the AWS Security Specialty (SCS-C02)](/posts/aws-scs-c02-exam-experience)
 
 ---
 

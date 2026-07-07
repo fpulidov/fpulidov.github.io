@@ -9,15 +9,7 @@ canonicalURL: "https://thehiddenport.dev/posts/aws-ec2-hardening"
 enable_comments: true
 ---
 
-Perfect — let’s start by drafting the **updated EC2 Hardening Guide**.
-I’ll keep it detailed, actionable, and structured so it’s easy to follow, while also signaling authority to both readers and Google.
-
----
-
-# EC2 Hardening Guide (Updated 2025)
-
-> **Last updated:** September 2025. </br>
-> This guide consolidates AWS official best practices, CIS Benchmarks, and real-world experience to help you secure Amazon EC2 instances.
+This guide consolidates AWS official best practices, CIS Benchmarks, and real-world experience to help you secure Amazon EC2 instances.
 
 ---
 
@@ -126,7 +118,11 @@ I’ll keep it detailed, actionable, and structured so it’s easy to follow, wh
 
 ---
 
-I'll be posting soon a full walthrough about **Meeting CIS Benchmarks for EC2**.
+**Related guides:**
+- [Meeting CIS Benchmarks for EC2: A Practical Guide](/posts/ec2-cis-benchmarks-guide/)
+- [Hardened Amazon Linux 2 AMI with EC2 Image Builder](/posts/building-hardened-amazon-linux-2-ami-secure-ec2)
+- [Replace SSH with Session Manager: Secure EC2 Access Guide](/posts/securing-ec2-access-with-ssm/)
+- [How to Detect AWS Root Account Usage](/posts/detect-root-account-usage)
 
 ---
 

@@ -8,8 +8,6 @@ canonicalURL: "https://thehiddenport.dev/posts/aws-detecting-privilege-escalatio
 enable_comments: true
 ---
 
-# Detecting Privilege Escalation in AWS Using CloudTrail and EventBridge
-
 One of the most dangerous threats in an AWS environment is **privilege escalation**—when an entity (a user, role, or service) gains more permissions than it should, either by misconfiguration or abuse. Detecting these escalation attempts is essential to protecting your cloud environment.
 
 AWS does not provide out-of-the-box detection for many of these patterns, but with **CloudTrail**, **EventBridge**, and some **detection engineering**, you can build native alerts for high-risk API calls that indicate an escalation in progress—or one about to happen.
@@ -183,5 +181,10 @@ Privilege escalation is one of the most critical actions you need to monitor in 
 Even a single detection rule—targeting `AttachUserPolicy` with `AdministratorAccess`—can surface abuse before it becomes a breach.
 
 Don’t wait for an incident to act. Harden your detection stack today.
+
+**Related guides:**
+- [IAM Least Privilege in AWS: Access Analyzer Guide](/posts/iam-access-analyzer-least-privilege)
+- [AWS Incident Response: 5 Scenarios & How to Contain Them](/posts/aws-incident-response-scenarios/)
+- [eJPTv2: Prep Strategy, Resources & Honest Review](/posts/ejptv2-journey) — understanding the attacker mindset strengthens your detection engineering
 
 ---

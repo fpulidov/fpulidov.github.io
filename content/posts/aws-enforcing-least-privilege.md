@@ -8,8 +8,6 @@ canonicalURL: "https://thehiddenport.dev/posts/enforcing-least-privilege-iam-acc
 enable_comments: true
 ---
 
-# Enforcing Least Privilege in AWS IAM with Access Analyzer and Last Access Data
-
 The principle of least privilege is foundational in securing AWS environments, yet in practice, most IAM roles are over-permissioned by default. This article walks through how to actually **enforce** least privilege in AWS using tools like IAM Access Analyzer, service access reports, CloudTrail, and real-time alerting.
 
 ---

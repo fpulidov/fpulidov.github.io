@@ -24,6 +24,7 @@ theme = "PaperMod"
   ShowBreadCrumbs = true
   ShowCodeCopyButtons = true
   ShowWordCount = true
+  ShowToc = true
   disableScrollToTop = false
   ShowTaxonomies = true
   enableRobotsTXT = true
@@ -112,7 +113,7 @@ theme = "PaperMod"
     weight = 30
 
 [pagination]
-  pagerSize = 10
+  pagerSize = 20
 
 [mediaTypes]
   [mediaTypes."text/plain"]

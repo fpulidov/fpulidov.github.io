@@ -8,8 +8,6 @@ canonicalURL: "https://thehiddenport.dev/posts/aws-guardduty-setup-findings-siem
 enable_comments: true
 ---
 
-# Getting Started with Amazon GuardDuty: Setup, Findings, and SIEM Integration
-
 Amazon GuardDuty is a threat detection service that continuously monitors your AWS accounts and workloads for malicious activity and delivers detailed security findings for visibility and remediation. In this guide, we'll walk through setting up GuardDuty, understanding its findings, and integrating it with SIEM solutions to enhance your security posture.
 
 ## Enabling GuardDuty

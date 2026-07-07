@@ -110,7 +110,7 @@ You should see an alert shortly after in your email or Slack.
 - **Regularly review CloudTrail and GuardDuty findings**
 
 This all starts with proper access control.  
-Read [Why IAM Users Are Obsolete in 2025](../aws-iam-users-alternatives) to modernize your identity model.
+Read [IAM Users Are Dead: Modern AWS Access Control for 2026](/posts/aws-iam-users-alternatives) to modernize your identity model.
 
 
 ---
@@ -119,5 +119,8 @@ Read [Why IAM Users Are Obsolete in 2025](../aws-iam-users-alternatives) to mode
 
 If you're detecting root usage in AWS — that's a signal. Either something's misconfigured, or something's wrong. By setting up this detection and alerting pipeline, you can react quickly and minimize risk.
 
-In future guides, we'll build on this with incident response workflows and automated remediations.
+**Related guides:**
+- [AWS Security Checklist 2026](/posts/aws-security-checklist-2026/)
+- [Detect AWS IAM Privilege Escalation with CloudTrail](/posts/aws-detecting-privilege-escalation-cloudtrail-eventbridge/)
+- [AWS Incident Response: 5 Scenarios & How to Contain Them](/posts/aws-incident-response-scenarios/)
 
