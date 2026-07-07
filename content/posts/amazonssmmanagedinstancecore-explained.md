@@ -1,9 +1,9 @@
 ---
-title: "AmazonSSMManagedInstanceCore Explained: What This IAM Policy Does and When to Use It"
+title: "AmazonSSMManagedInstanceCore: Full Policy Breakdown"
 date: 2026-07-07
 draft: false
-description: "A breakdown of the AmazonSSMManagedInstanceCore IAM policy — what permissions it grants, why your EC2 instances need it for Session Manager, and how to scope it down for production."
-summary: "The AmazonSSMManagedInstanceCore policy is the standard IAM policy for connecting to EC2 via Session Manager. This guide explains every permission it grants, when to use it as-is, and how to build a tighter custom policy for production."
+description: "What AmazonSSMManagedInstanceCore actually permits, when to use it for Session Manager, and how to build a scoped-down custom policy for production."
+summary: "Full breakdown of every permission in the AmazonSSMManagedInstanceCore IAM policy, plus a least-privilege custom alternative for production EC2 instances."
 slug: "amazonssmmanagedinstancecore-iam-policy-explained"
 tags: ["AWS", "IAM", "SSM", "Session Manager", "EC2", "Security", "Least Privilege"]
 categories: ["Cloud Security", "Guides"]

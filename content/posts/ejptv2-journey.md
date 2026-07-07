@@ -1,8 +1,8 @@
 ---
-title: "From Cloud Security to Pentesting: My eJPTv2 Journey"
+title: "eJPTv2: Prep Strategy, Resources & Honest Review"
 date: 2025-09-08
 draft: false
-description: "Why I’m taking the eJPTv2 exam and how cloud security and pentesting connect. A personal journey blending AWS, incident response, and hands-on hacking."
+description: "How I prepared for the eJPTv2 exam coming from cloud security. Study plan, TryHackMe labs, INE course review, and tips for the Junior Penetration Tester cert."
 slug: "ejptv2-journey"
 tags: ["ejpt", "ethical hacking", "cloud security", "pentesting", "career development"]
 keywords: ["ejptv2", "penetration testing", "cloud security career", "obsidian notes", "tryhackme", "ine ejpt"]

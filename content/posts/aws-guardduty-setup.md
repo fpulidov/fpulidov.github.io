@@ -1,7 +1,7 @@
 ---
-title: "Getting Started with Amazon GuardDuty: Setup, Findings, and SIEM Integration"
-description: "Learn how to enable Amazon GuardDuty, understand its security findings, and integrate with SIEM solutions for enhanced threat detection in AWS."
-summary: "A comprehensive guide to setting up Amazon GuardDuty, interpreting its findings, and integrating with SIEM systems to bolster AWS security."
+title: "Amazon GuardDuty Setup: Findings, Alerts & SIEM Integration"
+description: "Enable GuardDuty, understand finding types, set up alerting, and integrate with your SIEM. Step-by-step guide with Terraform and console walkthroughs."
+summary: "Set up Amazon GuardDuty from scratch: enable the service, understand finding severity, configure alerts via EventBridge, and integrate with SIEM systems."
 date: 2025-06-24
 tags: ["AWS", "Security", "GuardDuty", "SIEM", "Threat Detection"]
 canonicalURL: "https://thehiddenport.dev/posts/aws-guardduty-setup-findings-siem-integration/"

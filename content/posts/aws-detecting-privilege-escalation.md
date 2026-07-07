@@ -1,7 +1,7 @@
 ---
-title: "Detecting Privilege Escalation in AWS Using CloudTrail and EventBridge"
-description: "Learn how to detect IAM privilege escalation attempts in AWS using CloudTrail logs, EventBridge rules, and practical detection engineering strategies. Includes examples, alerting techniques, and real-world API call patterns."
-summary: "A deep technical guide to setting up AWS-native detection for privilege escalation using CloudTrail, EventBridge, and minimal infrastructure."
+title: "Detect AWS IAM Privilege Escalation with CloudTrail"
+description: "How to detect IAM privilege escalation in AWS using CloudTrail events, EventBridge rules, and real-world API patterns. Includes alerting setup and Terraform."
+summary: "Set up AWS-native detection for privilege escalation using CloudTrail, EventBridge, and minimal infrastructure. Real API patterns and alerting included."
 date: 2025-06-20
 tags: ["AWS", "IAM", "CloudTrail", "EventBridge", "Detection", "Security"]
 canonicalURL: "https://thehiddenport.dev/posts/aws-detecting-privilege-escalation-cloudtrail-eventbridge/"

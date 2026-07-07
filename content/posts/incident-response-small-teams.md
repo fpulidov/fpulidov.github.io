@@ -1,10 +1,10 @@
 ---
-title: "Incident Response in AWS: A Practical Guide"
+title: "AWS Incident Response Guide for Small Security Teams"
 date: 2025-05-04
 tags: ["aws", "incident-response", "cloud-security", "forensics", "ssm", "security-hub"]
 categories: ["Cloud Security", "Guides"]
-description: "Learn how to build an incident response plan in AWS. Covers detection, playbooks, automation & response best practices."
-summary: "Learn how to run an effective incident response process in AWS using automation and forensic best practices — without needing a separate IR account."
+description: "Build an AWS incident response process using CloudTrail, GuardDuty, and automation. Includes free playbook template, forensic steps, and Terraform code."
+summary: "Run effective incident response in AWS with automation and forensic best practices. Free playbook template included — no dedicated IR account needed."
 slug: "incident-response-aws-guide"
 draft: false
 author: "Javier Pulido"

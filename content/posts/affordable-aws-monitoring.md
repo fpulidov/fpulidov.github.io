@@ -1,9 +1,9 @@
 ---
 
-title: "AWS Security Monitoring: Affordable Tools & Best Practices"
+title: "AWS Security Monitoring Tools: Setup & Best Practices"
 date: 2025-05-19
 draft: false
-description: "Learn how to monitor AWS security with affordable tools. Covers GuardDuty, CloudTrail, Security Hub & practical monitoring setups."
+description: "Set up AWS security monitoring with GuardDuty, CloudTrail, Security Hub, and EventBridge. Practical architectures for threat detection on any budget."
 slug: "affordable-aws-security-monitoring"
 tags: ["aws", "cloud security", "monitoring", "siem", "cloudtrail", "eventbridge", "wazuh"]
 keywords: ["aws monitoring cost", "cloudtrail security events", "affordable aws siem", "eventbridge alerting", "aws security best practices"]

@@ -1,14 +1,14 @@
 ---
-title: "EKS Security Monitoring: Visibility, Runtime Detection & Best Practices"
+title: "EKS Security: Monitoring, Audit Logs & Runtime Detection"
 date: 2025-09-17
 draft: false
-description: "Learn how to monitor Amazon EKS clusters for security threats. Covers CloudWatch, GuardDuty, audit logs, Falco runtime detection, and best practices for Kubernetes security."
+description: "Secure Amazon EKS clusters with CloudWatch, GuardDuty, audit logs, and Falco runtime detection. Includes architecture examples and common pitfalls."
 slug: "eks-security-monitoring"
 tags: ["AWS", "EKS", "Kubernetes", "Security", "Monitoring", "Falco", "CloudWatch"]
 categories: ["Cloud Security", "Guides"]
-keywords: ["eks security monitoring", "kubernetes monitoring aws", "falco eks", "eks audit logs", "cloudwatch eks monitoring"]
+keywords: ["eks security", "eks security best practices", "eks security monitoring", "kubernetes security aws", "falco eks", "eks audit logs"]
 enable_comments: true
-summary: "Amazon EKS introduces new monitoring challenges: pods, containers, audit logs, runtime threats. This guide covers AWS-native monitoring tools, open-source Falco integration, and best practices to secure Kubernetes workloads."
+summary: "How to monitor EKS for security threats using CloudWatch, GuardDuty, audit logs, and Falco. Covers AWS-native tools, open-source options, and best practices."
 ---
 
 # EKS Security Monitoring: Visibility, Runtime Detection & Best Practices

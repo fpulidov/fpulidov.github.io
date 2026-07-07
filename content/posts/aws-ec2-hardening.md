@@ -1,6 +1,6 @@
 ---
-title: "Hardening EC2 Instances for AWS Security: A Practical Guide"
-description: "Step-by-step EC2 hardening guide: secure your AWS instances with IAM least privilege, OS hardening, encryption, logging, and compliance checks aligned with AWS and CIS best practices."
+title: "EC2 Hardening Guide: Secure AWS Instances Step by Step"
+description: "Harden EC2 instances with IAM least privilege, OS lockdown, encryption, logging, and CIS benchmark checks. Practical guide with console and Terraform examples."
 date: 2025-05-29
 tags: ["AWS", "EC2", "Security", "Hardening", "Cloud Security", "AWS Security Best Practices", "EC2 Compliance", "CIS Benchmark AWS"]
 categories: ["Cloud Security", "Guides"]

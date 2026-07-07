@@ -1,8 +1,8 @@
 ---
-title: "Securing Temporary Credentials in AWS: Best Practices for Safe Role Usage"
+title: "AWS Temporary Credentials & IAM Roles: Security Best Practices"
 date: 2025-05-11T10:00:00+02:00
 draft: false
-description: "Learn how to secure temporary AWS credentials using IAM roles, STS, and automation. Prevent misuse and follow least privilege best practices."
+description: "How to use IAM roles, STS, and temporary credentials securely. Covers least privilege, session policies, credential expiration, and common mistakes to avoid."
 slug: "aws-temporary-credentials-security"
 tags: ["aws", "cloud security", "iam", "sts", "temporary credentials"]
 keywords: ["aws sts", "iam roles", "temporary credentials", "cloud security", "assume role", "least privilege"]
