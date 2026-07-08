@@ -9,7 +9,7 @@ summary: "Stop using IAM users in AWS. This guide explains why they're risky and
 slug: "aws-iam-users-alternatives"
 draft: false
 author: "Javier Pulido"
-canonicalURL: "https://thehiddenport.dev/posts/aws-iam-users-alternatives"
+canonicalURL: "https://thehiddenport.dev/posts/aws-iam-users-alternatives/"
 enable_comments: true
 ---
 

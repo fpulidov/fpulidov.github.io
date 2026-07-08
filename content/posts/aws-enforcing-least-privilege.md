@@ -5,7 +5,7 @@ summary: "How to audit and refine IAM permissions using Access Analyzer, CloudTr
 date: 2025-06-09
 tags: ["AWS", "IAM", "Least Privilege", "Access Analyzer", "Security"]
 keywords: ["iam least privilege", "aws access analyzer", "iam policy generator", "least privilege aws", "iam access analyzer guide"]
-canonicalURL: "https://thehiddenport.dev/posts/enforcing-least-privilege-iam-access-analyzer"
+canonicalURL: "https://thehiddenport.dev/posts/aws-enforcing-least-privilege/"
 enable_comments: true
 ---
 

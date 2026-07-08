@@ -136,6 +136,7 @@ theme = "PaperMod"
   home = ["HTML", "RSS", "JSON", "Robots"]
   section = ["HTML"]
   taxonomy = ["HTML"]
+  term = ["HTML"]
   page = ["HTML"]
   404 = ["HTML"]
 

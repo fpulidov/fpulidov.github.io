@@ -7,11 +7,11 @@ categories: ["Cloud Security"]
 description: "Free 2026 AWS security checklist with 30+ actionable controls. Covers IAM hardening, S3 lockdown, CloudTrail logging, encryption, and compliance basics."
 summary: "A step-by-step checklist to secure your AWS account in 2026 — includes IAM hardening, S3 lockdown, logging, and budget alerts. Beginner to intermediate friendly."
 slug: "aws-security-checklist-2026"
-aliases: ["/posts/aws-security-checklist-2025/"]
+aliases: ["/posts/aws-security-checklist-2025/", "/aws-security-checklist-2025/"]
 image: "/images/checklist.png"
 draft: false
 author: "Javier Pulido"
-canonicalURL: "https://thehiddenport.dev/posts/aws-security-checklist-2026"
+canonicalURL: "https://thehiddenport.dev/posts/aws-security-checklist-2026/"
 enable_comments: true
 ---
 

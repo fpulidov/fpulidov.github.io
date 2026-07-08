@@ -9,7 +9,7 @@ description: "This guide walks you through detecting and responding to AWS root 
 slug: "detect-root-account-usage"
 draft: false
 author: "Javier Pulido"
-canonicalURL: "https://thehiddenport.dev/posts/detect-root-account-usage"
+canonicalURL: "https://thehiddenport.dev/posts/detect-root-account-usage/"
 enable_comments: true
 ---
 

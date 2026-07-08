@@ -7,9 +7,10 @@ categories: ["Cloud Security"]
 description: "A practical guide to the five most common AWS security misconfigurations in 2026 and how to fix them using the AWS Console and Terraform."
 summary: "Five AWS misconfigurations still causing breaches in 2026 — includes fixes for public S3 buckets, over-permissive IAM, open security groups, and missing monitoring."
 slug: "aws-security-misconfigurations-guide"
+aliases: ["/posts/aws-security-misconfigurations/"]
 draft: false
 author: "Javier Pulido"
-canonicalURL: "https://thehiddenport.dev/posts/aws-security-misconfigurations-guide"
+canonicalURL: "https://thehiddenport.dev/posts/aws-security-misconfigurations-guide/"
 enable_comments: true
 ---
 

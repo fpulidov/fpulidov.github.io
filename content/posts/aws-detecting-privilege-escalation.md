@@ -5,7 +5,7 @@ summary: "Set up AWS-native detection for privilege escalation using CloudTrail,
 date: 2025-06-20
 tags: ["AWS", "IAM", "CloudTrail", "EventBridge", "Detection", "Security"]
 keywords: ["iam privilege escalation", "aws privilege escalation detection", "cloudtrail iam monitoring", "eventbridge security rules", "aws iam attack detection"]
-canonicalURL: "https://thehiddenport.dev/posts/aws-detecting-privilege-escalation-cloudtrail-eventbridge/"
+canonicalURL: "https://thehiddenport.dev/posts/aws-detecting-privilege-escalation/"
 enable_comments: true
 ---
 

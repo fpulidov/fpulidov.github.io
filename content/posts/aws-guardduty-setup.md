@@ -5,7 +5,7 @@ summary: "Set up Amazon GuardDuty from scratch: enable the service, understand f
 date: 2025-06-24
 tags: ["AWS", "Security", "GuardDuty", "SIEM", "Threat Detection"]
 keywords: ["amazon guardduty setup", "guardduty findings", "guardduty siem integration", "aws threat detection", "guardduty alerts"]
-canonicalURL: "https://thehiddenport.dev/posts/aws-guardduty-setup-findings-siem-integration/"
+canonicalURL: "https://thehiddenport.dev/posts/aws-guardduty-setup/"
 enable_comments: true
 ---
 
