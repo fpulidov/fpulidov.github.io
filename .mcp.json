@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "analytics": {
+      "command": "node",
+      "args": ["tools/analytics-mcp/server.mjs"],
+      "env": {}
+    }
+  }
+}

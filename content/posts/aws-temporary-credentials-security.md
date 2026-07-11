@@ -1,13 +1,13 @@
 ---
-title: "AWS Temporary Credentials & IAM Roles: Security Best Practices"
+title: "Stop Using Access Keys: AWS Temporary Credentials Done Right"
 date: 2025-05-11T10:00:00+02:00
 draft: false
-description: "How to use IAM roles, STS, and temporary credentials securely. Covers least privilege, session policies, credential expiration, and common mistakes to avoid."
+description: "Ditch long-term access keys. Practical guide to AWS IAM roles, STS, and temporary credentials — with real mistakes to avoid and least-privilege patterns that work."
 slug: "aws-temporary-credentials-security"
 tags: ["aws", "cloud security", "iam", "sts", "temporary credentials"]
-keywords: ["aws sts", "iam roles", "temporary credentials", "cloud security", "assume role", "least privilege"]
+keywords: ["aws temporary credentials", "aws iam best practices temporary credentials", "aws sts assume role", "aws access keys alternative", "aws least privilege temporary credentials"]
 aliases: ["/aws-temp-creds-security/"]
-summary: "How to use IAM roles, STS, and temporary credentials securely — covering least privilege, session policies, credential expiration, and common mistakes."
+summary: "Ditch long-term access keys. Practical guide to IAM roles, STS, and temporary credentials — with real mistakes to avoid and least-privilege patterns that work."
 canonicalURL: "https://thehiddenport.dev/posts/aws-temporary-credentials-security/"
 enable_comments: true
 ---

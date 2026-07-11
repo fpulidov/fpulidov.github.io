@@ -1,11 +1,11 @@
 ---
-title: "Replace SSH with Session Manager: Secure EC2 Access Guide"
+title: "AWS Session Manager Setup: AmazonSSMManagedInstanceCore & Secure EC2 Access"
 date: 2025-06-03
-description: "Stop using SSH keys and bastion hosts. Set up AWS Systems Manager Session Manager for secure, auditable EC2 access with no inbound ports."
+description: "Complete guide to setting up AWS SSM Session Manager — AmazonSSMManagedInstanceCore policy, IAM roles, instance profiles, and replacing SSH with zero inbound ports."
 tags: ["AWS", "EC2", "Security", "Session Manager", "SSM", "IAM", "Cloud Security"]
-keywords: ["aws session manager", "ssm ec2 access", "replace ssh aws", "session manager setup", "secure ec2 access"]
+keywords: ["amazonssmmanagedinstancecore", "aws session manager setup", "ssm ec2 access", "aws ssm iam role", "session manager instance profile"]
 canonicalURL: "https://thehiddenport.dev/posts/aws-securing-ec2-access-with-ssm/"
-summary: "Step-by-step guide to replacing SSH with AWS Systems Manager Session Manager for secure, auditable EC2 access with no inbound ports."
+summary: "Complete SSM Session Manager setup — AmazonSSMManagedInstanceCore policy, IAM roles, and replacing SSH with zero open ports."
 enable_comments: true
 ---
 
