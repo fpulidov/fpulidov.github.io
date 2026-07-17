@@ -364,7 +364,7 @@ All three must be **Interface** type endpoints (not Gateway). Their security gro
 ## Related Posts
 
 - [Securing EC2 Access with AWS Systems Manager Session Manager](/posts/securing-ec2-access-with-ssm/) — full setup guide covering VPC endpoints, logging, and disabling SSH
-- [Enforcing Least Privilege in AWS IAM](/posts/enforcing-least-privilege-iam-access-analyzer/) — using Access Analyzer to audit and tighten IAM policies
+- [Enforcing Least Privilege in AWS IAM](/posts/iam-access-analyzer-least-privilege/) — using Access Analyzer to audit and tighten IAM policies
 - [Hardening EC2 Instances for AWS Security](/posts/aws-ec2-hardening/) — OS-level hardening, encryption, and compliance checks
 
 ---

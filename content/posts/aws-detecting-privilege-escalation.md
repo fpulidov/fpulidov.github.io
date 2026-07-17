@@ -184,6 +184,7 @@ Even a single detection rule—targeting `AttachUserPolicy` with `AdministratorA
 Don’t wait for an incident to act. Harden your detection stack today.
 
 **Related guides:**
+- [CloudTrail Log Analysis: How to Find Who Did What](/posts/aws-cloudtrail-log-analysis/) — Athena queries for investigating the events these detections surface
 - [IAM Least Privilege in AWS: Access Analyzer Guide](/posts/iam-access-analyzer-least-privilege)
 - [AWS Incident Response: 5 Scenarios & How to Contain Them](/posts/aws-incident-response-scenarios/)
 - [eJPTv2: Prep Strategy, Resources & Honest Review](/posts/ejptv2-journey) — understanding the attacker mindset strengthens your detection engineering

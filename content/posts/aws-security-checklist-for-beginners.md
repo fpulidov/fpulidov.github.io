@@ -130,6 +130,8 @@ Use these reports to catch drift and stale resources early.
 ---
 
 **Go deeper on specific areas:**
+- [AWS SCPs That Actually Work](/posts/aws-scp-best-practices/) — org-level guardrails that enforce this checklist automatically
+- [CloudTrail Log Analysis: How to Find Who Did What](/posts/aws-cloudtrail-log-analysis/) — investigate when a checklist item gets violated
 - [IAM Users Are Dead: Modern AWS Access Control for 2026](/posts/aws-iam-users-alternatives)
 - [EC2 Hardening Guide: Secure AWS Instances Step by Step](/posts/aws-ec2-hardening)
 - [Meeting CIS Benchmarks for EC2](/posts/ec2-cis-benchmarks-guide/)

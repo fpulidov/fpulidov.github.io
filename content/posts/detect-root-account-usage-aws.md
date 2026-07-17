@@ -121,7 +121,9 @@ Read [IAM Users Are Dead: Modern AWS Access Control for 2026](/posts/aws-iam-use
 If you're detecting root usage in AWS — that's a signal. Either something's misconfigured, or something's wrong. By setting up this detection and alerting pipeline, you can react quickly and minimize risk.
 
 **Related guides:**
+- [AWS SCPs That Actually Work](/posts/aws-scp-best-practices/) — deny root actions at the org level so this detection becomes your safety net, not your only defense
+- [CloudTrail Log Analysis: How to Find Who Did What](/posts/aws-cloudtrail-log-analysis/) — Athena queries for investigating root activity and beyond
 - [AWS Security Checklist 2026](/posts/aws-security-checklist-2026/)
-- [Detect AWS IAM Privilege Escalation with CloudTrail](/posts/aws-detecting-privilege-escalation-cloudtrail-eventbridge/)
+- [Detect AWS IAM Privilege Escalation with CloudTrail](/posts/aws-detecting-privilege-escalation/)
 - [AWS Incident Response: 5 Scenarios & How to Contain Them](/posts/aws-incident-response-scenarios/)
 

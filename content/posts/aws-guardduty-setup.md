@@ -80,3 +80,8 @@ Integrating GuardDuty with a Security Information and Event Management (SIEM) sy
 ## Conclusion
 
 Amazon GuardDuty provides a robust solution for continuous threat detection in your AWS environment. By understanding its findings and integrating them with SIEM solutions, you can enhance your security monitoring and response capabilities. Regularly reviewing and acting upon GuardDuty findings is essential for maintaining a strong security posture in the cloud.
+
+**Related guides:**
+- [CloudTrail Log Analysis: How to Find Who Did What](/posts/aws-cloudtrail-log-analysis/) — dig deeper into the events behind GuardDuty findings
+- [AWS SCPs That Actually Work](/posts/aws-scp-best-practices/) — prevent the actions GuardDuty would otherwise detect
+- [Detect AWS IAM Privilege Escalation with CloudTrail](/posts/aws-detecting-privilege-escalation/) — targeted detection for IAM escalation patterns

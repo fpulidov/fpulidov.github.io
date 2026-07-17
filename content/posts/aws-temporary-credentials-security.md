@@ -105,5 +105,5 @@ If not, they’ll become just another attack surface.
 
 **Related guides:**
 - [IAM Users Are Dead: Modern AWS Access Control for 2026](/posts/aws-iam-users-alternatives)
-- [IAM Least Privilege in AWS: Access Analyzer Guide](/posts/enforcing-least-privilege-iam-access-analyzer)
-- [Detect AWS IAM Privilege Escalation with CloudTrail](/posts/aws-detecting-privilege-escalation-cloudtrail-eventbridge/)
+- [IAM Least Privilege in AWS: Access Analyzer Guide](/posts/iam-access-analyzer-least-privilege/)
+- [Detect AWS IAM Privilege Escalation with CloudTrail](/posts/aws-detecting-privilege-escalation/)

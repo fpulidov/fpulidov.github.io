@@ -362,6 +362,6 @@ Start with the critical items — IRSA, RBAC audit, audit logging, and pod secur
 
 **Related guides:**
 - [EKS Security: Monitoring, Audit Logs & Runtime Detection](/posts/eks-security-monitoring/)
-- [IAM Least Privilege in AWS: Access Analyzer Guide](/posts/enforcing-least-privilege-iam-access-analyzer/)
+- [IAM Least Privilege in AWS: Access Analyzer Guide](/posts/iam-access-analyzer-least-privilege/)
 - [Replace SSH with Session Manager: Secure EC2 Access Guide](/posts/securing-ec2-access-with-ssm/)
 - [AWS Security Checklist 2026](/posts/aws-security-checklist-2026/)

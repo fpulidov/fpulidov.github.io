@@ -243,7 +243,7 @@ aws cloudtrail lookup-events \
 
 **Follow-up:** Audit all IAM policies modified in the last 7 days with AWS Config. Set up an EventBridge rule that triggers on any `AttachRolePolicy` or `PutUserPolicy` call containing `AdministratorAccess` — this should always fire an alert.
 
-> For a deep dive on detection rules for privilege escalation, see [Detect AWS IAM Privilege Escalation with CloudTrail](/posts/aws-detecting-privilege-escalation-cloudtrail-eventbridge/).
+> For a deep dive on detection rules for privilege escalation, see [Detect AWS IAM Privilege Escalation with CloudTrail](/posts/aws-detecting-privilege-escalation/).
 
 ---
 
@@ -364,4 +364,4 @@ Build your detection stack, pre-create your isolation security group, and automa
 - [AWS Incident Response Guide for Small Security Teams](/posts/incident-response-aws-guide/)
 - [AWS IR Playbook Template (Free)](/posts/aws-ir-playbook-template/)
 - [AWS Incident Response Toolkit](/posts/aws-ir-toolkit/)
-- [Detect AWS IAM Privilege Escalation with CloudTrail](/posts/aws-detecting-privilege-escalation-cloudtrail-eventbridge/)
+- [Detect AWS IAM Privilege Escalation with CloudTrail](/posts/aws-detecting-privilege-escalation/)

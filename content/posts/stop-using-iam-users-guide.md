@@ -136,6 +136,7 @@ IAM users served their time—but in 2026, they are no longer secure or scalable
 
 By transitioning to **Identity Center for users**, **STS for automation**, and **OIDC for pipelines**, you're moving toward a modern, zero-trust access model that scales with your org.
 
----
-
-*Let IAM users rest in peace. Your future is federated.* 🔐
+**Related guides:**
+- [AWS SCPs That Actually Work](/posts/aws-scp-best-practices/) — enforce identity guardrails at the org level
+- [CloudTrail Log Analysis: How to Find Who Did What](/posts/aws-cloudtrail-log-analysis/) — audit who's still creating IAM users and trace the cleanup
+- [Stop Using Access Keys: AWS Temporary Credentials Done Right](/posts/aws-temporary-credentials-security/) — the credential model that replaces IAM user access keys
