@@ -128,6 +128,8 @@ security incidents in AWS. It assumes limited team size and leverages AWS-native
 
 > For scenario-specific containment steps (compromised keys, public S3, cryptomining, privilege escalation), see [AWS Incident Response: 5 Scenarios & How to Contain Them](/posts/aws-incident-response-scenarios/).
 
+> For a real-world example of this playbook in action — including the mistakes that cost us days — see [I Investigated a Real Phishing Attack — Here's the Full Kill Chain](/posts/real-world-phishing-incident-response/).
+
 ---
 
 ## Want a downloadable version in PDF?

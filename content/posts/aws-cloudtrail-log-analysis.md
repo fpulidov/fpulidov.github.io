@@ -338,7 +338,7 @@ When you're investigating an actual security incident — compromised credential
 
 The queries are fundamentally the same. What changes is that you're filtering by a specific principal ARN or access key across your entire organization trail, looking for every action they took.
 
-I'll cover a real incident investigation workflow in an upcoming post — including reverse-engineering indicators of compromise from CloudTrail when a phishing campaign went sideways. The foundation you build here is exactly what you'll need when that day comes.
+I wrote up a real incident investigation where I reverse-engineered a full phishing kill chain and extracted IOCs — see [I Investigated a Real Phishing Attack — Here's the Full Kill Chain](/posts/real-world-phishing-incident-response/). The foundation you build here is exactly what you'll need when that day comes.
 
 ---
 

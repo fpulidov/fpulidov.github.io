@@ -361,6 +361,7 @@ Incident response in AWS comes down to three things: detecting quickly, containi
 Build your detection stack, pre-create your isolation security group, and automate the high-confidence responses. When the alert fires, you want to execute a playbook — not design one.
 
 **Related resources:**
+- [I Investigated a Real Phishing Attack — Here's the Full Kill Chain](/posts/real-world-phishing-incident-response/) — a real spearphishing incident walkthrough with forensic analysis and lessons learned
 - [AWS Incident Response Guide for Small Security Teams](/posts/incident-response-aws-guide/)
 - [AWS IR Playbook Template (Free)](/posts/aws-ir-playbook-template/)
 - [AWS Incident Response Toolkit](/posts/aws-ir-toolkit/)
