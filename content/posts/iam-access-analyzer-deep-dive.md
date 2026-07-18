@@ -7,6 +7,7 @@ categories: ["Cloud Security", "Guides"]
 summary: "Use IAM Access Analyzer to build least-privilege IAM roles in AWS — includes policy generation from CloudTrail, Terraform integration, and AWS best practices."
 description: "Learn how to use IAM Access Analyzer to identify risky permissions, generate fine-tuned IAM policies, and integrate the tool into your AWS development workflow."
 slug: "iam-access-analyzer-least-privilege"
+aliases: ["/posts/enforcing-least-privilege-iam-access-analyzer/"]
 draft: false
 author: "Javier Pulido"
 canonicalURL: "https://thehiddenport.dev/posts/iam-access-analyzer-least-privilege/"
