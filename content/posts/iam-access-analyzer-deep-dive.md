@@ -1,11 +1,11 @@
 ---
-title: "Building Least-Privilege IAM Roles with IAM Access Analyzer"
+title: "Automate IAM Least Privilege with Access Analyzer & Terraform"
 date: 2025-04-21
 tags: ["aws", "iam", "least-privilege", "access-analyzer", "terraform", "security"]
-keywords: ["iam access analyzer", "aws least privilege", "iam policy generator cloudtrail", "access analyzer terraform", "aws iam audit"]
+keywords: ["iam access analyzer terraform", "aws iam policy generator", "access analyzer policy generation", "terraform iam least privilege", "automate iam permissions aws"]
 categories: ["Cloud Security", "Guides"]
-summary: "Use IAM Access Analyzer to build least-privilege IAM roles in AWS — includes policy generation from CloudTrail, Terraform integration, and AWS best practices."
-description: "Learn how to use IAM Access Analyzer to identify risky permissions, generate fine-tuned IAM policies, and integrate the tool into your AWS development workflow."
+summary: "Automate least-privilege IAM roles using Access Analyzer policy generation, CloudTrail-based scoping, and Terraform integration."
+description: "Generate least-privilege IAM policies automatically from CloudTrail activity using Access Analyzer, then deploy them with Terraform. Step-by-step with code examples."
 slug: "iam-access-analyzer-least-privilege"
 aliases: ["/posts/enforcing-least-privilege-iam-access-analyzer/"]
 draft: false
