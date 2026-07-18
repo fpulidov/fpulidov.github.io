@@ -1,10 +1,10 @@
 ---
-title: "IDOR Vulnerabilities in AWS APIs: How to Find & Prevent Them"
-description: "What IDOR is, why it's dangerous in AWS APIs and Lambda functions, and how to detect and prevent insecure direct object references. Includes real bug bounty examples."
+title: "IDOR in AWS APIs: Real Examples from Bug Bounty & How to Fix Them"
+description: "One hunter reported 220 IDOR finds in a single year. Here's how insecure direct object references show up in Lambda, API Gateway, and DynamoDB — with prevention code."
 summary: "Deep dive into IDOR vulnerabilities with real AWS API examples, bug bounty cases, and prevention strategies for Lambda, API Gateway, and internal tooling."
 date: 2025-06-27
 tags: ["Bug Bounty", "Security", "Web", "AWS", "API", "IDOR"]
-keywords: ["idor vulnerability aws", "insecure direct object reference", "aws api security", "idor prevention", "aws authorization bypass"]
+keywords: ["idor vulnerability aws", "idor bug bounty", "insecure direct object reference", "aws api security", "idor prevention", "broken access control aws", "aws lambda idor", "api gateway authorization bypass"]
 canonicalURL: "https://thehiddenport.dev/posts/aws-preventing-idor/"
 enable_comments: true
 ---
