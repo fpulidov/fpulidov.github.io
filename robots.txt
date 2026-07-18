@@ -1,3 +1,7 @@
 User-agent: *
-Disallow:
+Allow: /
+
+Disallow: /page/
+Disallow: /blog/
+
 Sitemap: https://thehiddenport.dev/sitemap.xml
