@@ -140,6 +140,7 @@ The skills transfer in both directions — understanding attacks makes you a bet
 ---
 
 **Related posts:**
+- [How I Passed the AWS Security Specialty (SCS-C02)](/posts/aws-scs-c02-exam-experience/) — my other cert experience, from the defensive side
 - [AWS Incident Response: 5 Scenarios & How to Contain Them](/posts/aws-incident-response-scenarios/) — the defender's side of what pentesters simulate
 - [I Investigated a Real Phishing Attack — Here's the Full Kill Chain](/posts/real-world-phishing-incident-response/) — real-world attack chain analysis
 - [Detect AWS IAM Privilege Escalation with CloudTrail](/posts/aws-detecting-privilege-escalation/) — detecting what pentesters do in AWS environments

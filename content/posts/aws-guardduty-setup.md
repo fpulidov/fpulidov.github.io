@@ -83,6 +83,7 @@ Amazon GuardDuty provides a robust solution for continuous threat detection in y
 
 **Related guides:**
 - [I Investigated a Real Phishing Attack — Here's the Full Kill Chain](/posts/real-world-phishing-incident-response/) — what happens when email compromise reaches the endpoint and you need forensics
+- [AWS Security Monitoring Without the Enterprise Price Tag](/posts/affordable-aws-security-monitoring/) — build a full monitoring stack around GuardDuty on any budget
 - [CloudTrail Log Analysis: How to Find Who Did What](/posts/aws-cloudtrail-log-analysis/) — dig deeper into the events behind GuardDuty findings
 - [AWS SCPs That Actually Work](/posts/aws-scp-best-practices/) — prevent the actions GuardDuty would otherwise detect
 - [Detect AWS IAM Privilege Escalation with CloudTrail](/posts/aws-detecting-privilege-escalation/) — targeted detection for IAM escalation patterns

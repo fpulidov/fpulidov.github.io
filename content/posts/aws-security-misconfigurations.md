@@ -172,10 +172,10 @@ Misconfigurations like these are often easy to fix—but also easy to miss.
 
 By tackling these five areas, you significantly reduce the likelihood of breaches, increase visibility, and build a security-first cloud foundation.
 
-Coming up: deeper dives into automation, policy generation, and detection workflows in AWS.
-
-📄 Handling misconfigurations is one thing. Responding to them fast is another.
-[Check out the AWS Incident Response Playbook →](https://thehiddenport.dev/incident-response-aws-guide)
+**Related guides:**
+- [IDOR in AWS APIs: Real Examples from Bug Bounty & How to Fix Them](/posts/aws-preventing-idor/) — another class of misconfiguration that's easy to miss in APIs
+- [AWS Security Checklist: 30-Minute Account Review](/posts/aws-security-checklist-2026/) — run through all critical controls in one pass
+- [AWS Incident Response Playbook (Free)](/posts/aws-ir-playbook-template/) — when misconfigurations get exploited, here's your response plan
 
 ---
 

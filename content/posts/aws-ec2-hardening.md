@@ -121,9 +121,10 @@ This guide consolidates AWS official best practices, CIS Benchmarks, and real-wo
 
 **Related guides:**
 - [Meeting CIS Benchmarks for EC2: A Practical Guide](/posts/ec2-cis-benchmarks-guide/)
-- [Hardened Amazon Linux 2 AMI with EC2 Image Builder](/posts/building-hardened-amazon-linux-2-ami-secure-ec2)
-- [Replace SSH with Session Manager: Secure EC2 Access Guide](/posts/securing-ec2-access-with-ssm/)
-- [How to Detect AWS Root Account Usage](/posts/detect-root-account-usage)
+- [Hardened Amazon Linux 2 AMI with EC2 Image Builder](/posts/aws-ami-hardening/)
+- [AWS Session Manager Setup: Secure EC2 Access Without SSH](/posts/aws-securing-ec2-access-with-ssm/)
+- [How to Detect AWS Root Account Usage](/posts/detect-root-account-usage/)
+- [AWS Security Monitoring Without the Enterprise Price Tag](/posts/affordable-aws-security-monitoring/)
 
 ---
 
