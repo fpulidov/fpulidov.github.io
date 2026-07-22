@@ -7,7 +7,7 @@ categories: ["Cloud Security", "Guides"]
 summary: "Automate least-privilege IAM roles using Access Analyzer policy generation, CloudTrail-based scoping, and Terraform integration."
 description: "Generate least-privilege IAM policies automatically from CloudTrail activity using Access Analyzer, then deploy them with Terraform. Step-by-step with code examples."
 slug: "iam-access-analyzer-least-privilege"
-aliases: ["/posts/enforcing-least-privilege-iam-access-analyzer/"]
+aliases: ["/posts/enforcing-least-privilege-iam-access-analyzer/", "/posts/iam-access-analyzer-deep-dive/"]
 draft: false
 author: "Javier Pulido"
 canonicalURL: "https://thehiddenport.dev/posts/iam-access-analyzer-least-privilege/"

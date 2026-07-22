@@ -1,12 +1,12 @@
 ---
-title: "EKS Security Best Practices: Monitoring, Audit Logs & Runtime Detection (2026)"
+title: "EKS Security Monitoring: Audit Logs, Falco Runtime Detection & GuardDuty (2026)"
 date: 2025-09-17
 draft: false
-description: "Practical EKS security checklist — control plane audit logs, Falco runtime detection, GuardDuty for containers, and the monitoring gaps most teams miss."
+description: "Most EKS clusters ship with control plane logging off and no runtime detection. Here's the step-by-step: audit logs, Falco, GuardDuty for containers, and the gaps teams miss."
 slug: "eks-security-monitoring"
 tags: ["AWS", "EKS", "Kubernetes", "Security", "Monitoring", "Falco", "CloudWatch"]
 categories: ["Cloud Security", "Guides"]
-keywords: ["eks security best practices", "eks security", "eks container security", "eks monitoring", "aws eks security monitoring", "eks audit logs", "falco eks"]
+keywords: ["eks security monitoring", "eks security best practices", "eks audit logs", "eks container security", "aws eks monitoring", "falco eks", "eks runtime monitoring", "eks control plane logs"]
 enable_comments: true
 summary: "Practical EKS security checklist — control plane audit logs, Falco runtime detection, GuardDuty for containers, and the monitoring gaps most teams miss."
 canonicalURL: "https://thehiddenport.dev/posts/eks-security-monitoring/"

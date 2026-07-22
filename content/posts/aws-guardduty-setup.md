@@ -1,10 +1,10 @@
 ---
-title: "Amazon GuardDuty Setup Guide: Findings, EventBridge Alerts & SIEM Integration"
-description: "Set up GuardDuty in 10 minutes, route findings to Slack or your SIEM via EventBridge, and learn which finding types actually matter. Terraform + Console."
-summary: "Set up GuardDuty in 10 minutes, route findings to Slack or your SIEM via EventBridge, and learn which finding types actually matter."
+title: "AWS GuardDuty Setup: Route Findings to Slack & Your SIEM in 10 Minutes"
+description: "Enable GuardDuty, filter noisy findings by severity, and wire EventBridge alerts to Slack or your SIEM — with Terraform and Console steps. Includes which finding types actually need your attention."
+summary: "Enable GuardDuty, filter noisy findings by severity, and wire EventBridge alerts to Slack or your SIEM — with Terraform and Console steps."
 date: 2025-06-24
 tags: ["AWS", "Security", "GuardDuty", "SIEM", "Threat Detection"]
-keywords: ["amazon guardduty", "aws guardduty setup", "guardduty siem integration", "guardduty eventbridge", "guardduty findings", "aws threat detection"]
+keywords: ["aws guardduty setup", "guardduty eventbridge", "guardduty siem integration", "guardduty findings", "guardduty slack alerts", "amazon guardduty configuration", "aws threat detection", "guardduty terraform"]
 canonicalURL: "https://thehiddenport.dev/posts/aws-guardduty-setup/"
 enable_comments: true
 ---
