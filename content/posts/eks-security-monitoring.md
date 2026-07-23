@@ -131,7 +131,7 @@ Here’s a sample end-to-end architecture you could adopt. You can scale or trim
 
 ## 7. Conclusion
 
-EKS adds complexity to AWS monitoring in the form of ephemeral pods, runtime threats, and audit visibility gaps. But by layering AWS-native tools (CloudWatch, GuardDuty, Security Hub) with open-source detection (Falco, Prometheus, Grafana), you can cover infrastructure, runtime, and security monitoring in a practical way.  
+EKS adds complexity to AWS monitoring in the form of ephemeral pods, runtime threats, and audit visibility gaps. But by layering AWS-native tools (CloudWatch, GuardDuty, Security Hub) with open-source detection (Falco, Prometheus, Grafana), you can cover infrastructure, runtime, and security monitoring in a practical way. If you're unsure how GuardDuty and Security Hub complement each other, see [GuardDuty vs Security Hub: What Each Does and When You Need Both](/posts/aws-guardduty-vs-security-hub/).  
 
 EKS security monitoring is not about logging everything, it’s about collecting the right signals, prioritizing them, and making alerts actionable. Done right, you gain visibility, catch misconfigurations early, and detect threats before they escalate.  
 

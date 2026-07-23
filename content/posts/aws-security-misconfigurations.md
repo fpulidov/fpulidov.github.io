@@ -153,6 +153,8 @@ Logging is essential for investigation, compliance, and threat detection.
 3. **Amazon GuardDuty**
 4. **AWS Security Hub**
 
+Not sure how GuardDuty and Security Hub fit together? See [GuardDuty vs Security Hub: What Each Does and When You Need Both](/posts/aws-guardduty-vs-security-hub/).
+
 By leveraging services like **AWS CloudTrail**, **AWS Config**, **Amazon GuardDuty**, and **AWS Security Hub**, organizations can establish a comprehensive security framework in AWS. Together, these tools provide detailed visibility into API activity, ensure continuous compliance with best practices, detect threats using intelligent analysis, and centralize security findings for actionable insights. This integrated approach enhances your ability to prevent, detect, and respond to security incidents effectively, while maintaining a strong security posture across your AWS environment.
 
 

@@ -137,6 +137,7 @@ Use these reports to catch drift and stale resources early.
 - [Meeting CIS Benchmarks for EC2](/posts/ec2-cis-benchmarks-guide/)
 - [How to Detect AWS Root Account Usage](/posts/detect-root-account-usage)
 - [AWS Incident Response: 5 Scenarios & How to Contain Them](/posts/aws-incident-response-scenarios/)
+- [GuardDuty vs Security Hub: What Each Does and When You Need Both](/posts/aws-guardduty-vs-security-hub/)
 - [How I Passed the AWS Security Specialty (SCS-C02)](/posts/aws-scs-c02-exam-experience)
 
 ---

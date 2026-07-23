@@ -244,4 +244,5 @@ If this helped you rethink your AWS monitoring setup, consider subscribing to [T
 * [AWS Incident Response Guide for Small Security Teams](/posts/incident-response-aws-guide/)
 * [IAM Users Are Dead: Modern AWS Access Control for 2026](/posts/aws-iam-users-alternatives)
 * [Amazon GuardDuty Setup: Findings, Alerts & SIEM Integration](/posts/aws-guardduty-setup/)
+* [GuardDuty vs Security Hub: What Each Does and When You Need Both](/posts/aws-guardduty-vs-security-hub/)
 * [AWS Security Checklist 2026: 30+ Controls for IAM, EC2 & S3](/posts/aws-security-checklist-2026/)
