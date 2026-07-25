@@ -245,4 +245,5 @@ If this helped you rethink your AWS monitoring setup, consider subscribing to [T
 * [IAM Users Are Dead: Modern AWS Access Control for 2026](/posts/aws-iam-users-alternatives)
 * [Amazon GuardDuty Setup: Findings, Alerts & SIEM Integration](/posts/aws-guardduty-setup/)
 * [GuardDuty vs Security Hub: What Each Does and When You Need Both](/posts/aws-guardduty-vs-security-hub/)
+* [Secrets Manager Now Sends Events to EventBridge](/posts/aws-secrets-manager-eventbridge-notifications/)
 * [AWS Security Checklist 2026: 30+ Controls for IAM, EC2 & S3](/posts/aws-security-checklist-2026/)

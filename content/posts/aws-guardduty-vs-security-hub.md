@@ -206,3 +206,4 @@ Most teams answer yes to all three.
 - [AWS Security Monitoring Without the Enterprise Price Tag](/posts/affordable-aws-security-monitoring/) — build a full monitoring stack on a small budget
 - [AWS Misconfigurations I Find in Every Security Audit](/posts/aws-security-misconfigurations-guide/) — the findings Security Hub catches automatically
 - [AWS Security Checklist: 30-Minute Account Review](/posts/aws-security-checklist-2026/) — run through all critical controls in one pass
+- [Secrets Manager Now Sends Events to EventBridge](/posts/aws-secrets-manager-eventbridge-notifications/) — set up secret rotation alerts using the same EventBridge pattern
