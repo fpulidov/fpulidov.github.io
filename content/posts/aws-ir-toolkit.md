@@ -1,76 +1,130 @@
 ---
-
-title: "AWS Incident Response Toolkit: Resources & Templates"
-description: "Complete AWS incident response toolkit. Includes playbooks, templates, tools, and guidance for cloud security teams."
+title: "AWS Incident Response Toolkit: Playbook, Terraform Automation & Forensic Tools"
+description: "Free toolkit with an IR playbook template, Terraform-deployed notification pipeline, Lambda functions for SES and Slack alerts, and a forensic tool matrix — everything you need to respond to AWS security incidents."
 date: 2025-05-20
-summary: "After publishing my free AWS IR checklist, I decided to go one step further — a full incident response toolkit with Terraform code, automation scripts, and ready-to-use templates. Here’s what’s inside."
+summary: "A complete incident response toolkit for AWS — playbook template, Terraform notification pipeline, Lambda alert functions, and a forensic tool reference. Free download."
 tags: ["aws", "security", "incident-response", "toolkit"]
-keywords: ["aws incident response toolkit", "aws ir tools", "incident response templates", "aws security toolkit", "ir automation aws"]
+keywords: ["aws incident response toolkit", "aws ir tools", "incident response templates", "aws security toolkit", "ir automation aws", "aws incident response playbook", "security hub notifications terraform"]
 slug: "aws-ir-toolkit"
 canonicalURL: "https://thehiddenport.dev/posts/aws-ir-toolkit/"
+enable_comments: true
 ---
 
-## Why I Built This Toolkit
+When a Security Hub finding fires at 2am, the last thing you want is to be piecing together a response process from scratch — figuring out who to notify, what to isolate, and where to look for evidence.
 
-After sharing my [Incident Response in AWS article](../incident-response-aws-guide/) and a free downloadable checklist, I received a lot of feedback — mostly from engineers saying the same thing:
-
-> *“This is helpful, but I still have to piece everything together.”*
-
-So I built a complete AWS Incident Response Toolkit.
-
-This bundle goes much further than the checklist: ready-to-use Terraform to deploy the notification pipeline, Python scripts for SES and Slack alerts, and a matrix of tools you can use during forensic investigations. It’s designed to save you time, avoid mistakes, and make response feel a lot less chaotic.
+I built this toolkit after going through that exact situation too many times. It's the set of templates, automation, and reference material I wish I'd had from day one.
 
 ---
 
-## What’s Inside the Toolkit
+## What's in the Toolkit
 
-Here’s a look at what’s included:
+### IR Playbook Template (PDF)
 
-| File                                      | Type     | Description                                                                   |
-| ----------------------------------------- | -------- | ----------------------------------------------------------------------------- |
-| `Incident response playbook template.pdf` | PDF      | Editable playbook aligned with ISO 27001 and AWS workflows                    |
-| `Notification_Flows_Extended.md`          | Markdown | 3 notification flow examples (SES, Slack, SQS)                                |
-| `Cloud_Forensics_Tool_Matrix.xlsx`        | Excel    | A categorized list of native and open-source tools for memory, logs, and more |
-| `terraform/`                              | Code     | Terraform code to deploy EventBridge + Lambda pipeline (deployment-ready)     |
-| `python/email_notification.py`            | Code     | Lambda-compatible Python script to send SES alerts on new findings            |
-| `python/slack_notification.py`            | Code     | Example Slack webhook integration (extendable)                                |
-| `README.md`                               | Markdown | Full usage instructions                                                       |
+A printable, checklist-style playbook covering the five standard IR phases, aligned to ISO 27001 and AWS-native workflows:
 
-> 💡 You don’t have to be a Terraform expert — just update a few variables and deploy with `terraform apply`.
+1. **Preparation** — roles (Incident Commander, Comms Lead, IR Engineer), CloudTrail/GuardDuty/Config prerequisites, forensic IAM roles, asset documentation
+2. **Detection & Analysis** — trigger sources (Security Hub, GuardDuty), CloudTrail correlation, resource identification, volatile data capture via SSM
+3. **Containment** — security group isolation, credential revocation, IAM suspension
+4. **Eradication & Recovery** — patching, secret rotation, re-imaging, backup restoration
+5. **Lessons Learned** — post-mortem, root cause documentation, playbook updates, stakeholder debrief
+
+Each phase has checkboxes you can print and use during an active incident.
+
+### Notification Pipeline (Terraform + Lambda)
+
+Deployable automation that routes Security Hub findings to your team:
+
+```
+Security Hub → EventBridge → Lambda → SES Email / Slack
+```
+
+The Terraform code creates everything in one `terraform apply`:
+
+- **EventBridge rule** — matches findings with severity >= MEDIUM, compliance status FAILED, workflow status NEW
+- **Lambda function** — extracts finding metadata and sends a formatted email via SES, then marks the finding as NOTIFIED to prevent duplicate alerts
+- **IAM role** — least-privilege permissions for SES and Security Hub only
+- **CloudWatch log group** — 14-day retention for Lambda logs
+
+The EventBridge rule pattern filters on severity and compliance status so you don't get paged for every informational finding:
+
+```hcl
+event_pattern = jsonencode({
+  source      = ["aws.securityhub"]
+  detail-type = ["Security Hub Findings - Imported"]
+  detail = {
+    findings = {
+      Workflow   = { Status = ["NEW"] }
+      Compliance = { Status = ["FAILED"] }
+      Severity   = { Label = ["MEDIUM", "HIGH", "CRITICAL"] }
+    }
+  }
+})
+```
+
+### Slack Notification Lambda
+
+A second Lambda function that posts formatted alerts to Slack via incoming webhook. Uses Slack Block Kit for structured messages with:
+
+- Severity color-coding (red for CRITICAL, orange for HIGH, yellow for MEDIUM)
+- Finding title, source service, account, region, and resource
+- Direct "View in Security Hub" button
+
+Uses only Python's built-in `urllib` — no external dependencies, no Lambda layers required.
+
+### Notification Flow Architectures
+
+Three reference patterns documented with triggers, logic, and what to configure:
+
+1. **Security Hub → SES email** (fully implemented with Terraform)
+2. **GuardDuty/Security Hub → Slack** (Lambda included, Terraform target left as exercise)
+3. **IAM policy changes → CloudTrail → EventBridge → SQS** (reference architecture with EventBridge pattern)
+
+### Cloud Forensics Tool Matrix (Excel)
+
+A categorized reference of tools for AWS incident investigation — native AWS services and open-source alternatives, mapped by use case (memory acquisition, log analysis, network forensics, disk forensics).
 
 ---
 
-## Use Cases
+## How to Deploy
 
-Whether you're:
+1. Download the toolkit and extract it
+2. Create `terraform/terraform.tfvars` with your email addresses:
 
-* A cloud security engineer handling incidents solo
-* A DevSecOps team responding to GuardDuty findings
-* A consultant setting up IR workflows for clients
+```hcl
+aws_region     = "eu-west-1"
+ses_from_email = "alerts@yourdomain.com"
+ses_to_email   = "security-team@yourdomain.com"
+```
 
-…this toolkit helps you deploy faster, communicate better, and keep a paper trail.
+3. Deploy:
+
+```bash
+cd terraform
+terraform init
+terraform plan
+terraform apply
+```
+
+4. Generate sample findings to test:
+
+```bash
+aws securityhub create-sample-findings --region eu-west-1
+```
+
+**Prerequisites:** SES sender email must be verified (or SES out of sandbox mode). AWS credentials configured locally.
 
 ---
 
-## Where to Get It
+## Download the Toolkit (Free)
 
-🛠️ You can grab the full toolkit here:
-👉 [Buy the AWS IR Toolkit on Gumroad](https://1220446601165.gumroad.com/l/aws-ir-tool)
+[Download AWS IR Toolkit v1.1 (.zip, ~100KB)](/downloads/aws-ir-toolkit-v1.1.zip)
 
-I’ve priced it at **€9** to make it accessible, but still sustainable for me to keep updating it.
-
-You’ll get all future updates for free — including any new scripts, improved playbook versions, or Notion templates I release.
-
-There is also a Gumroad community set up where you can suggest additions to the bundle.
+Includes the playbook PDF, all Terraform and Python code above, the notification flow architectures, and the forensic tool matrix.
 
 ---
 
-## Final Thoughts
-
-This was built from real-world pain. I just wanted to make something useful that I wish existed when I was building IR workflows.
-
-If you grab the toolkit and find it useful, I’d love to hear from you. Your feedback will help shape version 2.
-
-Until then — stay ready.
-
-– Javier
+**Related guides:**
+- [AWS Incident Response Scenarios: 5 Real-World Attack Patterns](/posts/aws-incident-response-scenarios/) — practice these scenarios with the playbook
+- [AWS CloudTrail Log Analysis for Security](/posts/aws-cloudtrail-log-analysis/) — the primary data source for IR investigation
+- [AWS GuardDuty Setup: Route Findings to Slack & Your SIEM](/posts/aws-guardduty-setup/) — the detection layer that feeds the notification pipeline
+- [Real-World Phishing Incident Response](/posts/real-world-phishing-incident-response/) — a full IR walkthrough using this methodology
