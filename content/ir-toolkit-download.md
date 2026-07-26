@@ -27,6 +27,6 @@ cp terraform.tfvars.example terraform.tfvars  # edit with your SES email
 terraform init && terraform apply
 ```
 
-Questions? Reach out at javierpulidovergara@gmail.com.
+Questions? Reach out at javier@thehiddenport.dev.
 
 [Back to The Hidden Port →](/posts/aws-ir-toolkit/)

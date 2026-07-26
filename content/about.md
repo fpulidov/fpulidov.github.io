@@ -41,7 +41,7 @@ Everything published here is written from real environments, not documentation s
 
 ## Contact
 
-- **Consulting inquiries:** [javierpulidovergara@gmail.com](mailto:javierpulidovergara@gmail.com) — include a short description of what you're dealing with
+- **Consulting inquiries:** [javier@thehiddenport.dev](mailto:javier@thehiddenport.dev) — include a short description of what you're dealing with
 - **General questions or feedback:** same email, or the comments on any post
 - **Elsewhere:** [GitHub](https://github.com/fpulidov/) · [LinkedIn](https://www.linkedin.com/in/ejher/)
 

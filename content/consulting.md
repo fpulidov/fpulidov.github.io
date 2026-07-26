@@ -49,7 +49,7 @@ Availability is limited — I keep the consulting load small so it doesn't compr
 
 ## Get in Touch
 
-Email: [javierpulidovergara@gmail.com](mailto:javierpulidovergara@gmail.com)
+Email: [javier@thehiddenport.dev](mailto:javier@thehiddenport.dev)
 
 Include:
 
