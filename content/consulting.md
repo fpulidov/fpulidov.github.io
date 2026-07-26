@@ -1,13 +1,17 @@
 ---
-title: "Consulting"
-description: "AWS security consulting — audits, GuardDuty and Security Hub deployment, IAM hardening, incident response, and ISO 27001 preparation."
+title: "AWS Security Consulting — Sevilla, Spain"
+description: "AWS security consultant based in Sevilla, Spain. Cloud security audits, GuardDuty and Security Hub deployment, IAM hardening, incident response, and ISO 27001 preparation. Remote engagements across Europe."
 layout: "single"
 author: "Javier Pulido"
 searchHidden: true
 url: "/consulting/"
 ---
 
-I take on a small number of AWS security consulting engagements each quarter. If your team is dealing with unclear detection coverage, IAM sprawl, an upcoming audit, or an incident you're not sure how to prevent from repeating — that's where I can help.
+I'm an **AWS security consultant based in Sevilla, Spain**, working remotely with clients across Europe and beyond. I take on a small number of engagements each quarter — typically startups and mid-size teams that need real security posture in place without hiring a full cloud security team.
+
+If your team is dealing with unclear detection coverage, IAM sprawl, an upcoming audit, or an incident you're not sure how to prevent from repeating — that's where I can help.
+
+> **¿Buscas un consultor de seguridad AWS en España?** Trabajo con empresas en toda Europa desde Sevilla. Español e inglés. [Reserva una llamada gratuita](https://calendly.com/javier-thehiddenport/30min).
 
 ## What I Do
 
@@ -36,10 +40,10 @@ I don't work with large enterprises with dedicated security teams — you're bet
 
 ## How It Works
 
-1. **Initial call (free, 30 minutes)** — you describe what you're dealing with, I ask questions, and we figure out whether it's a good fit
-2. **Scoped proposal** — fixed scope, fixed price, clear deliverables. No open-ended retainers unless you specifically want one
-3. **Engagement** — remote, async-friendly, with regular checkpoints. I work in your AWS accounts via cross-account role or in a shared environment, depending on your policy
-4. **Handover** — everything I build ships with documentation and Terraform code so your team can maintain it
+1. **Free 30-minute intro call** — [book a slot on Calendly](https://calendly.com/javier-thehiddenport/30min). You describe what you're dealing with, I ask questions, and we figure out whether it's a good fit.
+2. **Scoped proposal** — fixed scope, fixed price, clear deliverables. No open-ended retainers unless you specifically want one.
+3. **Engagement** — remote, async-friendly, with regular checkpoints. I work in your AWS accounts via cross-account role or in a shared environment, depending on your policy.
+4. **Handover** — everything I build ships with documentation and Terraform code so your team can maintain it.
 
 ## Rates & Availability
 
@@ -49,15 +53,17 @@ Availability is limited — I keep the consulting load small so it doesn't compr
 
 ## Get in Touch
 
-Email: [javier@thehiddenport.dev](mailto:javier@thehiddenport.dev)
+**Book a free 30-minute call:** [calendly.com/javier-thehiddenport/30min](https://calendly.com/javier-thehiddenport/30min)
 
-Include:
+**Or email:** [javier@thehiddenport.dev](mailto:javier@thehiddenport.dev)
+
+If emailing, please include:
 
 - What you're currently dealing with (or want to prevent)
 - Your rough AWS footprint (number of accounts, main services)
 - Any deadline you're working against (audit date, launch date, etc.)
 
-I typically respond within 48 hours.
+I typically respond within 48 hours. Based in Sevilla (CET/CEST); happy to accommodate other time zones for the intro call.
 
 ---
 

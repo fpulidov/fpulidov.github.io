@@ -41,7 +41,9 @@ Everything published here is written from real environments, not documentation s
 
 ## Contact
 
-- **Consulting inquiries:** [javier@thehiddenport.dev](mailto:javier@thehiddenport.dev) — include a short description of what you're dealing with
+Based in **Sevilla, Spain**. Working remotely with clients across Europe.
+
+- **Consulting inquiries:** [book a free 30-min call](https://calendly.com/javier-thehiddenport/30min) or email [javier@thehiddenport.dev](mailto:javier@thehiddenport.dev)
 - **General questions or feedback:** same email, or the comments on any post
 - **Elsewhere:** [GitHub](https://github.com/fpulidov/) · [LinkedIn](https://www.linkedin.com/in/ejher/)
 
