@@ -6,7 +6,7 @@ description: "Most EKS clusters ship with control plane logging off and no runti
 slug: "eks-security-monitoring"
 tags: ["AWS", "EKS", "Kubernetes", "Security", "Monitoring", "Falco", "CloudWatch"]
 categories: ["Cloud Security", "Guides"]
-keywords: ["eks security monitoring", "eks security best practices", "eks audit logs", "eks container security", "aws eks monitoring", "falco eks", "eks runtime monitoring", "eks control plane logs"]
+keywords: ["eks security monitoring", "eks audit logs", "eks container security", "aws eks monitoring", "falco eks", "eks runtime monitoring", "eks control plane logs", "eks threat detection"]
 enable_comments: true
 summary: "Practical EKS security checklist — control plane audit logs, Falco runtime detection, GuardDuty for containers, and the monitoring gaps most teams miss."
 canonicalURL: "https://thehiddenport.dev/posts/eks-security-monitoring/"

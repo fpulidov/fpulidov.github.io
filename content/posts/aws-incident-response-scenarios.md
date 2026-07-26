@@ -16,7 +16,7 @@ Most AWS incident response guides explain the theory — preparation, detection,
 
 This post covers five incident scenarios that AWS security teams encounter regularly, with detection signals, containment commands, and follow-up actions you can execute immediately.
 
-> For the full process framework, see [Incident Response in AWS: A Practical Guide](/posts/incident-response-aws-guide/). For a ready-to-use template, see the [AWS IR Playbook Template](/posts/aws-ir-playbook-template/).
+> For the full process framework, see [Incident Response in AWS: A Practical Guide](/posts/incident-response-aws-guide/). For ready-to-use templates and Terraform automation, see the [AWS IR Toolkit](/posts/aws-ir-toolkit/).
 
 ---
 
@@ -344,7 +344,7 @@ def handler(event, context):
 
 Containment is step one, not the finish line. After you've stopped the bleeding:
 
-1. **Preserve evidence** — snapshot all volumes, export CloudTrail logs to a tamper-proof S3 bucket with Object Lock. See the [IR Playbook Template](/posts/aws-ir-playbook-template/) for the full evidence checklist.
+1. **Preserve evidence** — snapshot all volumes, export CloudTrail logs to a tamper-proof S3 bucket with Object Lock. See the [AWS IR Toolkit](/posts/aws-ir-toolkit/) for the full evidence checklist.
 
 2. **Determine root cause** — how did the attacker get in? Leaked key in a repo? SSRF? Over-permissioned role? The root cause determines whether your fix is "rotate one key" or "redesign your network."
 
@@ -363,6 +363,6 @@ Build your detection stack, pre-create your isolation security group, and automa
 **Related resources:**
 - [I Investigated a Real Phishing Attack — Here's the Full Kill Chain](/posts/real-world-phishing-incident-response/) — a real spearphishing incident walkthrough with forensic analysis and lessons learned
 - [AWS Incident Response Guide for Small Security Teams](/posts/incident-response-aws-guide/)
-- [AWS IR Playbook Template (Free)](/posts/aws-ir-playbook-template/)
+- [AWS Incident Response Toolkit (Free)](/posts/aws-ir-toolkit/)
 - [AWS Incident Response Toolkit](/posts/aws-ir-toolkit/)
 - [Detect AWS IAM Privilege Escalation with CloudTrail](/posts/aws-detecting-privilege-escalation/)

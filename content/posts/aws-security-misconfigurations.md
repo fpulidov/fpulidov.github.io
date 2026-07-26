@@ -177,7 +177,7 @@ By tackling these five areas, you significantly reduce the likelihood of breache
 **Related guides:**
 - [IDOR in AWS APIs: Real Examples from Bug Bounty & How to Fix Them](/posts/aws-preventing-idor/) — another class of misconfiguration that's easy to miss in APIs
 - [AWS Security Checklist: 30-Minute Account Review](/posts/aws-security-checklist-2026/) — run through all critical controls in one pass
-- [AWS Incident Response Playbook (Free)](/posts/aws-ir-playbook-template/) — when misconfigurations get exploited, here's your response plan
+- [AWS Incident Response Toolkit (Free)](/posts/aws-ir-toolkit/) — when misconfigurations get exploited, here's your response plan
 
 ---
 

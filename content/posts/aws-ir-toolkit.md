@@ -6,6 +6,7 @@ summary: "A complete incident response toolkit for AWS — playbook template, Te
 tags: ["aws", "security", "incident-response", "toolkit"]
 keywords: ["aws incident response toolkit", "aws ir tools", "incident response templates", "aws security toolkit", "ir automation aws", "aws incident response playbook", "security hub notifications terraform"]
 slug: "aws-ir-toolkit"
+aliases: ["/posts/aws-ir-playbook-template/"]
 canonicalURL: "https://thehiddenport.dev/posts/aws-ir-toolkit/"
 enable_comments: true
 ---

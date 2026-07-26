@@ -207,7 +207,7 @@ This minimizes cost while still preserving a chain-of-custody–friendly trail.
 
 ## Check my own IR Playbook Template
 
-📄 [Online IR Playbook template](/posts/aws-ir-playbook-template/)
+📄 [AWS Incident Response Toolkit](/posts/aws-ir-toolkit/)
 
 Includes:
 - Triage checklist

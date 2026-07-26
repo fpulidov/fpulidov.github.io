@@ -107,7 +107,7 @@ Want to get proactive?
 * Parse results and send a report to security engineers or your team chat
 * Automatically open a ticket if `iam:PassRole` appears on a dev role
 
-You can add this to your [IR automation playbook](../aws-ir-playbook-template/).
+You can add this to your [IR automation toolkit](../aws-ir-toolkit/).
 
 ---
 

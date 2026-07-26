@@ -220,4 +220,4 @@ The lesson is the same across corporate IT and cloud: **identity is the perimete
 - [AWS Incident Response: 5 Scenarios & How to Contain Them](/posts/aws-incident-response-scenarios/)
 - [CloudTrail Log Analysis with Athena: Compliance Forensics](/posts/aws-cloudtrail-log-analysis/)
 - [Setting Up AWS GuardDuty: EventBridge Alerts & Threat Detection](/posts/aws-guardduty-setup/)
-- [AWS IR Playbook Template (Free)](/posts/aws-ir-playbook-template/)
+- [AWS Incident Response Toolkit (Free)](/posts/aws-ir-toolkit/)
