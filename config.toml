@@ -97,11 +97,16 @@ theme = "PaperMod"
     name = "About"
     url = "/about/"
     weight = 2
-  
+
+  [[menu.main]]
+    name = "Consulting"
+    url = "/consulting/"
+    weight = 3
+
   [[menu.main]]
     name = "Resources"
     url = "/resources/"
-    weight = 3
+    weight = 4
 
   [[menu.main]]
     name = "Search"

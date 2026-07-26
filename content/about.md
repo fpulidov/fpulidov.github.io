@@ -5,42 +5,46 @@ author: "Javier Pulido"
 searchHidden: true
 ---
 
-Hi! I’m **Javier Pulido**, a Cloud Security Engineer with a passion for making complex infrastructure safe, automated, and compliant. Over the past several years, I’ve helped my company build and secure their AWS environment using infrastructure-as-code, identity federation, and proactive monitoring.
+I'm **Javier Pulido**, a Cloud Security Engineer specialized in AWS. Over the past several years I've built and secured multi-account AWS environments with infrastructure-as-code, identity federation, and continuous monitoring — the same patterns I write about here.
+
+## What I Help Teams With
+
+Beyond writing, I take on selected consulting engagements. If your team is dealing with any of these, I can help:
+
+- **AWS security audits** — end-to-end review of your account structure, IAM, network exposure, logging, and detection posture. Findings prioritized by real risk, not compliance box-ticking.
+- **GuardDuty, Security Hub & IR pipelines** — deploy the detection layer, filter the noise, wire findings to Slack/PagerDuty/your SIEM, and build the response playbook around it.
+- **IAM hardening** — least-privilege refactor, migration from IAM users to SSO/IAM Identity Center, cross-account access design, permission boundary strategy.
+- **Landing zones & governance** — multi-account structure with Control Tower, secure baselines, guardrails, and cost/access controls that scale.
+- **ISO 27001 preparation** — AWS-native controls, evidence collection automation, and gap analysis for the technical clauses.
+
+[See how consulting engagements work →](/consulting/)
 
 ## Core Expertise
-- **AWS Governance & Landing Zones**  
-  Designing multi-account structures with AWS Control Tower, Service Catalog and Secure Baselines to enforce least‑privilege and separation of duties.
 
-- **Identity & Access Management**  
-  Implementing AWS SSO via Google IdP, fine‑grained permission provisioning with Terraform modules, and session tagging strategies across Bitbucket Pipelines.
+- **AWS Governance & Landing Zones** — multi-account structures with Control Tower, Service Catalog, and secure baselines that enforce least-privilege and separation of duties
+- **Identity & Access Management** — AWS SSO via external IdPs, Terraform-managed permission sets, session tagging for CI/CD attribution
+- **Infrastructure Automation** — Terraform and CloudFormation for IAM, Config rules, Security Hub, and Lambda/SNS/SES notification pipelines
+- **Incident Response & Forensics** — dedicated IR accounts, AVML memory acquisition via SSM, evidence chain-of-custody with S3 lifecycle policies
+- **DevSecOps Integrations** — Slack bots and scheduled Lambdas that ingest Security Hub findings, correlate authorship via AWS Config, and route alerts to the right owner
+- **ISO 27001 Compliance** — AWS-native controls, automated remediation, and monitoring aligned to ISO 27001:2023
 
-- **Infrastructure Automation**  
-  Writing and modularizing Terraform and CloudFormation templates to provision IAM roles, configure AWS Config rules, and automate Security Hub notifications through Lambda/SNS/SES.
+## The Hidden Port
 
-- **Incident Response & Forensics**  
-  Establishing IR processes in dedicated AWS accounts, leveraging AVML over SSM for memory acquisition, and securing evidence with strict S3 lifecycle and access policies.
+This blog is where I document what actually works — and what doesn't — from the security engineering side of AWS. Topics include:
 
-- **DevSecOps Integrations**  
-  Building Slack bots and daily Lambdas to ingest Security Hub findings, correlate authorship via AWS Config, and proactively notify responsible parties.
+- Cloud security tutorials and automation recipes
+- Detection engineering with GuardDuty, Security Hub, and CloudTrail
+- Incident response playbooks and forensic walkthroughs
+- Compliance guidance for ISO 27001 and SOC2 on small teams
 
-- **ISO 27001:2023 compliance**  
-  By leveraging AWS services, custom automated remediation, and tailored alerting based on continuous monitoring, I help ensure my company's infrastructure remains compliant with the latest ISO 27001:2023 standards.
+Everything published here is written from real environments, not documentation summaries.
 
-## Writing & Community
-With **The Hidden Port**, I want to share knowledge and experiences in:
-- **Cloud Security** tutorials and automation recipes  
-- **Personal Cybersecurity** guides for home labs and digital hygiene  
-- **Compliance Simplified** walkthroughs for ISO 27001 & SOC2 on small teams
+## Contact
 
-## Why This Blog?
-Technology moves fast. Misconfigurations slip through the cracks. Here, I document:
-1. **Practical how‑tos** that you can apply in minutes  
-2. **Lessons learned** from real‑world audits and incident analysis  
-3. **Tools & templates** you can plug into your own environments
-
-Feel free to explore, question, and reach out if you’d like to collaborate or chat.  
-You can also find me on [GitHub](https://github.com/fpulidov/) and [LinkedIn](https://www.linkedin.com/in/ejher/).
+- **Consulting inquiries:** [javierpulidovergara@gmail.com](mailto:javierpulidovergara@gmail.com) — include a short description of what you're dealing with
+- **General questions or feedback:** same email, or the comments on any post
+- **Elsewhere:** [GitHub](https://github.com/fpulidov/) · [LinkedIn](https://www.linkedin.com/in/ejher/)
 
 ---
 
-> “Trust but verify.”  
+> "Trust but verify."
