@@ -63,7 +63,7 @@ If emailing, please include:
 - Your rough AWS footprint (number of accounts, main services)
 - Any deadline you're working against (audit date, launch date, etc.)
 
-I typically respond within 48 hours. Based in Sevilla (CET/CEST); happy to accommodate other time zones for the intro call.
+I typically respond within 48 hours. CET/CEST timezone; happy to accommodate other time zones for the intro call.
 
 ---
 

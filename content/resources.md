@@ -97,8 +97,6 @@ The baseline compliance framework. Most Security Hub controls map to this. Free 
 
 I take on a small number of AWS security consulting engagements each quarter — security audits, GuardDuty/Security Hub deployment, IAM hardening, IR readiness, ISO 27001 preparation.
 
-Based in Sevilla, Spain. Working remotely with clients across Europe.
-
 **[Book a free 30-minute call](https://calendly.com/javier-thehiddenport/30min)** or see [how consulting engagements work](/consulting/).
 
 ---
