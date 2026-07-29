@@ -11,7 +11,7 @@ canonicalURL: "https://thehiddenport.dev/posts/ejptv2-journey/"
 enable_comments: true
 ---
 
-If your background is cloud security and you're thinking about breaking into pentesting, the eJPTv2 is a solid entry point. I took it coming from years of AWS security work — hardening infrastructure, responding to incidents, writing detection rules — and found the transition both natural and surprisingly humbling.
+If your background is cloud security and you're thinking about breaking into pentesting, the eJPTv2 is a solid entry point. I prepared for it coming from years of AWS security work — hardening infrastructure, responding to incidents, writing detection rules — and found the study process both natural and surprisingly humbling.
 
 This post covers how I prepared, what resources were worth the time, and how a defender's background actually helps (and where it blinds you).
 

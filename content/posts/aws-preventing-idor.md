@@ -5,20 +5,15 @@ summary: "Deep dive into IDOR vulnerabilities with real AWS API examples, bug bo
 date: 2025-06-27
 tags: ["Bug Bounty", "Security", "Web", "AWS", "API", "IDOR"]
 keywords: ["idor vulnerability aws", "idor bug bounty", "insecure direct object reference", "aws api security", "idor prevention", "broken access control aws", "aws lambda idor", "api gateway authorization bypass"]
+categories: ["Cloud Security"]
 canonicalURL: "https://thehiddenport.dev/posts/aws-preventing-idor/"
+lastmod: 2026-07-29
 enable_comments: true
 ---
 
 In bug bounty and pentesting, **IDOR (Insecure Direct Object Reference)** remains one of the most frequent and dangerous vulnerabilities—even today. OWASP defines it as a classic **Broken Access Control** issue, overwhelming APIs that use predictable or guessable object identifiers ([cheatsheetseries.owasp.org](https://cheatsheetseries.owasp.org/cheatsheets/Insecure_Direct_Object_Reference_Prevention_Cheat_Sheet.html )). But its real impact goes beyond HTTP—IDOR can silently appear in **AWS APIs**, Lambda functions, and internal tooling. This post examines how that happens, how bounty hunters find them, and how AWS developers can prevent and detect IDOR effectively.
 
 ---
-
-## Personal Note
-
-I'm currently starting my journey into bug bounty hunting. Given my background in AWS security, I realized there’s a natural overlap between the two worlds—especially when it comes to misconfigurations, permission boundaries, and API behavior. This article is my first step into exploring that intersection.
-
-If you’re curious to follow along as I dive deeper into bug bounty topics—real findings, tooling, and mindset—stay tuned. More coming soon.
-
 
 ## What Is IDOR?
 
@@ -128,62 +123,90 @@ Best practices aligned with OWASP guidance include ([cheatsheetseries.owasp.org
 
 ## Detection & Alerting Strategy
 
-### Use CloudTrail + EventBridge for IDOR Detection
+### CloudWatch Logs Insights for Enumeration Detection
 
-Any API returning 404 or 200 on unexpected IDs can trigger alerts:
+API Gateway access logs capture every request with status code and caller identity. Use CloudWatch Logs Insights to detect enumeration patterns:
+
+```sql
+fields @timestamp, httpMethod, resourcePath, status, ip
+| filter status in [403, 404]
+| stats count(*) as errorCount by ip, bin(5m) as window
+| filter errorCount > 20
+| sort errorCount desc
+```
+
+This catches a single IP generating >20 unauthorized or not-found responses in 5 minutes — the signature of someone enumerating object IDs.
+
+### CloudWatch Metric Filter + Alarm
+
+Create a metric filter on your API Gateway access logs that increments on `403` or `404` status codes, then attach a CloudWatch Alarm that fires when the error rate spikes:
+
 ```json
 {
-  "detail-type": ["API Call via CloudTrail"],
-  "detail": {
-    "eventSource": ["execute-api.amazonaws.com"],
-    "httpStatus": ["200"],
-    "requestParameters": {
-      "resourceId": ["*"]
+  "filterPattern": "[ip, user, timestamp, request, status = 403 || status = 404, size, referer, agent]",
+  "metricTransformations": [{
+    "metricName": "IDOREnumerationAttempts",
+    "metricNamespace": "APIGateway/Security",
+    "metricValue": "1"
+  }]
+}
+```
+
+Set the alarm threshold based on your normal traffic — for most internal APIs, >50 4xx responses in 5 minutes from a single source warrants investigation.
+
+---
+
+## Putting It All Together: A Hardened API Pattern
+
+Here's what a properly defended API Gateway → Lambda → DynamoDB path looks like — and why each layer matters:
+
+**Application layer (Lambda):** Every read or write operation includes the authenticated `userId` as a partition key condition. The caller can send whatever `objectId` they want — if they don't own it, DynamoDB returns nothing.
+
+```js
+const result = await dynamo.get({
+  TableName: "user-documents",
+  Key: { userId: event.requestContext.authorizer.claims.sub, objectId: event.pathParameters.id }
+});
+if (!result.Item) return { statusCode: 404, body: "Not found" };
+```
+
+**IAM layer:** The Lambda execution role restricts DynamoDB access to items matching the caller's identity using a condition key — defense in depth even if the application logic has a bug:
+
+```json
+{
+  "Effect": "Allow",
+  "Action": ["dynamodb:GetItem", "dynamodb:Query"],
+  "Resource": "arn:aws:dynamodb:*:*:table/user-documents",
+  "Condition": {
+    "ForAllValues:StringEquals": {
+      "dynamodb:LeadingKeys": "${aws:userid}"
     }
   }
 }
 ```
-Then trigger SNS or Lambda to log suspicious enumeration.
 
-### Log-based alerts in CloudWatch
+**Network layer:** WAF rate-limits to 50 requests/minute per IP on internal endpoints. This won't stop a sophisticated attacker, but it slows automated enumeration enough for your alerts to fire.
 
-Watch for:
-- Many 404s within a minute
-- Access to resources owned by a different AWS account or user
+**Observability layer:** CloudWatch metric filter on 403/404 spikes (described above) triggers a PagerDuty alert. CloudTrail captures every API Gateway invocation for forensic analysis.
 
----
-
-## Putting It All Together: A Hardened Example
-
-- API Gateway → Lambda → DynamoDB access
-- Lambda code strictly checks `userId` ownership
-- IAM policy only allows access to items under `${aws:userid}`
-- WAF blocks >50 requests/minute per IP to `/internal/api/`
-- CloudTrail/CloudWatch logs feed into SIEM alerts for anomalies
+The key principle: **object ownership checks in code, IAM conditions as a safety net, rate limiting as a speed bump, and logging to catch what slips through.**
 
 ---
 
 ## Why IDOR Still Wins in Bug Bounty
 
-Despite being well-known, IDOR persists due to:
+Despite being a well-known vulnerability, IDOR persists because of how teams actually build software:
 
-- **Fast development cycles**: devs quickly expose objects without validation.
-- **False confidence in UUIDs**: obfuscation ≠ security.
-- **Lack of server-side enforcement**: clients control identifiers, so attackers can enumerate.
+- **Fast development cycles** — a new endpoint gets shipped in a sprint, the authorization check gets deferred to "next sprint," and nobody comes back for it.
+- **False confidence in UUIDs** — teams assume that random identifiers are unfindable. They're not — UUIDs leak in URLs, API responses, browser history, and logs.
+- **Lack of server-side enforcement** — frontend validation hides the ID field, but the API accepts whatever you send. Every IDOR is a server-side bug, never a client-side one.
+- **Microservices trust boundaries** — internal service-to-service calls often skip authorization because "only our services call this endpoint." Until they don't.
 
 ---
 
 ## Related Reading
 
-- [My full IAM least privilege guide](/posts/aws-enforcing-least-privilege/)
-- [EventBridge detection for privilege escalation](/posts/aws-detecting-privilege-escalation/)
-- [EC2 Hardening & AMI automation](/posts/aws-ec2-hardening/)
-
----
-
-## Final Thoughts
-
-IDOR is simple to understand—but complex to eliminate completely, especially in cloud environments. With thoughtful access control, logging, detection, and auditing, you can significantly reduce risk. For bug hunters, IDOR remains a low-hanging but impactful vulnerability, especially when combined with AWS APIs or internal tools.
-
-Keep hunting, keep securing—and if you find an AWS-based IDOR, do share the example (anonymized) so the whole community learns with you.
-```
+- [AWS Misconfigurations I Find in Every Security Audit](/posts/aws-security-misconfigurations-guide/) — the recurring findings across environments, including access control gaps
+- [IAM Least Privilege: From Theory to Practice](/posts/aws-enforcing-least-privilege/) — how to scope permissions properly
+- [Detecting Privilege Escalation in AWS](/posts/aws-detecting-privilege-escalation/) — EventBridge detection rules for suspicious API calls
+- [AWS Security Checklist: 30-Minute Account Review](/posts/aws-security-checklist-2026/) — quick self-audit you can run today
