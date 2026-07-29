@@ -5,22 +5,18 @@ summary: "Set up AWS-native detection for privilege escalation using CloudTrail,
 date: 2025-06-20
 tags: ["AWS", "IAM", "CloudTrail", "EventBridge", "Detection", "Security"]
 keywords: ["iam privilege escalation", "aws privilege escalation detection", "cloudtrail iam monitoring", "eventbridge security rules", "aws iam attack detection"]
+categories: ["Cloud Security"]
 canonicalURL: "https://thehiddenport.dev/posts/aws-detecting-privilege-escalation/"
 aliases: ["/posts/aws-detecting-privilege-escalation-cloudtrail-eventbridge/"]
+lastmod: 2026-07-29
 enable_comments: true
 ---
 
-One of the most dangerous threats in an AWS environment is **privilege escalation**—when an entity (a user, role, or service) gains more permissions than it should, either by misconfiguration or abuse. Detecting these escalation attempts is essential to protecting your cloud environment.
+Privilege escalation — when an entity gains more permissions than it should — is one of the most dangerous patterns in AWS. An attacker with read-only access who can attach `AdministratorAccess` to their own role has effectively rooted your account.
 
-AWS does not provide out-of-the-box detection for many of these patterns, but with **CloudTrail**, **EventBridge**, and some **detection engineering**, you can build native alerts for high-risk API calls that indicate an escalation in progress—or one about to happen.
+AWS doesn't detect most of these patterns out of the box. GuardDuty catches some credential abuse, but the IAM-level escalation paths — `AttachUserPolicy`, `PutRolePolicy`, `PassRole` chains — fly under the radar unless you build your own detection.
 
-This article will dive deep into:
-- Why privilege escalation is critical
-- How attackers typically escalate privileges in AWS
-- Which CloudTrail events to monitor
-- How to configure EventBridge to catch suspicious patterns
-- How to alert in real-time (SNS, Lambda, etc.)
-- Caveats and tuning recommendations
+With **CloudTrail**, **EventBridge**, and a handful of rules, you can alert on these escalation attempts in near real-time using only native AWS services.
 
 ---
 
@@ -79,7 +75,7 @@ Example CloudTrail log (truncated):
   },
   ...
 }
-````
+```
 
 ---
 
@@ -94,15 +90,17 @@ EventBridge can subscribe to the CloudTrail event stream and match on **suspicio
   "source": ["aws.iam"],
   "detail-type": ["AWS API Call via CloudTrail"],
   "detail": {
-    "eventName": ["AttachUserPolicy", "PutUserPolicy"],
-    "requestParameters.policyArn": [{
-      "prefix": "arn:aws:iam::aws:policy/AdministratorAccess"
-    }]
+    "eventName": ["AttachUserPolicy", "AttachRolePolicy", "PutUserPolicy", "PutRolePolicy"],
+    "requestParameters": {
+      "policyArn": [{
+        "prefix": "arn:aws:iam::aws:policy/AdministratorAccess"
+      }]
+    }
   }
 }
 ```
 
-This rule matches when someone attaches `AdministratorAccess` to themselves (or anyone).
+This rule matches when someone attaches `AdministratorAccess` to any user or role. The `requestParameters` must be nested (not dot-notation) for EventBridge to match correctly. Note that `PutUserPolicy` and `PutRolePolicy` (inline policies) won't have a `policyArn` — they'll match on `eventName` alone, which is what you want since any inline policy creation warrants review.
 
 ### Other Useful Event Names to Watch
 
@@ -167,27 +165,9 @@ You can reduce noise by:
 
 ## Related Reading
 
-If this post interests you, check these out:
-
-* [Enforcing Least Privilege in AWS IAM](/posts/aws-enforcing-least-privilege/)
-* [AWS Incident Response Toolkit](/posts/aws-ir-toolkit/)
-* [Securing EC2 Access with AWS Systems Manager](/posts/aws-securing-ec2-access-with-ssm/)
-* [AWS Security Checklist 2026](/posts/aws-security-checklist-2026/)
-
----
-
-## Conclusion
-
-Privilege escalation is one of the most critical actions you need to monitor in AWS. While AWS provides the logs (via CloudTrail), it’s your responsibility to wire up detection logic. Thankfully, with **EventBridge** and **a few well-designed rules**, you can begin detecting these escalation attempts in near real-time.
-
-Even a single detection rule—targeting `AttachUserPolicy` with `AdministratorAccess`—can surface abuse before it becomes a breach.
-
-Don’t wait for an incident to act. Harden your detection stack today.
-
-**Related guides:**
+- [IAM Least Privilege in AWS: Access Analyzer Guide](/posts/iam-access-analyzer-least-privilege/) — tighten the permissions these detections are watching for
+- [Enforcing Least Privilege in AWS IAM](/posts/aws-enforcing-least-privilege/) — the workflow for auditing and pruning IAM policies
 - [CloudTrail Log Analysis: How to Find Who Did What](/posts/aws-cloudtrail-log-analysis/) — Athena queries for investigating the events these detections surface
-- [IAM Least Privilege in AWS: Access Analyzer Guide](/posts/iam-access-analyzer-least-privilege)
-- [AWS Incident Response: 5 Scenarios & How to Contain Them](/posts/aws-incident-response-scenarios/)
-- [eJPTv2: Prep Strategy, Resources & Honest Review](/posts/ejptv2-journey) — understanding the attacker mindset strengthens your detection engineering
-
----
+- [AWS Incident Response: 5 Scenarios & How to Contain Them](/posts/aws-incident-response-scenarios/) — what to do when a detection fires
+- [GuardDuty Runtime Monitoring: The Security Agent That Sees Inside Your Workloads](/posts/aws-guardduty-runtime-monitoring/) — complements IAM-level detection with process-level visibility
+- [AWS Security Checklist: 30-Minute Account Review](/posts/aws-security-checklist-2026/) — quick self-audit to check your detection coverage

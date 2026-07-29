@@ -5,7 +5,9 @@ summary: "How to audit and refine IAM permissions using Access Analyzer, CloudTr
 date: 2025-06-09
 tags: ["AWS", "IAM", "Least Privilege", "Access Analyzer", "Security"]
 keywords: ["iam least privilege", "aws access analyzer", "iam policy generator", "least privilege aws", "iam access analyzer guide"]
+categories: ["Cloud Security"]
 canonicalURL: "https://thehiddenport.dev/posts/aws-enforcing-least-privilege/"
+lastmod: 2026-07-29
 enable_comments: true
 ---
 
@@ -35,7 +37,7 @@ IAM Access Analyzer helps you detect resource-based policies that grant access t
 aws accessanalyzer create-analyzer \
   --type ACCOUNT \
   --name security-audit
-````
+```
 
 Once active, it scans all supported resources and generates findings like:
 
@@ -44,7 +46,7 @@ Once active, it scans all supported resources and generates findings like:
 
 This is your first pass: shut down **explicit external access** that violates least privilege.
 
-[Read more in my Access Analyzer deep dive](../iam-access-analyzer-least-privilege/)
+[Read more in my Access Analyzer deep dive](/posts/iam-access-analyzer-least-privilege/)
 
 ---
 
@@ -79,7 +81,7 @@ For fine-tuning:
 
 1. Use **CloudTrail** to view actual API calls made by a role.
 2. Feed those into the **IAM Policy Simulator** to determine what the minimum required permissions are.
-3. Manually edit the policy or use tools like [repokid](https://github.com/Netflix/repokid) for automation.
+3. Manually edit the policy to keep only the actions that appeared in CloudTrail. For automation, IAM Access Analyzer’s policy generation feature can produce a scoped-down policy from CloudTrail data directly — far more reliable than manual correlation.
 
 This is tedious but worth it — it’s the **real way** to enforce least privilege.
 
@@ -95,7 +97,7 @@ Use **EventBridge + CloudTrail** to catch events like:
 * Roles being granted `AdministratorAccess`
 * Roles using new services suddenly
 
-Send these to **SNS**, **Slack**, or log them into a [central detection toolkit](../aws-ir-toolkit/).
+Send these to **SNS**, **Slack**, or log them into a [central detection toolkit](/posts/aws-ir-toolkit/).
 
 ---
 
@@ -107,17 +109,29 @@ Want to get proactive?
 * Parse results and send a report to security engineers or your team chat
 * Automatically open a ticket if `iam:PassRole` appears on a dev role
 
-You can add this to your [IR automation toolkit](../aws-ir-toolkit/).
+You can add this to your [IR automation toolkit](/posts/aws-ir-toolkit/).
+
+---
+
+## Common Mistakes When Implementing Least Privilege
+
+Even teams that invest in least privilege often stumble on the same patterns:
+
+**Starting too broad, never tightening.** It's common to launch with `s3:*` "temporarily" and plan to scope down later. Later never comes. Start with Access Analyzer's generated policy from day one — it's easier to add a missing permission than to figure out which of 47 `s3:*` permissions are actually needed six months later.
+
+**Ignoring condition keys.** A policy that allows `dynamodb:GetItem` on a table is less dangerous than it looks — until you realize it allows reading *any* item, not just the caller's. Use condition keys like `dynamodb:LeadingKeys` or `s3:prefix` to scope access to the caller's own data. See the [IDOR prevention guide](/posts/aws-preventing-idor/) for why this matters at the application layer too.
+
+**Confusing identity-based and resource-based policies.** A role might have no `s3:GetObject` permission, but if the S3 bucket policy grants access to `*`, the data is still exposed. Access Analyzer catches these — run it regularly, not just once.
+
+**Not revoking access for departed team members.** IAM users and SSO assignments accumulate. Schedule a quarterly review of `aws iam get-credential-report` output and cross-reference against your HR system. Automate this if you have more than 20 users.
 
 ---
 
 ## Related Reading
 
-* [Common AWS IAM Misconfigurations](/posts/aws-security-misconfigurations/)
-* [IAM Access Analyzer Deep Dive](/posts/iam-access-analyzer-least-privilege/)
-* [AWS IR Toolkit with Detection Rules](/posts/aws-ir-toolkit/)
-* [Securing Temporary AWS Credentials](/posts/aws-temporary-credentials-security/)
-
----
-
-**Happy hunting**
+- [AWS Misconfigurations I Find in Every Security Audit](/posts/aws-security-misconfigurations-guide/) — the recurring findings across environments, including IAM
+- [IAM Access Analyzer Deep Dive](/posts/iam-access-analyzer-least-privilege/) — the detailed walkthrough of policy generation and external access findings
+- [Detect AWS IAM Privilege Escalation with CloudTrail](/posts/aws-detecting-privilege-escalation/) — what to monitor when least privilege fails
+- [Securing Temporary AWS Credentials](/posts/aws-temporary-credentials-security/) — the foundation least privilege builds on
+- [AWS Incident Response Toolkit](/posts/aws-ir-toolkit/) — templates and automation for when a permission gap gets exploited
+- [AWS Security Checklist: 30-Minute Account Review](/posts/aws-security-checklist-2026/) — quick self-audit you can run today
