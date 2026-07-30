@@ -9,6 +9,7 @@ tags: ["AWS", "IAM", "SSM", "Session Manager", "EC2", "Security", "Least Privile
 categories: ["Cloud Security", "Guides"]
 keywords: ["AmazonSSMManagedInstanceCore", "SSM IAM policy", "Session Manager permissions", "SSM role for EC2", "aws ssm permissions", "ec2 session manager iam"]
 canonicalURL: "https://thehiddenport.dev/posts/amazonssmmanagedinstancecore-iam-policy-explained/"
+lastmod: 2026-07-30
 enable_comments: true
 ---
 
@@ -16,7 +17,7 @@ If you've set up AWS Systems Manager Session Manager to connect to EC2 instances
 
 This post breaks down the policy, explains each permission block, and shows you how to build a scoped-down alternative for production environments where least privilege matters.
 
-> For the full Session Manager setup walkthrough (VPC endpoints, logging, disabling SSH), see [Securing EC2 Access with AWS Systems Manager Session Manager](/posts/securing-ec2-access-with-ssm/).
+> For the full Session Manager setup walkthrough (VPC endpoints, logging, disabling SSH), see [Securing EC2 Access with AWS Systems Manager Session Manager](/posts/aws-securing-ec2-access-with-ssm/).
 
 ---
 
@@ -361,10 +362,11 @@ All three must be **Interface** type endpoints (not Gateway). Their security gro
 
 ---
 
-## Related Posts
+## Related Reading
 
-- [Securing EC2 Access with AWS Systems Manager Session Manager](/posts/securing-ec2-access-with-ssm/) — full setup guide covering VPC endpoints, logging, and disabling SSH
-- [Enforcing Least Privilege in AWS IAM](/posts/iam-access-analyzer-least-privilege/) — using Access Analyzer to audit and tighten IAM policies
-- [Hardening EC2 Instances for AWS Security](/posts/aws-ec2-hardening/) — OS-level hardening, encryption, and compliance checks
-
----
+- [AWS Session Manager Setup: Replace SSH with Zero Inbound Ports](/posts/aws-securing-ec2-access-with-ssm/) — the full setup guide this policy enables
+- [IAM Access Analyzer Deep Dive](/posts/iam-access-analyzer-least-privilege/) — audit what your policies actually grant
+- [Enforcing Least Privilege in AWS IAM](/posts/aws-enforcing-least-privilege/) — the workflow for scoping down policies like this one
+- [EC2 Hardening Guide](/posts/aws-ec2-hardening/) — OS-level hardening that complements IAM scoping
+- [AWS Security Checklist: 30-Minute Account Review](/posts/aws-security-checklist-2026/) — quick baseline check including IAM and network controls
+- [GuardDuty Runtime Monitoring](/posts/aws-guardduty-runtime-monitoring/) — detect threats on the instances this policy manages

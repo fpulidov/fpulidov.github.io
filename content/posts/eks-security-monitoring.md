@@ -1,5 +1,5 @@
 ---
-title: "EKS Security Monitoring: Audit Logs, Falco Runtime Detection & GuardDuty (2026)"
+title: "EKS Security Monitoring: Audit Logs, Falco Runtime Detection & GuardDuty"
 date: 2025-09-17
 draft: false
 description: "Most EKS clusters ship with control plane logging off and no runtime detection. Here's the step-by-step: audit logs, Falco, GuardDuty for containers, and the gaps teams miss."
@@ -10,131 +10,193 @@ keywords: ["eks security monitoring", "eks audit logs", "eks container security"
 enable_comments: true
 summary: "Practical EKS security checklist — control plane audit logs, Falco runtime detection, GuardDuty for containers, and the monitoring gaps most teams miss."
 canonicalURL: "https://thehiddenport.dev/posts/eks-security-monitoring/"
+lastmod: 2026-07-30
 ---
 
-Monitoring Kubernetes on AWS (EKS) brings challenges beyond traditional EC2 or IAM setups — pods, containers, control plane, node behavior, runtime threats — all need attention. This guide walks you through what to monitor, which tools matter, and how to build a monitoring strategy for EKS that balances depth, cost, and security.
+Monitoring Kubernetes on AWS adds layers that traditional EC2 monitoring doesn't cover — pods are ephemeral, containers restart constantly, and the control plane is managed by AWS but the security visibility is your problem. Most EKS clusters I see in audits have control plane logging disabled and zero runtime detection, which means an attacker who gets into a pod can move laterally without generating a single alert.
+
+This guide covers what to monitor, how to configure it, and where the gaps are that teams consistently miss.
 
 > For hardening your cluster before you monitor it — RBAC, network policies, pod security, image scanning — see [EKS Security Best Practices: Hardening Your Cluster](/posts/eks-security-best-practices/).
 
 ---
 
-## Table of Contents
+## What Makes EKS Monitoring Different
 
-1. [What Makes EKS Monitoring Special](#1-what-makes-eks-monitoring-special)  
-2. [Types of Monitoring in EKS](#2-types-of-monitoring-in-eks)  
-3. [AWS-Native Monitoring Tools for EKS](#3-aws-native-monitoring-tools-for-eks)  
-4. [Runtime Security & Threat Detection](#4-runtime-security--threat-detection)  
-5. [Building an EKS Monitoring Pipeline: Architecture Example](#5-building-an-eks-monitoring-pipeline-architecture-example)  
-6. [Best Practices & Common Pitfalls](#6-best-practices--common-pitfalls)  
-7. [Conclusion](#7-conclusion)  
+EKS monitoring is harder than EC2 monitoring for four specific reasons:
 
----
-
-## 1. What Makes EKS Monitoring Special
-
-- **Dynamic infrastructure**: Pods are ephemeral; nodes may scale up/down; containers restart; workloads shift.  
-- **Multi-layered architecture**: You have the cluster control plane, worker nodes, container runtime, networking, storage.  
-- **Shared responsibility & visibility gaps**: AWS manages the control plane, but worker nodes, pod configuration, and runtime monitoring are your responsibility.  
-- **Volume & noise**: Logs from kubelet, CNI plugins, app pods, etc. Filtering and prioritization are critical.  
+- **Ephemeral infrastructure**: Pods start and die constantly. You can't SSH in and check logs after the fact — if you weren't collecting when it happened, the evidence is gone.
+- **Multi-layered architecture**: Control plane, worker nodes, container runtime, pod networking, and application logs are all separate streams that need separate collection.
+- **Shared responsibility gaps**: AWS manages the control plane, but worker node security, pod configuration, and runtime detection are entirely on you.
+- **Volume**: Kubelet, CNI plugins, application pods, kube-proxy, and audit events all generate logs. Without filtering, you're paying for noise.
 
 ---
 
-## 2. Types of Monitoring in EKS
+## Types of EKS Monitoring
 
-| Monitoring Type | What It Covers | Why It Matters |
-|------------------|------------------|------------------|
-| **Infrastructure / Control Plane** | API server logs, audit events, scheduler, node health | Detect cluster-level issues, privilege abuse |
-| **Application / Pod-level** | Container logs, resource usage, restarts, failures | Catch misbehaving containers and app issues |
-| **Security / Runtime Events** | RBAC changes, `kubectl exec`, privilege escalation, filesystem/network anomalies | Detect attacks or insider threats |
-| **Network & Storage** | Pod-to-pod, ingress/egress, storage latency/errors | Spot misconfigurations, data leakage |
-| **Observability & Alerts** | Dashboards, alerts, traces | Help with debugging and SLA adherence |
-
----
-
-## 3. AWS-Native Monitoring Tools for EKS
-
-- **CloudWatch Container Insights** → Cluster, node, pod-level metrics.  
-- **CloudWatch Logs + Fluent Bit** → Collect stdout/stderr from pods, node system logs, kubelet/kube-proxy.  
-- **EKS Control Plane Logging** → API server, audit, authenticator, scheduler logs.  
-- **CloudWatch Observability Operator** → Simplifies metrics and dashboards.  
-- **Amazon Managed Service for Prometheus + Grafana** → PromQL queries and custom visualization without managing infra.  
-- **AWS X-Ray & OpenTelemetry** → Distributed tracing for microservices.  
-- **AWS Security Hub Integration** → Centralize findings and alerts from multiple sources.  
+| Type | What It Covers | Why It Matters |
+|------|----------------|----------------|
+| **Control Plane** | API server logs, audit events, scheduler, authenticator | Detect privilege abuse, RBAC changes, unauthorized API calls |
+| **Application / Pod** | Container stdout/stderr, resource usage, restarts | Catch misbehaving containers and application failures |
+| **Runtime Security** | `kubectl exec`, privilege escalation, filesystem anomalies | Detect attacks, reverse shells, container escapes |
+| **Network** | Pod-to-pod traffic, ingress/egress, DNS queries | Spot exfiltration, lateral movement, misconfigured network policies |
 
 ---
 
-## 4. Runtime Security & Threat Detection
+## AWS-Native Monitoring Tools
 
-- **Falco + Plugins**  
-  - Detects anomalies in container behavior and Kubernetes API events.  
-  - The `k8saudit-eks` plugin monitors audit logs for high-risk actions (`kubectl exec`, RBAC changes, etc.).  
+### Control Plane Logging
 
-- **Audit Logs**  
-  - Enable audit logging for EKS.  
-  - Monitor high-value events: role bindings, service account creation, privileged pods.  
+This is the single most important step and the one most often skipped. Enable it via the console or CLI:
 
-- **Custom Rules & Baselines**  
-  - Define what “normal” looks like for your cluster.  
-  - Alert when workloads deviate (e.g., images pulled from unknown registries, privileged pods).  
+```bash
+aws eks update-cluster-config \
+  --name my-cluster \
+  --logging '{"clusterLogging":[{"types":["api","audit","authenticator","controllerManager","scheduler"],"enabled":true}]}'
+```
 
----
+At minimum, enable **api** and **audit** logs. The audit log captures every Kubernetes API request — who called what, when, and whether it was allowed. This is your CloudTrail equivalent for Kubernetes.
 
-## 5. Building an EKS Monitoring Pipeline: Architecture Example
+### CloudWatch Container Insights
 
-Here’s a sample end-to-end architecture you could adopt. You can scale or trim depending on cluster size, security posture, cost tolerance.
+Collects cluster, node, and pod-level metrics with the CloudWatch agent:
 
-### Architecture Overview
-- Enable control plane logging to CloudWatch.  
-- Deploy Fluent Bit DaemonSet for node and pod logs.  
-- Use Container Insights or Prometheus for metrics.  
-- Deploy Falco with custom runtime rules.  
-- Forward Falco alerts via Fluent Bit → CloudWatch Logs.  
-- Transform alerts to AWS Security Finding Format (ASFF) → ingest into Security Hub.  
-- Route high-severity alerts to Slack, email, or PagerDuty.  
+```bash
+aws eks create-addon \
+  --cluster-name my-cluster \
+  --addon-name amazon-cloudwatch-observability
+```
 
----
+### Fluent Bit for Log Collection
 
-### Sample Steps & Considerations
+Deploy as a DaemonSet to collect pod logs (stdout/stderr), kubelet logs, and system logs from every node:
 
-| Step                                        | Description                                                                                                                                                         |
-| ------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Enable control plane audit & other logs** | Via EKS console or IaC, enable control plane logs: API server, authenticator, etc. Ensure they’re sent to CloudWatch.                                               |
-| **Deploy Fluent Bit (DaemonSet)**           | On all worker node groups, configure it to collect pod logs (stdout/stderr), system logs, kubelets, etc. Apply filters to drop low-value logs (e.g. verbose debug). |
-| **Deploy Container Insights**               | Use the Container Insights add-on or Observability Operator. Ensure metrics from nodes & pods are collected.                                                        |
-| **Deploy Falco via Helm**                   | With custom rule files, mounting audit log streams if applicable. Use Kubernetes service account with right IAM permissions.                                        |
-| **Set up Security Hub / Alert Routing**     | Use AWS Lambda or built-in integrations. Determine severity, which alerts to send to DevSecOps / ops. Possibly automate remediation for highest-severity findings.  |
-| **Dashboard & Visualization**               | Use Grafana (managed or self-hosted) for internal dashboards. Use CloudWatch dashboards for quick overviews.                                                        |
+```bash
+kubectl apply -f https://raw.githubusercontent.com/aws-samples/amazon-cloudwatch-container-insights/latest/k8s-deployment-manifest-templates/deployment-mode/daemonSet/container-insights-monitoring/fluent-bit/fluent-bit.yaml
+```
 
+Configure filters to drop high-volume, low-value logs (verbose debug output, health check noise) early in the pipeline to control CloudWatch costs.
 
+### Other AWS Tools
 
-
-### Cost / Performance Considerations
-- More logging = more cost. Logs from control plane + audit + Application - stdout + Falco = high volume. Drop / sample / filter early.
-- Retention: Hot vs cold. Archive older logs.
-- Number of rules: Falco / audit rules too permissive → noise. Too many alerts → alert fatigue.
-- Resource usage: Falco + Fluent Bit consume CPU / memory; choose node sizes accordingly or isolate in separate node group. 
+- **Amazon Managed Prometheus + Grafana** — PromQL queries and dashboards without managing the infrastructure
+- **AWS X-Ray / OpenTelemetry** — distributed tracing for microservices running in pods
+- **Security Hub** — centralize findings from GuardDuty, Config, and custom detections
 
 ---
 
-## 6. Best Practices & Common Pitfalls
+## Runtime Security & Threat Detection
 
-1. Enable only relevant control plane log types: too many logs create noise and costs.
-2. Structured logging: use JSON or other structured formats so that filtering / dashboards work well.
-3. Use IAM Roles for Service Accounts (IRSA) for log agents and detection tools to limit permissions.
-4. Filter / Sample / Drop unneeded logs: e.g. drop very verbose events in production.
-5. Baseline then alert on anomalies rather than static thresholds only.
-6. Keep Falco / detection rules up to date: attack tactics evolve.
-7. Monitor the monitor itself: are your agents failing? Are logs being ingested? Are metrics stale?
-8. Set up alert routing and priority: not every event needs paging; group, suppress, alert levels.
+### GuardDuty EKS Protection
+
+GuardDuty's EKS audit log monitoring detects suspicious Kubernetes API activity — anonymous API calls, known attack tools, pods launched with privileged containers. Enable it alongside [GuardDuty Runtime Monitoring](/posts/aws-guardduty-runtime-monitoring/) for process-level visibility inside containers.
+
+```bash
+# Check if EKS protection is enabled
+aws guardduty list-detectors --query 'DetectorIds[0]' --output text | \
+  xargs -I {} aws guardduty get-detector --detector-id {} \
+  --query 'Features[?Name==`EKS_AUDIT_LOGS`].Status'
+```
+
+### Falco for Runtime Detection
+
+Falco monitors system calls inside containers and detects anomalies that GuardDuty doesn't cover — shell spawns in non-interactive containers, sensitive file reads, unexpected outbound connections.
+
+Deploy via Helm:
+
+```bash
+helm repo add falcosecurity https://falcosecurity.github.io/charts
+helm install falco falcosecurity/falco \
+  --namespace falco --create-namespace \
+  --set falcosidekick.enabled=true \
+  --set falcosidekick.config.aws.cloudwatchlogs.loggroup="/eks/falco-alerts"
+```
+
+Example custom rule — detect a shell spawned inside a container that shouldn't have interactive access:
+
+```yaml
+- rule: Shell Spawned in Non-Interactive Container
+  desc: Detect shell processes in containers not marked for interactive use
+  condition: >
+    spawned_process and container and
+    proc.name in (bash, sh, zsh, dash) and
+    not container.image.repository in (allowed-debug-image)
+  output: >
+    Shell spawned in container
+    (user=%user.name command=%proc.cmdline container=%container.name
+    image=%container.image.repository pod=%k8s.pod.name ns=%k8s.ns.name)
+  priority: WARNING
+  tags: [container, shell, mitre_execution]
+```
+
+### Audit Log Queries
+
+With control plane audit logs in CloudWatch, use Logs Insights to hunt for suspicious activity:
+
+```sql
+# Find kubectl exec sessions (potential lateral movement)
+fields @timestamp, user.username, objectRef.resource, objectRef.name, objectRef.namespace
+| filter verb = "create" and objectRef.subresource = "exec"
+| sort @timestamp desc
+| limit 50
+```
+
+```sql
+# Detect privilege escalation — ClusterRoleBindings granting cluster-admin
+fields @timestamp, user.username, objectRef.name, requestObject
+| filter verb in ["create", "update"] and objectRef.resource = "clusterrolebindings"
+| sort @timestamp desc
+```
+
+```sql
+# Find pods running as privileged
+fields @timestamp, user.username, objectRef.name, objectRef.namespace
+| filter verb = "create" and objectRef.resource = "pods"
+| filter requestObject like "privileged"
+| sort @timestamp desc
+```
 
 ---
 
-## 7. Conclusion
+## Building the Monitoring Pipeline
 
-EKS adds complexity to AWS monitoring in the form of ephemeral pods, runtime threats, and audit visibility gaps. But by layering AWS-native tools (CloudWatch, GuardDuty, Security Hub) with open-source detection (Falco, Prometheus, Grafana), you can cover infrastructure, runtime, and security monitoring in a practical way. If you're unsure how GuardDuty and Security Hub complement each other, see [GuardDuty vs Security Hub: What Each Does and When You Need Both](/posts/aws-guardduty-vs-security-hub/).  
+Here's the architecture that covers all four monitoring types:
 
-EKS security monitoring is not about logging everything, it’s about collecting the right signals, prioritizing them, and making alerts actionable. Done right, you gain visibility, catch misconfigurations early, and detect threats before they escalate.  
+1. **Enable control plane logging** — API server + audit logs to CloudWatch
+2. **Deploy Fluent Bit DaemonSet** — pod and node logs to CloudWatch, with filters to drop noise
+3. **Deploy Container Insights** — cluster and pod metrics
+4. **Enable GuardDuty EKS protection** — audit log monitoring + runtime monitoring
+5. **Deploy Falco** — custom runtime rules, alerts to CloudWatch via Falcosidekick
+6. **Route alerts** — CloudWatch alarms or EventBridge rules to SNS/Slack/PagerDuty for high-severity findings
+
+### Cost Control
+
+EKS monitoring generates high log volume. Keep costs manageable:
+
+- **Filter early**: Drop verbose debug logs and health check noise in Fluent Bit before they reach CloudWatch
+- **Retention tiers**: Keep hot logs 30 days in CloudWatch, archive to S3 for long-term retention
+- **Scope Falco rules**: Overly broad rules generate alert fatigue and storage costs. Start with the [default ruleset](https://github.com/falcosecurity/rules) and add custom rules as you learn your cluster's baseline
+- **Resource budget**: Falco and Fluent Bit consume CPU and memory on every node. Size node groups accordingly or isolate monitoring agents in a dedicated node group
 
 ---
 
-*If this guide helped, share it with your team or subscribe to **The Hidden Port** for more AWS and cloud security deep-dives.*
+## Common Pitfalls
+
+**Control plane logging disabled by default.** Unlike CloudTrail, EKS doesn't log anything until you explicitly enable it. Every new cluster starts blind.
+
+**Monitoring the monitors.** Fluent Bit crashes or Falco stops collecting, and nobody notices because the thing that would alert you is the thing that's broken. Add a heartbeat check — a CloudWatch alarm on the absence of log data from your agents.
+
+**Static thresholds instead of baselines.** "Alert on >100 API calls/minute" fires during normal deployments. Baseline your cluster's normal behavior first, then alert on deviations.
+
+**Ignoring IRSA for monitoring agents.** Fluent Bit and Falco need IAM permissions to write to CloudWatch/S3. Use [IAM Roles for Service Accounts](https://docs.aws.amazon.com/eks/latest/userguide/iam-roles-for-service-accounts.html) instead of node-level instance profiles — it limits blast radius if a monitoring pod is compromised.
+
+---
+
+## Related Reading
+
+- [EKS Security Best Practices: Hardening Your Cluster](/posts/eks-security-best-practices/) — RBAC, network policies, and pod security standards
+- [GuardDuty Runtime Monitoring](/posts/aws-guardduty-runtime-monitoring/) — process-level detection inside containers and EC2
+- [GuardDuty vs Security Hub: What Each Does and When You Need Both](/posts/aws-guardduty-vs-security-hub/) — how these tools fit together
+- [CloudTrail Log Analysis: How to Find Who Did What](/posts/aws-cloudtrail-log-analysis/) — similar analysis techniques for AWS API events
+- [Detect AWS IAM Privilege Escalation](/posts/aws-detecting-privilege-escalation/) — the IAM-level detection that complements EKS monitoring
+- [AWS Security Checklist: 30-Minute Account Review](/posts/aws-security-checklist-2026/) — baseline controls including GuardDuty and logging
