@@ -1,217 +1,208 @@
 ---
-title: "AWS Session Manager Setup: AmazonSSMManagedInstanceCore & Secure EC2 Access"
+title: "AWS Session Manager Setup: Replace SSH with Zero Inbound Ports"
 date: 2025-06-03
-description: "Complete guide to setting up AWS SSM Session Manager — AmazonSSMManagedInstanceCore policy, IAM roles, instance profiles, and replacing SSH with zero inbound ports."
+description: "Step-by-step SSM Session Manager setup — IAM role, AmazonSSMManagedInstanceCore policy, instance profile, and session logging. No SSH keys, no bastion hosts, no port 22."
 tags: ["AWS", "EC2", "Security", "Session Manager", "SSM", "IAM", "Cloud Security"]
-keywords: ["amazonssmmanagedinstancecore", "aws session manager setup", "ssm ec2 access", "aws ssm iam role", "session manager instance profile"]
+keywords: ["amazonssmmanagedinstancecore", "aws session manager setup", "ssm ec2 access", "aws ssm iam role", "session manager instance profile", "replace ssh with session manager"]
+categories: ["Cloud Security"]
 canonicalURL: "https://thehiddenport.dev/posts/aws-securing-ec2-access-with-ssm/"
-summary: "Complete SSM Session Manager setup — AmazonSSMManagedInstanceCore policy, IAM roles, and replacing SSH with zero open ports."
+summary: "Step-by-step SSM Session Manager setup — IAM role, instance profile, session logging, and removing SSH entirely. No keys, no bastions, no port 22."
+lastmod: 2026-07-30
 enable_comments: true
 ---
 
-## Introduction
+Every AWS account I audit still has port 22 open on at least a few instances. SSH keys scattered across laptops, a bastion host nobody remembers deploying, and zero logging of who connected when. AWS Systems Manager Session Manager solves all of this — shell access through IAM with full audit trails, no inbound ports, and no key management.
 
-Traditional SSH access to EC2 instances poses several security challenges, including the management of SSH keys, exposure of ports, and lack of centralized auditing. AWS Systems Manager Session Manager offers a secure and auditable alternative, allowing you to manage EC2 instances without opening inbound ports or maintaining bastion hosts.
+This guide walks through the setup end to end: IAM role, instance profile, agent verification, session logging, and finally killing SSH for good.
 
-This guide provides a step-by-step approach to configuring Session Manager for secure EC2 access, aligning with AWS's official documentation and best practices.
+---
 
 ## Prerequisites
 
-Before proceeding, ensure the following:
+Before starting, verify three things:
 
-* **SSM Agent Installed**: Amazon EC2 instances must have the SSM Agent installed. Amazon Linux 2 and Ubuntu 16.04 or later come with the agent pre-installed. For other operating systems, refer to the [SSM Agent installation guide](https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-agent.html).
+**SSM Agent installed.** Amazon Linux 2, Amazon Linux 2023, and Ubuntu 16.04+ come with it pre-installed. For other operating systems, see the [SSM Agent installation guide](https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-agent.html).
 
-* **IAM Role with SSM Permissions**: Instances require an IAM role with the `AmazonSSMManagedInstanceCore` policy attached. This policy grants the necessary permissions for Systems Manager to manage the instance. For a full breakdown of what this policy allows and how to scope it down for production, see [AmazonSSMManagedInstanceCore Explained](/posts/amazonssmmanagedinstancecore-iam-policy-explained/).
+**IAM role with SSM permissions.** Instances need the `AmazonSSMManagedInstanceCore` managed policy. For a breakdown of what this policy allows and how to scope it down, see the [AmazonSSMManagedInstanceCore deep dive](/posts/amazonssmmanagedinstancecore-iam-policy-explained/).
 
-* **Outbound Internet Access or VPC Endpoints**: Instances must be able to communicate with Systems Manager endpoints. This can be achieved via outbound internet access (e.g., through a NAT gateway) or by configuring [VPC endpoints for Systems Manager](https://docs.aws.amazon.com/systems-manager/latest/userguide/setup-create-vpc.html).
+**Network path to SSM endpoints.** Instances need outbound HTTPS (443) to Systems Manager endpoints — either through a NAT gateway or [VPC endpoints for Systems Manager](https://docs.aws.amazon.com/systems-manager/latest/userguide/setup-create-vpc.html). No inbound ports required.
 
-## Step 1: Create an IAM Role for SSM
+---
 
-1. Navigate to the [IAM Console](https://console.aws.amazon.com/iam/).
+## Step 1: Create the IAM Role
 
-2. Select **Roles** > **Create role**.
+Create a role that EC2 can assume with the SSM managed policy attached:
 
-3. Choose **AWS service** as the trusted entity and select **EC2**.
+```bash
+# Create the trust policy
+cat > ssm-trust-policy.json << 'POLICY'
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Principal": { "Service": "ec2.amazonaws.com" },
+      "Action": "sts:AssumeRole"
+    }
+  ]
+}
+POLICY
 
-4. Click **Next: Permissions**.
+# Create the role and attach the SSM policy
+aws iam create-role \
+  --role-name EC2-SSM-Role \
+  --assume-role-policy-document file://ssm-trust-policy.json
 
-5. Attach the **AmazonSSMManagedInstanceCore** policy.
+aws iam attach-role-policy \
+  --role-name EC2-SSM-Role \
+  --policy-arn arn:aws:iam::aws:policy/AmazonSSMManagedInstanceCore
 
-6. Proceed through the remaining steps to name and create the role.
+# Create an instance profile and add the role
+aws iam create-instance-profile --instance-profile-name EC2-SSM-Profile
+aws iam add-role-to-instance-profile \
+  --instance-profile-name EC2-SSM-Profile \
+  --role-name EC2-SSM-Role
+```
 
-## Step 2: Attach the IAM Role to EC2 Instances
+Or in the console: IAM > Roles > Create role > AWS service > EC2 > attach `AmazonSSMManagedInstanceCore`.
 
-1. Open the [EC2 Console](https://console.aws.amazon.com/ec2/).
+---
 
-2. Select the instance(s) you wish to manage.
+## Step 2: Attach the Role to EC2 Instances
 
-3. Choose **Actions** > **Security** > **Modify IAM Role**.
+For existing instances:
 
-4. Select the IAM role created in Step 1 and apply the changes.
+```bash
+aws ec2 associate-iam-instance-profile \
+  --instance-id i-0123456789abcdef0 \
+  --iam-instance-profile Name=EC2-SSM-Profile
+```
 
-## Step 3: Verify SSM Agent Status
+For new instances, specify the instance profile at launch. The instance will register with Systems Manager automatically once the agent starts and the IAM role is in place.
 
-Ensure the SSM Agent is running on your instance:
+---
+
+## Step 3: Verify the SSM Agent
+
+SSH in one last time (or use EC2 Instance Connect) to confirm the agent is running:
 
 ```bash
 sudo systemctl status amazon-ssm-agent
 ```
 
-If the agent is not running, start it with:
+If it's not running:
 
 ```bash
+sudo systemctl enable amazon-ssm-agent
 sudo systemctl start amazon-ssm-agent
 ```
 
-## Step 4: Connect to the Instance Using Session Manager
+You can also check from outside the instance — if it shows up in Fleet Manager, the agent is working:
 
-With the IAM role attached and the SSM Agent running, you can initiate a session:
+```bash
+aws ssm describe-instance-information \
+  --query 'InstanceInformationList[].{ID:InstanceId,Status:PingStatus,Agent:AgentVersion}' \
+  --output table
+```
 
-### Using AWS Console
+Instances with `PingStatus: Online` are ready for Session Manager.
 
-1. Navigate to the [Systems Manager Console](https://console.aws.amazon.com/systems-manager/).
+---
 
-2. Select **Session Manager** > **Start session**.
+## Step 4: Connect via Session Manager
 
-3. Choose the instance and click **Start session**.
+### CLI
 
-### Using AWS CLI
-
-Ensure you have the [Session Manager plugin](https://docs.aws.amazon.com/systems-manager/latest/userguide/session-manager-working-with-install-plugin.html) installed.
-
-Initiate a session with:
+Install the [Session Manager plugin](https://docs.aws.amazon.com/systems-manager/latest/userguide/session-manager-working-with-install-plugin.html), then:
 
 ```bash
 aws ssm start-session --target i-0123456789abcdef0
 ```
 
-Replace `i-0123456789abcdef0` with your instance ID.
+### Console
 
-## Step 5: Enhance Security by Disabling SSH Access
+Systems Manager > Session Manager > Start session > select the instance.
 
-After verifying that Session Manager access works as intended, you can enhance security by disabling SSH access:
+### Port Forwarding
 
-* **Security Groups**: Remove inbound rules for port 22.
+Session Manager also handles port forwarding — useful for database access or internal web interfaces without exposing ports:
 
-* **Key Pairs**: Avoid assigning key pairs to instances.
+```bash
+aws ssm start-session \
+  --target i-0123456789abcdef0 \
+  --document-name AWS-StartPortForwardingSession \
+  --parameters '{"portNumber":["5432"],"localPortNumber":["15432"]}'
+```
 
-* **Bastion Hosts**: Decommission any bastion hosts used for SSH access.
-
-This approach reduces the attack surface and aligns with the principle of least privilege.
-
-## Step 6: Configure Logging for Auditing
-
-To maintain an audit trail of session activity:
-
-1. In the Systems Manager Console, navigate to **Session Manager** > **Preferences**.
-
-2. Click **Edit** and enable logging.
-
-3. Choose to send session logs to Amazon S3 and/or Amazon CloudWatch Logs.
-
-This configuration ensures that all session activity is recorded for compliance and auditing purposes.
-
-Absolutely! Let's enhance your article by adding two comprehensive sections: **Common Issues and Troubleshooting** and **Monitoring SSM Agent with CloudWatch**. These additions will provide readers with practical insights into potential pitfalls and proactive monitoring strategies.
+This forwards the instance's PostgreSQL port (5432) to localhost:15432 through the SSM tunnel. No security group changes needed.
 
 ---
 
-## Common Issues and Troubleshooting
+## Step 5: Enable Session Logging
 
-While AWS Systems Manager Session Manager offers a secure and efficient method for managing EC2 instances, users may encounter certain challenges during setup or operation. Below are some common issues and their resolutions:
+Without logging, Session Manager is just SSH with extra steps. The real value is the audit trail.
 
-### 1. **Instance Not Appearing in Session Manager**
+In Systems Manager > Session Manager > Preferences > Edit:
 
-**Issue**: The EC2 instance does not appear in the Session Manager console.
+- **S3 logging**: send session output to a bucket for long-term retention
+- **CloudWatch Logs**: send session output for real-time search and alerting
+- **KMS encryption**: encrypt session data in transit and at rest
 
-**Possible Causes and Solutions**:
+```bash
+# Verify logging is configured
+aws ssm describe-document --name SSM-SessionManagerRunShell \
+  --query 'Document.{Name:Name,Status:Status}' --output table
+```
 
-* **SSM Agent Not Installed or Running**: Ensure that the SSM Agent is installed and actively running on the instance. For Amazon Linux 2 and Ubuntu 16.04 or later, the agent is pre-installed. For other operating systems, refer to the [SSM Agent installation guide](https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-agent.html).
-
-* **Missing IAM Role or Incorrect Permissions**: Verify that the instance has an IAM role attached with the `AmazonSSMManagedInstanceCore` policy. This policy grants the necessary permissions for Systems Manager to manage the instance.
-
-* **Network Connectivity Issues**: The instance must be able to communicate with Systems Manager endpoints. Ensure that the instance has outbound internet access or is configured with the appropriate VPC endpoints for Systems Manager.
-
-### 2. **Session Initiation Fails**
-
-**Issue**: Attempting to start a session results in an error.
-
-**Possible Causes and Solutions**:
-
-* **SSM Agent Version Incompatibility**: Ensure that the SSM Agent is updated to the latest version. Older versions may lack support for certain features or have known issues.
-
-* **Session Manager Plugin Missing**: When using the AWS CLI, the Session Manager plugin must be installed. Follow the [installation instructions](https://docs.aws.amazon.com/systems-manager/latest/userguide/session-manager-working-with-install-plugin.html) to set it up.
-
-* **IAM User Permissions**: The IAM user initiating the session must have the necessary permissions, such as `ssm:StartSession`. Review and update IAM policies as needed.
-
-### 3. **SSM Agent Connectivity Issues**
-
-**Issue**: The SSM Agent cannot connect to Systems Manager endpoints.
-
-**Possible Causes and Solutions**:
-
-* **Firewall or Security Group Restrictions**: Ensure that the instance's security groups and network ACLs allow outbound HTTPS (port 443) traffic to Systems Manager endpoints.
-
-* **DNS Resolution Problems**: Verify that the instance can resolve domain names. Misconfigured DNS settings can prevent the agent from reaching AWS services.
-
-* **Endpoint Configuration**: If using VPC endpoints, confirm that they are correctly configured and associated with the appropriate route tables and security groups.
-
-For a comprehensive troubleshooting guide, refer to the [AWS Systems Manager Troubleshooting Documentation](https://docs.aws.amazon.com/systems-manager/latest/userguide/session-manager-troubleshooting.html).
+With CloudWatch logging enabled, you can search session transcripts — every command typed during a session is recorded.
 
 ---
 
-## Monitoring SSM Agent with CloudWatch
+## Step 6: Kill SSH
 
-Proactive monitoring of the SSM Agent ensures that you are promptly alerted to any issues, maintaining the reliability and security of your EC2 instances. Here's how to set up monitoring using Amazon CloudWatch:
+Once Session Manager is verified and logging is in place, remove SSH access entirely:
 
-### 1. **Send SSM Agent Logs to CloudWatch Logs**
+```bash
+# Find security groups with port 22 open
+aws ec2 describe-security-groups \
+  --filters "Name=ip-permission.from-port,Values=22" \
+  --query 'SecurityGroups[].{ID:GroupId,Name:GroupName}' --output table
 
-**Steps**:
+# Remove the SSH rule (replace sg-xxx and the CIDR with your values)
+aws ec2 revoke-security-group-ingress \
+  --group-id sg-xxx \
+  --protocol tcp --port 22 --cidr 0.0.0.0/0
+```
 
-1. **Create a CloudWatch Log Group**: In the CloudWatch console, create a log group to store SSM Agent logs.
-
-2. **Configure the SSM Agent to Send Logs**: Modify the SSM Agent configuration to send logs to the newly created log group. This can be done by editing the agent's configuration file or using Systems Manager Run Command.
-
-3. **Restart the SSM Agent**: After configuration, restart the SSM Agent to apply changes.
-
-For detailed instructions, consult the [AWS Systems Manager Monitoring Guide](https://docs.aws.amazon.com/systems-manager/latest/userguide/monitoring.html).
-
-### 2. **Create Metric Filters and Alarms**
-
-**Steps**:
-
-1. **Define Metric Filters**: In the CloudWatch console, create metric filters to identify specific log events, such as agent start or stop events. For example, to detect when the agent stops:
-
-   ```
-   filter pattern: "Stopping ssm agent worker"
-   ```
-
-2. **Create Alarms**: Based on the metric filters, set up alarms to notify you when certain thresholds are met. For instance, if the agent stops unexpectedly, an alarm can trigger an SNS notification.
-
-3. **Subscribe to Notifications**: Ensure that relevant personnel are subscribed to the SNS topic to receive timely alerts.
-
-For a practical example and additional guidance, refer to the AWS blog post on [Monitoring the Health of AWS Systems Manager Agent Using Amazon CloudWatch](https://aws.amazon.com/blogs/mt/monitor-health-aws-systems-manager-agent-using-amazon-cloudwatch/).
-
-
-## Additional Considerations
-
-* **User Permissions**: Control who can start sessions by defining IAM policies that grant `ssm:StartSession` permissions to specific users or roles.
-
-* **Port Forwarding**: Session Manager supports port forwarding, allowing secure access to applications running on instances without opening additional ports.
-
-* **Hybrid Environments**: Session Manager can manage on-premises servers and virtual machines by registering them as managed instances.
-
-## Conclusion
-
-By leveraging AWS Systems Manager Session Manager, you can eliminate the need for SSH access to EC2 instances, thereby enhancing security, simplifying access management, and ensuring comprehensive auditing. This approach aligns with AWS's best practices for secure and compliant infrastructure management.
+Also:
+- **Stop assigning key pairs** to new instances — they're unnecessary with Session Manager
+- **Decommission bastion hosts** — they're attack surface you no longer need
+- **Update runbooks** so the team knows to use `aws ssm start-session` instead of `ssh`
 
 ---
 
-*For further reading on IAM misconfigurations and security risks, refer to my previous article: [AWS IAM Misconfigurations: Security Risks and How to Fix Them](../aws-security-misconfigurations-guide).*
+## Troubleshooting
 
-*To explore incident response strategies in AWS, check out: [Incident Response in AWS: A Practical Playbook](../incident-response-aws-guide).*
+**Instance not showing in Session Manager:**
+1. Check IAM — the instance profile must have `AmazonSSMManagedInstanceCore` attached
+2. Check the agent — `systemctl status amazon-ssm-agent` should show `active (running)`
+3. Check network — the instance needs outbound 443 to `ssm.<region>.amazonaws.com`, `ssmmessages.<region>.amazonaws.com`, and `ec2messages.<region>.amazonaws.com`. If in a private subnet without NAT, you need VPC endpoints for all three services
 
-*For tools to automate incident response, visit: [AWS Incident Response Toolkit](../aws-ir-toolkit).*
+**Session starts but immediately closes:**
+- Usually an agent version issue. Update with `sudo yum install -y amazon-ssm-agent` (Amazon Linux) or `sudo snap refresh amazon-ssm-agent` (Ubuntu)
 
-*Learn about securing temporary AWS credentials here: [Securing Temporary AWS Credentials with STS](../aws-temporary-credentials-security).*
+**"TargetNotConnected" error:**
+- The instance's `PingStatus` in `describe-instance-information` will show `ConnectionLost`. Most common cause is a network change (new NACL rule, removed NAT gateway, or VPC endpoint misconfiguration)
+
+For the full troubleshooting reference, see [AWS Systems Manager Troubleshooting](https://docs.aws.amazon.com/systems-manager/latest/userguide/session-manager-troubleshooting.html).
 
 ---
+
+## Related Reading
+
+- [AmazonSSMManagedInstanceCore Explained](/posts/amazonssmmanagedinstancecore-iam-policy-explained/) — what the SSM policy actually grants and how to scope it down
+- [EC2 Hardening Guide: Secure Instances Step by Step](/posts/aws-ec2-hardening/) — the full hardening workflow that Session Manager is part of
+- [Meeting CIS Benchmarks for EC2](/posts/ec2-cis-benchmarks-guide/) — CIS controls that include disabling SSH
+- [AWS Misconfigurations I Find in Every Security Audit](/posts/aws-security-misconfigurations-guide/) — open SSH is one of the top findings
+- [AWS Security Checklist: 30-Minute Account Review](/posts/aws-security-checklist-2026/) — quick baseline check including network hardening
+- [Securing Temporary AWS Credentials](/posts/aws-temporary-credentials-security/) — the IAM foundation Session Manager builds on
