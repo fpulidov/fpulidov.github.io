@@ -8,6 +8,7 @@ description: "Practical guide to analyzing AWS CloudTrail logs — Athena querie
 summary: "How to actually use CloudTrail logs day-to-day — tracing non-compliant resources to their source, querying with Athena, and setting up alerts before things go wrong."
 slug: "aws-cloudtrail-log-analysis"
 canonicalURL: "https://thehiddenport.dev/posts/aws-cloudtrail-log-analysis/"
+lastmod: 2026-07-31
 enable_comments: true
 ---
 
@@ -355,10 +356,12 @@ I wrote up a real incident investigation where I reverse-engineered a full phish
 
 ---
 
-## Related Resources
+## Related Reading
 
 - [Detecting Privilege Escalation in AWS with CloudTrail and EventBridge](/posts/aws-detecting-privilege-escalation/) — automated detection for IAM escalation patterns
 - [Amazon GuardDuty Setup Guide](/posts/aws-guardduty-setup/) — ML-based threat detection that complements manual CloudTrail analysis
 - [How to Detect Root Account Usage](/posts/detect-root-account-usage/) — alerting on the most sensitive IAM events
 - [AWS SCPs That Actually Work](/posts/aws-scp-best-practices/) — prevent the non-compliant actions before they reach CloudTrail
+- [Enforcing Least Privilege in AWS IAM](/posts/aws-enforcing-least-privilege/) — use CloudTrail data to scope down the policies these queries audit
+- [AWS Security Checklist: 30-Minute Account Review](/posts/aws-security-checklist-2026/) — baseline controls including CloudTrail verification
 - [IAM Users Are Dead](/posts/aws-iam-users-alternatives/) — why the `CreateUser` query above should eventually return zero results
