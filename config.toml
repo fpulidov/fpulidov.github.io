@@ -45,7 +45,7 @@ theme = "PaperMod"
   [params.homeInfoParams]
     Title = "AWS Security, from the practitioner's side"
     Content = """
-Hi, I'm Javier — an independent AWS security consultant based in Sevilla, Spain. I help teams audit their AWS environments, deploy detection pipelines, harden IAM, and prepare for ISO 27001 audits — remote, across Europe and beyond.
+Hi, I'm Javier — an independent AWS security consultant. I help teams audit their AWS environments, deploy detection pipelines, harden IAM, and prepare for ISO 27001 audits.
 
 This site is where I write about the same work. Practical guides, real audit findings, and the tools I use day to day.
 

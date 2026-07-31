@@ -45,38 +45,6 @@ I don't work with large enterprises with dedicated security teams — you're bet
 3. **Engagement** — remote, async-friendly, with regular checkpoints. I work in your AWS accounts via cross-account role or in a shared environment, depending on your policy.
 4. **Handover** — everything I build ships with documentation and Terraform code so your team can maintain it.
 
-## What a Typical Security Audit Looks Like
-
-Most first engagements are a full AWS security audit. Here's how a typical 2-week audit runs, so you know exactly what you're paying for:
-
-**Week 1 — Discovery**
-
-- Read-only access to your AWS accounts via a scoped cross-account role
-- Automated inventory: accounts, regions in use, running resources, IAM footprint
-- Baseline pull from Security Hub, GuardDuty, Config, and Access Analyzer if enabled
-- Manual review of what the tools miss — CloudTrail logging gaps, root account usage, SCPs, network exposure, secret management, backup and encryption posture
-- Short daily updates so you know what I'm finding as I find it, not just at the end
-
-**Week 2 — Findings & Prioritization**
-
-- Every finding categorized by severity, exploitability, and effort to fix
-- Prioritized remediation list — the "fix this today" items separated from the "plan this quarter" ones
-- Written report you can share with your team, your auditors, or your board
-- Live walkthrough call to explain findings, answer questions, and align on what to fix first
-- Concrete remediation code (Terraform, SCPs, IAM policies) for the high-priority items
-
-**What you get at the end**
-
-- A written audit report with all findings, evidence, and prioritized remediation
-- Working Terraform or CLI examples for the priority fixes
-- A follow-up path — you can implement the fixes yourself, or extend the engagement to have me implement the highest-priority items
-
-**What I don't do**
-
-- Generic checklist reports. Every finding ties to a specific resource in your environment, with the specific fix.
-- Vendor pitches. I don't resell tools. If a paid product is genuinely the right call for your situation, I'll say so — but the default is native AWS services.
-- Open-ended "we'll figure it out as we go" scopes. You get a fixed price and a defined deliverable before we start.
-
 ## Rates & Availability
 
 Engagements are priced per project based on scope. Reach out with a short description of your situation and I'll come back with a proposal.
