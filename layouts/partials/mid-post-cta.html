@@ -1,0 +1,63 @@
+{{/* Mid-post consulting CTA — injected via JS after ~50% of H2 sections */}}
+<template id="mid-post-cta-template">
+  <aside class="mid-post-cta">
+    <div class="mid-post-cta-label">From Javier</div>
+    <p class="mid-post-cta-text">
+      If you'd rather have this done in your AWS environment than DIY it — that's what I do. Security audits, IAM hardening, GuardDuty and Security Hub deployment, ISO 27001 prep.
+    </p>
+    <a href="/consulting/" class="mid-post-cta-link">See how I work →</a>
+  </aside>
+</template>
+
+<style>
+  .mid-post-cta {
+    margin: 2.5rem 0;
+    padding: 1.25rem 1.5rem;
+    border-left: 4px solid var(--primary);
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 0 6px 6px 0;
+    font-family: var(--font);
+  }
+  .mid-post-cta-label {
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+  }
+  .mid-post-cta-text {
+    font-size: 0.95rem;
+    color: var(--secondary);
+    margin: 0 0 0.75rem 0;
+    line-height: 1.55;
+  }
+  .mid-post-cta-link {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--primary);
+    text-decoration: none;
+    border-bottom: 1px dashed var(--primary);
+  }
+  .mid-post-cta-link:hover {
+    opacity: 0.8;
+  }
+</style>
+
+<script>
+(function() {
+  document.addEventListener('DOMContentLoaded', function() {
+    var content = document.querySelector('.post-content');
+    if (!content) return;
+    var headings = content.querySelectorAll('h2');
+    if (headings.length < 3) return;
+    var midIndex = Math.floor(headings.length / 2);
+    var midHeading = headings[midIndex];
+    var template = document.getElementById('mid-post-cta-template');
+    if (template && midHeading && midHeading.parentNode) {
+      var clone = template.content.cloneNode(true);
+      midHeading.parentNode.insertBefore(clone, midHeading);
+    }
+  });
+})();
+</script>

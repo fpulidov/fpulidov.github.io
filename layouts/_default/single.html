@@ -42,6 +42,10 @@
   </div>
   {{- end }}
 
+  {{- if not (.Param "hideConsultingCta") }}
+  {{ partial "mid-post-cta.html" . }}
+  {{- end }}
+
   {{ partial "authorbox.html" . }}
 
   {{ partial "related.html" . }}
