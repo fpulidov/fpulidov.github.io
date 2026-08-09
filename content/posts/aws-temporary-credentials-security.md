@@ -1,13 +1,13 @@
 ---
-title: "Stop Using Access Keys: AWS Temporary Credentials Done Right"
+title: "Stop Using AWS Access Keys: The Temporary Credentials Playbook"
 date: 2025-05-11T10:00:00+02:00
 draft: false
-description: "Ditch long-term access keys. Practical guide to AWS IAM roles, STS, and temporary credentials — with real mistakes to avoid and least-privilege patterns that work."
+description: "Kill long-term AWS access keys for good. A step-by-step playbook using IAM roles and STS to lock down access in under a day — with the mistakes to skip."
 slug: "aws-temporary-credentials-security"
 tags: ["aws", "cloud security", "iam", "sts", "temporary credentials"]
 keywords: ["aws temporary credentials", "aws iam best practices temporary credentials", "aws sts assume role", "aws access keys alternative", "aws least privilege temporary credentials"]
 aliases: ["/aws-temp-creds-security/"]
-summary: "Ditch long-term access keys. Practical guide to IAM roles, STS, and temporary credentials — with real mistakes to avoid and least-privilege patterns that work."
+summary: "Kill long-term AWS access keys for good. A step-by-step playbook using IAM roles and STS to lock down access in under a day — with the mistakes to skip."
 canonicalURL: "https://thehiddenport.dev/posts/aws-temporary-credentials-security/"
 enable_comments: true
 ---
