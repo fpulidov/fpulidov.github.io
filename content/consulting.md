@@ -21,6 +21,9 @@ End-to-end review of an AWS environment: account structure, IAM, network exposur
 **Detection & Incident Response Engineering**
 Deploy GuardDuty and Security Hub the right way — with severity-based routing, EventBridge automation to Slack/PagerDuty/your SIEM, and finding suppression that filters noise without hiding real threats. Build the IR playbook around it so the alerts actually get actioned.
 
+**Vulnerability Management Program Design**
+Build a full VMP from scratch or fix a broken one — scanner architecture, prioritization beyond CVSS, SLA design that engineering actually respects, and automation for the toil. Budget-appropriate solutions, not enterprise tooling pitches.
+
 **IAM Hardening**
 Least-privilege refactor of existing IAM policies, migration from IAM users to Identity Center (SSO), cross-account access design with permission boundaries, and CloudTrail-based auditing of who's actually using what.
 
