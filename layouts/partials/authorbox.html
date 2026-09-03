@@ -1,17 +1,66 @@
-{{/* layouts/partials/authorbox.html */}}
-<section class="mt-10 border border-gray-700 rounded-lg p-6 bg-gray-800/40">
-  <h3 class="text-lg font-semibold text-gray-100 mb-2">Need help with your AWS security?</h3>
-  <p class="text-sm text-gray-300 mb-4 leading-relaxed">
-    I'm <span class="font-semibold">Javier Pulido</span> — an independent AWS security consultant based in Sevilla, Spain.
+{{/* Post-footer author box — full card CTA */}}
+<section class="post-authorbox">
+  <h3 class="post-authorbox-title">Need help with your AWS security?</h3>
+  <p class="post-authorbox-text">
+    I'm <strong>Javier Pulido</strong> — an independent AWS security consultant based in Sevilla, Spain.
     I run security audits, deploy GuardDuty and Security Hub, harden IAM, and help teams prepare for ISO 27001 —
     the same things covered in these posts, executed inside your environment.
   </p>
-  <p>
-    <a href="/consulting/"
-       class="inline-block bg-primary text-black font-semibold px-4 py-2 rounded hover:opacity-90 no-underline">
-      Book a free 30-min call →
-    </a>
-    &nbsp;
-    <a href="/about/" class="text-primary hover:underline text-sm">More about me</a>
-  </p>
+  <div class="post-authorbox-actions">
+    <a href="/consulting/" class="post-authorbox-btn">Book a free 30-min call →</a>
+    <a href="/about/" class="post-authorbox-link">More about me</a>
+  </div>
 </section>
+
+<style>
+  .post-authorbox {
+    margin: 2.5rem 0 1.5rem 0;
+    padding: 1.75rem;
+    border: 1px solid rgba(245, 165, 36, 0.35);
+    background: rgba(245, 165, 36, 0.06);
+    border-radius: 8px;
+    font-family: var(--font);
+  }
+  .post-authorbox-title {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--primary);
+    margin: 0 0 0.75rem 0;
+  }
+  .post-authorbox-text {
+    font-size: 0.95rem;
+    color: var(--secondary);
+    margin: 0 0 1.25rem 0;
+    line-height: 1.6;
+  }
+  .post-authorbox-actions {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    flex-wrap: wrap;
+  }
+  .post-authorbox-btn {
+    display: inline-block;
+    background: #f5a524;
+    color: #1a1a1a !important;
+    font-size: 0.95rem;
+    font-weight: 700;
+    padding: 0.65rem 1.2rem;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: opacity 0.15s ease;
+  }
+  .post-authorbox-btn:hover {
+    opacity: 0.88;
+    text-decoration: none;
+  }
+  .post-authorbox-link {
+    font-size: 0.9rem;
+    color: var(--secondary);
+    text-decoration: none;
+    border-bottom: 1px dashed var(--secondary);
+  }
+  .post-authorbox-link:hover {
+    opacity: 0.8;
+  }
+</style>
