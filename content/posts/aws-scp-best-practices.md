@@ -319,3 +319,4 @@ The **Suspended OU** is often overlooked — when you need to decommission an ac
 - [How to Detect Root Account Usage](/posts/detect-root-account-usage/) — monitoring complement to the root-deny SCP
 - [IAM Users Are Dead: Modern AWS Access Control](/posts/aws-iam-users-alternatives/) — why Identity Center replaces IAM users
 - [AWS Incident Response Scenarios](/posts/aws-incident-response-scenarios/) — detection and response patterns for break-glass monitoring
+- [AWS IAM Permission Boundaries](/posts/aws-iam-permission-boundaries/) — identity-level guardrails that complement org-level SCPs

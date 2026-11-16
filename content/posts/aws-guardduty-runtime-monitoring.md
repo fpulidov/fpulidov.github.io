@@ -420,3 +420,4 @@ The agent requires kernel 5.4+ for full eBPF tracing support. Older Amazon Linux
 - [GuardDuty vs Security Hub: What Each Does and When You Need Both](/posts/aws-guardduty-vs-security-hub/) — where Runtime Monitoring findings end up
 - [EKS Security Monitoring: Audit Logs, Falco & GuardDuty](/posts/eks-security-monitoring/) — how Runtime Monitoring compares to Falco for EKS
 - [AWS Security Monitoring Without the Enterprise Price Tag](/posts/affordable-aws-security-monitoring/) — full monitoring stack on a budget
+- [AWS CloudTrail Log Analysis: Who Did What, and When](/posts/aws-cloudtrail-log-analysis/) — investigate the activity behind a runtime finding

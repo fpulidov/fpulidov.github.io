@@ -112,7 +112,7 @@ That's the design intent — they're meant to work together, not compete.
 If your primary concern is **detecting active threats** and you already have a SIEM or central logging solution, GuardDuty standalone makes sense. Common scenarios:
 
 - Small team, limited budget, want threat detection without the Config cost overhead
-- Already using a third-party CSPM tool (Prowler, Wiz, etc.) for compliance
+- Already using a third-party CSPM tool ([Prowler](/posts/prowler-vs-aws-security-hub/), Wiz, etc.) for compliance
 - Routing findings directly to Slack/PagerDuty via EventBridge — don't need the Security Hub aggregation layer
 
 ---
@@ -208,3 +208,5 @@ Most teams answer yes to all three.
 - [AWS Misconfigurations I Find in Every Security Audit](/posts/aws-security-misconfigurations-guide/) — the findings Security Hub catches automatically
 - [AWS Security Checklist: 30-Minute Account Review](/posts/aws-security-checklist-2026/) — run through all critical controls in one pass
 - [Secrets Manager Now Sends Events to EventBridge](/posts/aws-secrets-manager-eventbridge-notifications/) — set up secret rotation alerts using the same EventBridge pattern
+- [GuardDuty Runtime Monitoring for EC2, EKS & ECS](/posts/aws-guardduty-runtime-monitoring/) — add runtime-layer threat detection on top of GuardDuty's managed findings
+- [AWS CloudTrail Log Analysis: Who Did What, and When](/posts/aws-cloudtrail-log-analysis/) — trace the activity behind a GuardDuty finding back to a principal and timestamp

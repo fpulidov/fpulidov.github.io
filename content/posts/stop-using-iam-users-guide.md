@@ -40,6 +40,8 @@ IAM users once helped us bootstrap AWS environments, but in 2026 they are outdat
 - Manages permissions via centralized permission sets
 - Enables SCIM provisioning and audit visibility
 
+For a deeper walkthrough, see [how to make account-level access optional in IAM Identity Center](/posts/iam-identity-center-account-access-optional/) — a cleaner permission model for multi-account orgs.
+
 ---
 
 ### 2. STS + AssumeRole for Automation

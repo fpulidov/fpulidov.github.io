@@ -279,7 +279,7 @@ Worker nodes run your pods. If they're compromised, everything on them is compro
 **Key hardening steps:**
 
 - **Use managed node groups or Fargate** — AWS patches the underlying OS for managed node groups running the EKS-optimized AMI. Fargate removes node management entirely.
-- **Disable SSH access** — use SSM Session Manager instead. No inbound ports, full audit logging. See [Replace SSH with Session Manager](/posts/securing-ec2-access-with-ssm/).
+- **Disable SSH access** — use SSM Session Manager instead. No inbound ports, full audit logging. See [Replace SSH with Session Manager](/posts/aws-securing-ec2-access-with-ssm/).
 - **Enable IMDSv2** — prevents SSRF-based credential theft from the instance metadata service:
 
 ```yaml
@@ -364,5 +364,5 @@ Start with the critical items — IRSA, RBAC audit, audit logging, and pod secur
 **Related guides:**
 - [EKS Security: Monitoring, Audit Logs & Runtime Detection](/posts/eks-security-monitoring/)
 - [IAM Least Privilege in AWS: Access Analyzer Guide](/posts/iam-access-analyzer-least-privilege/)
-- [Replace SSH with Session Manager: Secure EC2 Access Guide](/posts/securing-ec2-access-with-ssm/)
+- [Replace SSH with Session Manager: Secure EC2 Access Guide](/posts/aws-securing-ec2-access-with-ssm/)
 - [AWS Security Checklist 2026](/posts/aws-security-checklist-2026/)
