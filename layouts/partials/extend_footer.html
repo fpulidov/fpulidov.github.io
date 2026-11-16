@@ -3,3 +3,38 @@
 </div>
 
 <script async src="https://eocampaign1.com/form/fbc81a40-4aea-11f0-aff3-45842a94a714.js" data-form="fbc81a40-4aea-11f0-aff3-45842a94a714"></script>
+
+<!-- Consulting-funnel click tracking (GA4) -->
+<script>
+(function () {
+  function track(eventName, params) {
+    if (typeof window.gtag === 'function') {
+      window.gtag('event', eventName, params);
+    } else {
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push(Object.assign({ event: eventName }, params));
+    }
+  }
+  document.addEventListener('click', function (e) {
+    var a = e.target && e.target.closest ? e.target.closest('a[href]') : null;
+    if (!a) return;
+    var href = a.getAttribute('href') || '';
+    var loc = a.getAttribute('data-cta') || window.location.pathname;
+
+    if (/calendly\.com/i.test(href)) {
+      // Booking intent — the click through to Calendly. Mark as a Key Event in GA4.
+      track('calendly_click', {
+        cta_location: loc,
+        link_url: href,
+        page_path: window.location.pathname
+      });
+    } else if (/\/consulting\/?(?:[?#]|$)/.test(href)) {
+      // Mid-funnel — a post CTA sending the reader to the consulting page.
+      track('consulting_cta_click', {
+        cta_location: loc,
+        page_path: window.location.pathname
+      });
+    }
+  }, true);
+})();
+</script>
