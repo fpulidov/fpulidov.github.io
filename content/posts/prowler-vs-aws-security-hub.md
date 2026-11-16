@@ -164,3 +164,4 @@ The tool-selection question is a feature-matrix exercise. The architecture quest
 - [AWS Security Hub MCP App: Turn Compliance Findings into Action](/posts/aws-security-hub-mcp-app/) — automating action on Security Hub findings
 - [AWS Security Checklist: 30-Minute Account Review](/posts/aws-security-checklist-2026/) — the manual equivalent of a Prowler scan
 - [Vulnerability Scanner Architecture](/posts/vulnerability-scanner-architecture/) — how a dedicated scanner surface fits alongside CSPM tools in a mature program
+- [GuardDuty Alternatives: AWS Threat Detection Tools Compared](/posts/aws-guardduty-alternatives/) — the threat-detection equivalent of this posture-tool comparison
