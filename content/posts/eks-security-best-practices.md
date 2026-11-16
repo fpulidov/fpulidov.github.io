@@ -1,10 +1,11 @@
 ---
-title: "EKS Security Best Practices: RBAC, Pod Security & IRSA Hardening (2026)"
+title: "EKS Security Best Practices: 10 Fixes for RBAC, IRSA & Pods (2026)"
 date: 2026-07-07
 draft: false
 description: "Most EKS clusters run with default RBAC, no network policies, and pods with root. Here's the 10-item hardening checklist — IRSA, pod security standards, network policies, secrets encryption, and node lockdown with YAML you can apply today."
 summary: "10 actionable EKS security best practices covering IRSA, RBAC, network policies, pod security standards, image scanning, secrets encryption, and node hardening."
 slug: "eks-security-best-practices"
+lastmod: 2026-11-16
 tags: ["AWS", "EKS", "Kubernetes", "Security", "RBAC", "IRSA", "Pod Security", "Network Policy"]
 categories: ["Cloud Security", "Guides"]
 keywords: ["eks security best practices", "eks security", "aws eks security", "eks hardening", "eks rbac", "eks irsa", "eks pod security", "eks network policy", "kubernetes security aws"]

@@ -1,5 +1,5 @@
 ---
-title: "IAM Users Are Dead: Modern AWS Access Control for 2026"
+title: "Stop Using IAM Users: Secure AWS Access Alternatives for 2026"
 date: 2026-07-07
 tags: ["aws", "iam", "zero-trust", "sso", "sts", "ci-cd"]
 keywords: ["stop using iam users", "aws iam alternatives", "aws identity center", "aws sso migration", "iam users vs roles"]
@@ -7,6 +7,7 @@ categories: ["Cloud Security"]
 description: "Why AWS IAM users are obsolete in 2026 - and how to implement secure, scalable alternatives with Identity Center, OIDC, and temporary credentials."
 summary: "Stop using IAM users in AWS. This guide explains why they're risky and how to migrate to Identity Center, STS, and OIDC-based access — step-by-step."
 slug: "aws-iam-users-alternatives"
+lastmod: 2026-11-16
 draft: false
 author: "Javier Pulido"
 canonicalURL: "https://thehiddenport.dev/posts/aws-iam-users-alternatives/"
