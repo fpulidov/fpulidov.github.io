@@ -1,0 +1,23 @@
+/* Give the "Monitoring" nav item visual priority — render it as an accent button.
+   Scoped by href so it only ever affects that one menu link; harmless when the
+   (currently draft) page doesn't exist. Accent matches the site CTA colour. */
+#menu li a[href$="/monitoring/"] {
+    background: #f5a524;
+    border-radius: 6px;
+    padding: 2px 10px;
+    margin-left: 6px;
+    font-weight: 700;
+    transition: opacity 0.15s ease, transform 0.15s ease;
+}
+
+#menu li a[href$="/monitoring/"] span {
+    color: #1a1a1a !important;
+    /* Keep it bold even on the active page — PaperMod's `#menu .active`
+       sets the active span to font-weight:500, which would otherwise win. */
+    font-weight: 700 !important;
+}
+
+#menu li a[href$="/monitoring/"]:hover {
+    opacity: 0.9;
+    transform: translateY(-1px);
+}
