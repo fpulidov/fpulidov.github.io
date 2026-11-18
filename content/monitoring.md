@@ -77,8 +77,6 @@ Simple and per-domain — a whole company covered by one domain, regardless of h
 
 Includes continuous monitoring, triaged alerts, and remediation guidance. No per-user fees, no minimums, no long contract. Multi-domain and bundled-with-audit pricing available on request.
 
-*(Pricing provisional — final figures confirmed at launch.)*
-
 ## Common questions
 
 **Do you ever see or touch our real passwords?**
