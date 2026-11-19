@@ -364,5 +364,5 @@ Build your detection stack, pre-create your isolation security group, and automa
 - [I Investigated a Real Phishing Attack — Here's the Full Kill Chain](/posts/real-world-phishing-incident-response/) — a real spearphishing incident walkthrough with forensic analysis and lessons learned
 - [AWS Incident Response Guide for Small Security Teams](/posts/incident-response-aws-guide/)
 - [AWS Incident Response Toolkit (Free)](/posts/aws-ir-toolkit/)
-- [AWS Incident Response Toolkit](/posts/aws-ir-toolkit/)
+- [Credential Exposure Monitoring](/monitoring/) — the earliest signal: catch leaked credentials and sessions before they're used in an incident
 - [Detect AWS IAM Privilege Escalation with CloudTrail](/posts/aws-detecting-privilege-escalation/)

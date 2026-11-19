@@ -109,3 +109,4 @@ If not, they’ll become just another attack surface.
 - [IAM Least Privilege in AWS: Access Analyzer Guide](/posts/iam-access-analyzer-least-privilege/)
 - [Detect AWS IAM Privilege Escalation with CloudTrail](/posts/aws-detecting-privilege-escalation/)
 - [Secrets Manager Now Sends Events to EventBridge](/posts/aws-secrets-manager-eventbridge-notifications/) — monitor when secrets and credentials change automatically
+- [Credential Exposure Monitoring](/monitoring/) — catch leaked logins and stolen sessions before an attacker uses them
