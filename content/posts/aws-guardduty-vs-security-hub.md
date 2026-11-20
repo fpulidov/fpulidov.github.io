@@ -211,3 +211,4 @@ Most teams answer yes to all three.
 - [GuardDuty Runtime Monitoring for EC2, EKS & ECS](/posts/aws-guardduty-runtime-monitoring/) — add runtime-layer threat detection on top of GuardDuty's managed findings
 - [AWS CloudTrail Log Analysis: Who Did What, and When](/posts/aws-cloudtrail-log-analysis/) — trace the activity behind a GuardDuty finding back to a principal and timestamp
 - [GuardDuty Alternatives: AWS Threat Detection Tools Compared](/posts/aws-guardduty-alternatives/) — third-party and open-source detection options, and when they replace GuardDuty vs. ingest it
+- [Credential Exposure Monitoring](/monitoring/) — GuardDuty catches a compromised credential *being used*; this catches the leak before it ever reaches your account

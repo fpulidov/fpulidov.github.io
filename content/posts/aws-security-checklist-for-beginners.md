@@ -247,3 +247,4 @@ Security isn't a project — it's a recurring process. The controls you verified
 - [GuardDuty Runtime Monitoring](/posts/aws-guardduty-runtime-monitoring/) — process-level visibility inside your workloads
 - [AWS Secrets Manager EventBridge Notifications](/posts/aws-secrets-manager-eventbridge-notifications/) — automated alerts for credential changes
 - [How I Passed the AWS Security Specialty (SCS-C02)](/posts/aws-scs-c02-exam-experience/) — the cert that covers these topics in depth
+- [Credential Exposure Monitoring](/monitoring/) — check whether your team's logins are already for sale, the baseline most checklists miss

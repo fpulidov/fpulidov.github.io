@@ -89,3 +89,4 @@ Amazon GuardDuty provides a robust solution for continuous threat detection in y
 - [Detect AWS IAM Privilege Escalation with CloudTrail](/posts/aws-detecting-privilege-escalation/) — targeted detection for IAM escalation patterns
 - [AWS GuardDuty vs Security Hub: What Each Does and When You Need Both](/posts/aws-guardduty-vs-security-hub/) — how GuardDuty fits alongside Security Hub in your stack
 - [Secrets Manager Now Sends Events to EventBridge](/posts/aws-secrets-manager-eventbridge-notifications/) — same EventBridge pattern for secret rotation alerts
+- [Credential Exposure Monitoring](/monitoring/) — the early-warning layer: spot leaked credentials and sessions before GuardDuty ever sees them used

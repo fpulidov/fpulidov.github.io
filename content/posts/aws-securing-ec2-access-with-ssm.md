@@ -206,3 +206,4 @@ For the full troubleshooting reference, see [AWS Systems Manager Troubleshooting
 - [AWS Misconfigurations I Find in Every Security Audit](/posts/aws-security-misconfigurations-guide/) — open SSH is one of the top findings
 - [AWS Security Checklist: 30-Minute Account Review](/posts/aws-security-checklist-2026/) — quick baseline check including network hardening
 - [Securing Temporary AWS Credentials](/posts/aws-temporary-credentials-security/) — the IAM foundation Session Manager builds on
+- [Credential Exposure Monitoring](/monitoring/) — removing standing SSH credentials helps; this catches the console and SSO logins that leak anyway
