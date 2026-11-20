@@ -3,6 +3,7 @@ title: "Credential Exposure Monitoring — Know Before Attackers Do"
 description: "Continuous monitoring for your team's leaked passwords and stolen login sessions, across infostealer logs and breach data — with a security advisor who reads the findings and tells you what to do. For SMBs and teams without a SOC."
 layout: "single"
 author: "Javier Pulido"
+date: 2026-11-18
 draft: false
 hideConsultingCta: true
 url: "/monitoring/"
@@ -90,6 +91,8 @@ Free tools give you a raw list and stop there. You're paying for the infostealer
 
 **We already enforce MFA. Do we still need this?**
 Yes. Stolen session cookies bypass MFA entirely — the attacker reuses an already-authenticated session. Catching the leak early is how you stay ahead of that.
+
+*More detail: [How it works](/monitoring/how-it-works/) &nbsp;·&nbsp; [Full FAQ](/monitoring/faq/) &nbsp;·&nbsp; [See a sample report](/monitoring/sample-report/)*
 
 ---
 
