@@ -20,12 +20,28 @@
     if (!a) return;
     var href = a.getAttribute('href') || '';
     var loc = a.getAttribute('data-cta') || window.location.pathname;
+    var onExposureCheck = /\/monitoring\/free-exposure-check\/?$/.test(window.location.pathname);
 
     if (/calendly\.com/i.test(href)) {
       // Booking intent — the click through to Calendly. Mark as a Key Event in GA4.
       track('calendly_click', {
         cta_location: loc,
         link_url: href,
+        page_path: window.location.pathname
+      });
+      if (onExposureCheck) {
+        // Booking a call from the free-check page is a funnel conversion too.
+        track('exposure_check_submit', {
+          method: 'call',
+          cta_location: loc,
+          page_path: window.location.pathname
+        });
+      }
+    } else if (/^mailto:/i.test(href) && (onExposureCheck || /exposure[%2b+\s]*check/i.test(href))) {
+      // Requesting the free credential-exposure check by email — the funnel conversion.
+      track('exposure_check_submit', {
+        method: 'email',
+        cta_location: loc,
         page_path: window.location.pathname
       });
     } else if (/\/consulting\/?(?:[?#]|$)/.test(href)) {
