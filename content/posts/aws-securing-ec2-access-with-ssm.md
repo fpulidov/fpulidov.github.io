@@ -1,7 +1,7 @@
 ---
-title: "Access EC2 Without SSH: AWS SSM Session Manager Setup"
+title: "AWS SSM Session Manager Setup: Access EC2 Without SSH"
 date: 2025-06-03
-description: "Step-by-step SSM Session Manager setup — IAM role, AmazonSSMManagedInstanceCore policy, instance profile, and session logging. No SSH keys, no bastion hosts, no port 22."
+description: "Set up AWS Session Manager end to end: IAM role, instance profile, logging, and port forwarding — then kill SSH for good. No keys, no bastions, no open port 22."
 tags: ["AWS", "EC2", "Security", "Session Manager", "SSM", "IAM", "Cloud Security"]
 keywords: ["amazonssmmanagedinstancecore", "aws session manager setup", "ssm ec2 access", "aws ssm iam role", "session manager instance profile", "replace ssh with session manager"]
 categories: ["Cloud Security"]

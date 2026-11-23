@@ -1,8 +1,8 @@
 ---
-title: "AWS GuardDuty Runtime Monitoring: The Security Agent That Sees Inside Your Workloads"
+title: "AWS GuardDuty Runtime Monitoring: Setup, Cost & When to Use It"
 date: 2026-07-27
 draft: false
-description: "Standard GuardDuty watches network traffic. Runtime Monitoring deploys an agent that sees process execution, file access, and privilege escalation inside EC2, EKS, and ECS — here's how to enable it without blowing up your bill."
+description: "GuardDuty's agent sees process execution, file access, and privilege escalation inside EC2, EKS & ECS. How to enable Runtime Monitoring without blowing up your bill."
 slug: "aws-guardduty-runtime-monitoring"
 tags: ["AWS", "Security", "GuardDuty", "Runtime Monitoring", "EC2", "EKS", "ECS", "Threat Detection"]
 keywords: ["aws security agent", "guardduty runtime monitoring", "aws guardduty security agent", "guardduty ec2 runtime monitoring", "guardduty eks runtime monitoring", "aws runtime threat detection", "guardduty agent deployment"]

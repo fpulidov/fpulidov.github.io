@@ -2,7 +2,7 @@
 title: "GuardDuty vs Security Hub: Key Differences & When to Use Both (2026)"
 date: 2026-07-22
 draft: false
-description: "GuardDuty detects threats. Security Hub aggregates findings and checks compliance. Here's how they differ, where they overlap, and how to run them together without paying twice for the same data."
+description: "GuardDuty detects live threats; Security Hub aggregates findings and scores compliance. Where they differ, where they overlap, and how to run both without paying twice."
 slug: "aws-guardduty-vs-security-hub"
 lastmod: 2026-11-16
 tags: ["AWS", "Security", "GuardDuty", "Security Hub", "Threat Detection", "Compliance"]

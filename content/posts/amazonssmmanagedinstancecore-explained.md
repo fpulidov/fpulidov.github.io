@@ -2,7 +2,7 @@
 title: "AmazonSSMManagedInstanceCore: What It Grants & How to Scope It Down"
 date: 2026-07-07
 draft: false
-description: "What the AmazonSSMManagedInstanceCore policy actually permits, whether it's over-permissioned for production, and how to build a scoped-down least-privilege alternative for Session Manager."
+description: "Every permission in the AmazonSSMManagedInstanceCore policy, explained — whether it's over-permissioned for production, plus a copy-paste least-privilege alternative."
 summary: "Full breakdown of every permission in the AmazonSSMManagedInstanceCore IAM policy, plus a least-privilege custom alternative for production EC2 instances."
 slug: "amazonssmmanagedinstancecore-iam-policy-explained"
 tags: ["AWS", "IAM", "SSM", "Session Manager", "EC2", "Security", "Least Privilege"]
