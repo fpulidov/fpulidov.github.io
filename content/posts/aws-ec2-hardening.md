@@ -125,6 +125,7 @@ This guide consolidates AWS official best practices, CIS Benchmarks, and real-wo
 - [AWS Session Manager Setup: Secure EC2 Access Without SSH](/posts/aws-securing-ec2-access-with-ssm/)
 - [How to Detect AWS Root Account Usage](/posts/detect-root-account-usage/)
 - [AWS Security Monitoring Without the Enterprise Price Tag](/posts/affordable-aws-security-monitoring/)
+- [Credential Exposure Monitoring](/monitoring/) — hardening shrinks the attack surface; this catches the leaked console and SSO logins that bypass it entirely
 
 ---
 
