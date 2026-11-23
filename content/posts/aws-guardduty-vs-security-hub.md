@@ -209,6 +209,7 @@ Most teams answer yes to all three.
 - [AWS Security Checklist: 30-Minute Account Review](/posts/aws-security-checklist-2026/) — run through all critical controls in one pass
 - [Secrets Manager Now Sends Events to EventBridge](/posts/aws-secrets-manager-eventbridge-notifications/) — set up secret rotation alerts using the same EventBridge pattern
 - [GuardDuty Runtime Monitoring for EC2, EKS & ECS](/posts/aws-guardduty-runtime-monitoring/) — add runtime-layer threat detection on top of GuardDuty's managed findings
+- [EKS Security Best Practices](/posts/eks-security-best-practices/) — lock down the EKS clusters these services monitor: RBAC, IRSA, network policies, pod security
 - [AWS CloudTrail Log Analysis: Who Did What, and When](/posts/aws-cloudtrail-log-analysis/) — trace the activity behind a GuardDuty finding back to a principal and timestamp
 - [GuardDuty Alternatives: AWS Threat Detection Tools Compared](/posts/aws-guardduty-alternatives/) — third-party and open-source detection options, and when they replace GuardDuty vs. ingest it
 - [Credential Exposure Monitoring](/monitoring/) — GuardDuty catches a compromised credential *being used*; this catches the leak before it ever reaches your account

@@ -139,5 +139,6 @@ If you're weighing this decision for a real environment and want a second opinio
 - [GuardDuty Runtime Monitoring for EC2, EKS & ECS](/posts/aws-guardduty-runtime-monitoring/) — the runtime layer that deepens Extended Threat Detection
 - [Prowler vs AWS Security Hub](/posts/prowler-vs-aws-security-hub/) — the open-source vs. managed question on the posture side
 - [EKS Security Monitoring](/posts/eks-security-monitoring/) — where Falco fits in the Kubernetes detection story
+- [EKS Security Best Practices](/posts/eks-security-best-practices/) — harden Kubernetes itself, the layer Falco and runtime agents sit on top of
 - [AWS Security Monitoring Without the Enterprise Price Tag](/posts/affordable-aws-security-monitoring/) — building a real detection stack on a small budget
 - [Credential Exposure Monitoring](/monitoring/) — the layer none of these tools cover: catch leaked credentials and sessions before any detector ever sees them used

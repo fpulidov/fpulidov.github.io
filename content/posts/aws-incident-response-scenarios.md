@@ -7,7 +7,7 @@ summary: "Five real-world AWS incident response scenarios with detection signals
 slug: "aws-incident-response-scenarios"
 tags: ["AWS", "Incident Response", "CloudTrail", "GuardDuty", "Security", "Forensics", "EventBridge"]
 categories: ["Cloud Security", "Guides"]
-keywords: ["aws incident response", "aws incident detection and response", "aws security incident", "aws incident response playbook", "compromised aws credentials", "aws containment"]
+keywords: ["aws incident response scenarios", "aws incident response", "aws security incident examples", "compromised aws credentials response", "aws cryptomining incident", "aws s3 breach response", "aws containment"]
 canonicalURL: "https://thehiddenport.dev/posts/aws-incident-response-scenarios/"
 enable_comments: true
 ---
