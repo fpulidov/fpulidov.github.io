@@ -85,6 +85,8 @@ So the earliest possible signal isn't in CloudTrail at all. It's the moment your
 
 That outside-in view — monitoring for your team's leaked credentials and stolen sessions across infostealer logs and breach data — is a different data source from anything inside AWS, and it's exactly the early-warning layer most teams are missing. It's the service I run at [**The Hidden Port Monitoring**](/monitoring/): you give me a domain, I watch it continuously, and when something turns up I tell you what leaked and what to do about it. If you want to know where you stand right now, a [free exposure check](/monitoring/) will show you what's already out there.
 
+This applies well beyond AWS keys — it's every login your team uses. For the company-wide version (breach data vs. infostealer logs, what free tools like Have I Been Pwned cover, and how to check a whole domain), see [How to Check If Your Company's Credentials Are Already Leaked](/posts/check-company-credentials-leaked/).
+
 ## If a key just leaked: the first hour
 
 If you're reading this because a key is already exposed, move in this order:
