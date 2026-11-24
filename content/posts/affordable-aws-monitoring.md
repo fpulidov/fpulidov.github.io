@@ -1,19 +1,32 @@
 ---
 
-title: "AWS Security Monitoring Without the Enterprise Price Tag"
+title: "AWS Security Monitoring Tools & Services: A Real Stack From $25/Month"
 date: 2025-05-19
+lastmod: 2026-11-24
 draft: false
-description: "Build real AWS threat detection with GuardDuty, CloudTrail, EventBridge, and Wazuh — without Splunk or Datadog. Practical architectures that cost under $50/month."
+description: "Which AWS security monitoring tools and services to actually use — CloudTrail, GuardDuty, EventBridge, Config, Security Hub, plus open-source Wazuh — and how to combine them without Splunk or Datadog."
 slug: "affordable-aws-security-monitoring"
 tags: ["aws", "cloud security", "monitoring", "siem", "cloudtrail", "eventbridge", "wazuh"]
-keywords: ["aws security monitoring", "aws security monitoring best practices", "aws threat detection setup", "aws siem alternative", "cloudtrail security monitoring", "eventbridge alerting", "wazuh aws", "aws monitoring without splunk"]
+keywords: ["aws security monitoring", "aws security monitoring tools", "aws security monitoring services", "aws security monitoring best practices", "aws threat detection setup", "aws siem alternative", "cloudtrail security monitoring", "eventbridge alerting", "wazuh aws", "aws monitoring without splunk"]
 aliases: ["/aws-cost-effective-monitoring/"]
 summary: "How to build a real AWS security monitoring stack without enterprise pricing — using CloudTrail, EventBridge, GuardDuty, and open-source tools like Wazuh and OpenSearch."
 canonicalURL: "https://thehiddenport.dev/posts/affordable-aws-security-monitoring/"
 enable_comments: true
 ---
 
-> Monitoring in AWS doesn’t have to be expensive. In this guide, we’ll walk through real-world strategies to detect and respond to security events in AWS without blowing your budget — using a mix of native tooling, automation, and open-source solutions.
+> Monitoring in AWS doesn’t have to be expensive. This guide covers the AWS security monitoring tools and services worth using — native ones like CloudTrail, GuardDuty, EventBridge, Config, and Security Hub, plus open-source options like Wazuh and OpenSearch — and how to combine them into a stack that costs roughly $25–75 a month instead of a SIEM contract.
+
+**The AWS security monitoring tools at a glance:**
+
+| Tool / service | What it gives you | What drives the cost |
+|---|---|---|
+| **CloudTrail** | Audit log of every API call — who did what, and when | 90-day event history is free; trails cost S3 storage |
+| **CloudWatch Logs + metric filters** | Alerts on specific events (root login, access denied, SG changes) | GB ingested and retention period |
+| **EventBridge** | Routes findings and events to Lambda, SNS, Slack | Negligible at moderate volume |
+| **AWS Config** | Flags misconfigured resources (public S3, CloudTrail disabled) | Per rule evaluation |
+| **GuardDuty** | Managed threat detection: credential misuse, recon, crypto mining | Volume of data analyzed (30-day free trial) |
+| **Security Hub** | One place for findings + compliance scoring | Checks and findings ingested (30-day free trial) |
+| **Wazuh / OpenSearch** | Self-hosted SIEM and search over your logs | The instances you run them on |
 
 ## Introduction
 
