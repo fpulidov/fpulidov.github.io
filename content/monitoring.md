@@ -92,7 +92,7 @@ Free tools give you a raw list and stop there. You're paying for the infostealer
 **We already enforce MFA. Do we still need this?**
 Yes. Stolen session cookies bypass MFA entirely — the attacker reuses an already-authenticated session. Catching the leak early is how you stay ahead of that.
 
-*More detail: [How it works](/monitoring/how-it-works/) &nbsp;·&nbsp; [Full FAQ](/monitoring/faq/) &nbsp;·&nbsp; [See a sample report](/monitoring/sample-report/)*
+*More detail: [How it works](/monitoring/how-it-works/) &nbsp;·&nbsp; [Full FAQ](/monitoring/faq/) &nbsp;·&nbsp; [See a sample report](/monitoring/sample-report/) &nbsp;·&nbsp; [How to check if your company's credentials are leaked](/posts/check-company-credentials-leaked/)*
 
 ---
 

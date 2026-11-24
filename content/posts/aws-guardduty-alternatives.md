@@ -141,4 +141,6 @@ If you're weighing this decision for a real environment and want a second opinio
 - [EKS Security Monitoring](/posts/eks-security-monitoring/) — where Falco fits in the Kubernetes detection story
 - [EKS Security Best Practices](/posts/eks-security-best-practices/) — harden Kubernetes itself, the layer Falco and runtime agents sit on top of
 - [AWS Security Monitoring Without the Enterprise Price Tag](/posts/affordable-aws-security-monitoring/) — building a real detection stack on a small budget
+- [AWS Incident Response Scenarios](/posts/aws-incident-response-scenarios/) — whichever tool raises the alert, the containment steps for compromised credentials, cryptomining, and S3 exposure
+- [How to Check If Your Company's Credentials Are Already Leaked](/posts/check-company-credentials-leaked/) — the exposure that happens before any detector fires: breach data vs. infostealer logs
 - [Credential Exposure Monitoring](/monitoring/) — the layer none of these tools cover: catch leaked credentials and sessions before any detector ever sees them used

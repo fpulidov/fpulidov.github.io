@@ -143,4 +143,5 @@ By transitioning to **Identity Center for users**, **STS for automation**, and *
 - [AWS SCPs That Actually Work](/posts/aws-scp-best-practices/) — enforce identity guardrails at the org level
 - [CloudTrail Log Analysis: How to Find Who Did What](/posts/aws-cloudtrail-log-analysis/) — audit who's still creating IAM users and trace the cleanup
 - [Stop Using Access Keys: AWS Temporary Credentials Done Right](/posts/aws-temporary-credentials-security/) — the credential model that replaces IAM user access keys
+- [How to Check If Your Company's Credentials Are Already Leaked](/posts/check-company-credentials-leaked/) — IAM user passwords and keys are exactly what infostealers and breach dumps collect; here's how to check your whole domain
 - [Credential Exposure Monitoring](/monitoring/) — know the moment a work login or session leaks, before it's used against you

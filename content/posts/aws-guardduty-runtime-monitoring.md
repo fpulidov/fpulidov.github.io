@@ -422,5 +422,6 @@ The agent requires kernel 5.4+ for full eBPF tracing support. Older Amazon Linux
 - [EKS Security Best Practices](/posts/eks-security-best-practices/) — harden the clusters Runtime Monitoring watches: RBAC, IRSA, pod security, and network policies
 - [AWS Security Monitoring Without the Enterprise Price Tag](/posts/affordable-aws-security-monitoring/) — full monitoring stack on a budget
 - [AWS CloudTrail Log Analysis: Who Did What, and When](/posts/aws-cloudtrail-log-analysis/) — investigate the activity behind a runtime finding
+- [AWS Incident Response Scenarios](/posts/aws-incident-response-scenarios/) — how to contain the cryptomining and compromised-workload incidents Runtime Monitoring flags
 - [Credential Exposure Monitoring](/monitoring/) — the leaked-credential early warning that lands before anything reaches your account
 - [GuardDuty Alternatives: AWS Threat Detection Tools Compared](/posts/aws-guardduty-alternatives/) — when the managed baseline isn't enough, and what to add vs. replace

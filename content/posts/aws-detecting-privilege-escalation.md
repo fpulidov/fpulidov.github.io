@@ -171,4 +171,5 @@ You can reduce noise by:
 - [AWS Incident Response: 5 Scenarios & How to Contain Them](/posts/aws-incident-response-scenarios/) — what to do when a detection fires
 - [GuardDuty Runtime Monitoring: The Security Agent That Sees Inside Your Workloads](/posts/aws-guardduty-runtime-monitoring/) — complements IAM-level detection with process-level visibility
 - [AWS Security Checklist: 30-Minute Account Review](/posts/aws-security-checklist-2026/) — quick self-audit to check your detection coverage
+- [How to Check If Your Company's Credentials Are Already Leaked](/posts/check-company-credentials-leaked/) — find the leaked logins that become escalation step one
 - [Credential Exposure Monitoring](/monitoring/) — many escalation paths start with a credential that leaked long before; catch it early
