@@ -23,7 +23,7 @@ enable_comments: true
 | **CloudTrail** | Audit log of every API call — who did what, and when | 90-day event history is free; trails cost S3 storage |
 | **CloudWatch Logs + metric filters** | Alerts on specific events (root login, access denied, SG changes) | GB ingested and retention period |
 | **EventBridge** | Routes findings and events to Lambda, SNS, Slack | Negligible at moderate volume |
-| **AWS Config** | Flags misconfigured resources (public S3, CloudTrail disabled) | Per rule evaluation |
+| **AWS Config** | Flags misconfigured resources (public S3, CloudTrail disabled) | Configuration items recorded + rule evaluations |
 | **GuardDuty** | Managed threat detection: credential misuse, recon, crypto mining | Volume of data analyzed (30-day free trial) |
 | **Security Hub** | One place for findings + compliance scoring | Checks and findings ingested (30-day free trial) |
 | **Wazuh / OpenSearch** | Self-hosted SIEM and search over your logs | The instances you run them on |
@@ -128,13 +128,15 @@ Pricing is negligible at moderate volume.
   * IAM root usage
   * CloudTrail enabled
 
-Stay under the free tier (100 evaluations/month) or use it sparingly.
+There's no free tier: you pay per configuration item recorded and per rule evaluation. Keep the rule set small, and switch noisy resource types to periodic (daily) recording instead of continuous.
 
 ---
 
 ### 🚨 **Security Hub + GuardDuty**
 
-* Free for 30 days, then priced by finding volume.
+* Both have a 30-day free trial — use it to see what your real bill would be before committing.
+* **GuardDuty** is priced by the volume of data it analyzes (CloudTrail events, VPC flow logs, DNS logs, plus any protection plans you enable), so it scales with account activity, not with how many findings it raises.
+* **Security Hub** is priced by the security checks it runs and the findings it ingests — disable standards and controls you don't need to keep it down.
 * Use with EventBridge to auto-respond only to **High/Medium** severity.
 
 ---
@@ -154,9 +156,9 @@ Stay under the free tier (100 evaluations/month) or use it sparingly.
 
 ### 🔍 **OpenSearch (self-hosted)**
 
-* Use a minimal cluster (e.g., 2 nodes in `t3.medium`) or serverless preview
+* Use a minimal cluster (e.g., 2 nodes in `t3.medium`); OpenSearch Serverless exists too, but its minimum capacity usually costs more than a small cluster at low volume
 * Avoid expensive retention — snapshot to S3 after 7–14 days
-* Kibana dashboards for audit logs, login attempts, or GuardDuty
+* OpenSearch Dashboards for audit logs, login attempts, or GuardDuty findings
 
 ---
 
@@ -164,7 +166,7 @@ Stay under the free tier (100 evaluations/month) or use it sparingly.
 
 * Use `cloudwatch_exporter` to pull metrics securely
 * Great for EC2 / Lambda / API Gateway visibility
-* Host Grafana in AWS Amplify or Fargate
+* Run Grafana on Fargate or a small EC2 instance — or use Amazon Managed Grafana if you'd rather pay per user than patch it yourself
 
 ---
 
@@ -194,22 +196,23 @@ Stay under the free tier (100 evaluations/month) or use it sparingly.
 
 ## Automation Snippets for Cost-Efficient Alerts
 
-### 🎯 EventBridge Rule (UnauthorizedOperation)
+### 🎯 EventBridge Rule (Denied API Calls)
 
 ```json
 {
-  "source": ["aws.cloudtrail"],
   "detail-type": ["AWS API Call via CloudTrail"],
   "detail": {
-    "errorCode": ["UnauthorizedOperation"]
+    "errorCode": ["UnauthorizedOperation", "AccessDenied"]
   }
 }
 ```
 
+CloudTrail events arrive in EventBridge with the *service's* source (`aws.ec2`, `aws.iam`, `aws.s3`…), not `aws.cloudtrail` — so leave `source` out to match denials from any service. Two gotchas: read-only calls (`List*`, `Get*`, `Describe*`) are only delivered if the rule's state is `ENABLED_WITH_ALL_CLOUDTRAIL_MANAGEMENT_EVENTS`, and rules are regional — global services like IAM emit their events in `us-east-1`.
+
 ### 📏 CloudWatch Metric Filter (Root Login)
 
-```bash
-filter pattern: "$.userIdentity.type = \"Root\" && $.eventName = \"ConsoleLogin\""
+```text
+{ ($.eventName = "ConsoleLogin") && ($.userIdentity.type = "Root") }
 ```
 
 ### 🔔 SNS Notification from Lambda
@@ -228,7 +231,7 @@ sns.publish(
 
 ## Common Pitfalls to Avoid
 
-* **Over-collecting VPC flow logs** (use `sampled` mode for dev)
+* **Over-collecting VPC flow logs** (send them to S3 rather than CloudWatch Logs, use a custom format with only the fields you need, and log `REJECT` traffic only in dev)
 * **Ignoring storage lifecycle** → logs build up, cost you
 * **Enabling every AWS Config rule** → high evaluation cost
 * **Too many EventBridge rules** → simplify to key patterns
