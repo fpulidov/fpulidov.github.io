@@ -37,7 +37,7 @@
           page_path: window.location.pathname
         });
       }
-    } else if (/^mailto:/i.test(href) && (onExposureCheck || /exposure[%2b+\s]*check/i.test(href))) {
+    } else if (/^mailto:/i.test(href) && (onExposureCheck || /exposure(?:%20|[+\s])*check/i.test(href))) {
       // Requesting the free credential-exposure check by email — the funnel conversion.
       track('exposure_check_submit', {
         method: 'email',
@@ -52,5 +52,21 @@
       });
     }
   }, true);
+
+  // People whose mailto doesn't open a mail app copy the address instead.
+  // Count that as a free-check request too (once per pageview).
+  var copyTracked = false;
+  document.addEventListener('copy', function () {
+    if (copyTracked) return;
+    if (!/^\/monitoring\/(?:free-exposure-check\/?)?$/.test(window.location.pathname)) return;
+    var sel = window.getSelection ? String(window.getSelection()) : '';
+    if (!/javier@thehiddenport\.dev/i.test(sel)) return;
+    copyTracked = true;
+    track('exposure_check_submit', {
+      method: 'copy_email',
+      cta_location: window.location.pathname,
+      page_path: window.location.pathname
+    });
+  });
 })();
 </script>

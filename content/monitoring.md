@@ -23,6 +23,8 @@ An employee's laptop gets infected, or a service they signed up for gets breache
 
 [**Get a free exposure check →**](mailto:javier@thehiddenport.dev?subject=Free%20exposure%20check) &nbsp;&nbsp; [Book a 20-minute call](https://calendly.com/javier-thehiddenport/30min)
 
+*Button not opening your email? Just send the domain you want checked to* **[javier@thehiddenport.dev](mailto:javier@thehiddenport.dev?subject=Free%20exposure%20check)** *from whatever inbox you use.*
+
 ---
 
 ## Stolen logins come before the breach
@@ -101,3 +103,5 @@ Yes. Stolen session cookies bypass MFA entirely — the attacker reuses an alrea
 The fastest way to know if this is worth it is to look. Send me your domain and I'll run a free exposure check — you'll see exactly what's out there before deciding anything.
 
 [**Get your free exposure check →**](mailto:javier@thehiddenport.dev?subject=Free%20exposure%20check) &nbsp;&nbsp; [Book a 20-minute call](https://calendly.com/javier-thehiddenport/30min)
+
+*Button not opening your email? Just send the domain you want checked to* **[javier@thehiddenport.dev](mailto:javier@thehiddenport.dev?subject=Free%20exposure%20check)** *from whatever inbox you use.*

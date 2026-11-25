@@ -34,6 +34,8 @@ Send your domain by email, or grab 20 minutes and we'll look at it together:
 
 [**Request your free check →**](mailto:javier@thehiddenport.dev?subject=Free%20exposure%20check&body=Domain%20to%20check%3A%20) &nbsp;&nbsp; [Book a 20-minute call](https://calendly.com/javier-thehiddenport/30min)
 
+*Button not opening your email? Just send the domain you want checked to* **[javier@thehiddenport.dev](mailto:javier@thehiddenport.dev?subject=Free%20exposure%20check)** *from whatever inbox you use.*
+
 ## A note on privacy
 
 I only check the domain you give me, and only for credentials that have **already** leaked publicly — nothing is accessed, logged into, or touched. Any live credentials I find are shown to *you* so you can kill them; they are never used. If we go further than the free check, I act as your data processor under a proper agreement — the [FAQ](/monitoring/faq/) covers the GDPR specifics.
