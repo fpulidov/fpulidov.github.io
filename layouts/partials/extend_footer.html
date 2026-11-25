@@ -2,7 +2,18 @@
   <a href="/disclaimer/" class="linktext-xs text-gray-500 hover:text-primary">Disclaimer</a>
 </div>
 
-<script async src="https://eocampaign1.com/form/fbc81a40-4aea-11f0-aff3-45842a94a714.js" data-form="fbc81a40-4aea-11f0-aff3-45842a94a714"></script>
+<!-- Newsletter popup, kept off the monitoring funnel so it doesn't sit on top of the free-check CTAs.
+     Decided client-side: PaperMod renders the footer with partialCached, so a per-page template check isn't reliable. -->
+<script>
+(function () {
+  if (/^\/monitoring(?:\/|$)/.test(window.location.pathname)) return;
+  var s = document.createElement('script');
+  s.async = true;
+  s.src = 'https://eocampaign1.com/form/fbc81a40-4aea-11f0-aff3-45842a94a714.js';
+  s.setAttribute('data-form', 'fbc81a40-4aea-11f0-aff3-45842a94a714');
+  document.body.appendChild(s);
+})();
+</script>
 
 <!-- Consulting-funnel click tracking (GA4) -->
 <script>
