@@ -1,5 +1,6 @@
 ---
-title: "Stop Using IAM Users: Secure AWS Access Alternatives for 2026"
+title: "Stop Using IAM Users: Secure AWS Access Alternatives for 2026"
+aliases: ["/posts/stop-using-iam-users/"]
 date: 2026-07-07
 tags: ["aws", "iam", "zero-trust", "sso", "sts", "ci-cd"]
 keywords: ["stop using iam users", "aws iam alternatives", "aws identity center", "aws sso migration", "iam users vs roles"]

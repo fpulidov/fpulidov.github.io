@@ -1,5 +1,6 @@
 ---
-title: "Hardened Amazon Linux 2 AMI with EC2 Image Builder"
+title: "Hardened Amazon Linux 2 AMI with EC2 Image Builder"
+aliases: ["/posts/building-hardened-amazon-linux-2-ami-secure-ec2/"]
 description: "Build a CIS-compliant Amazon Linux 2 AMI using EC2 Image Builder. Covers IMDSv2 enforcement, auditd, CloudWatch logging, and automated security hardening."
 summary: "Step-by-step guide to build a hardened Amazon Linux 2 AMI with EC2 Image Builder including CIS benchmarks, IMDSv2 enforcement, auditd, and logging configuration."
 date: 2025-06-09

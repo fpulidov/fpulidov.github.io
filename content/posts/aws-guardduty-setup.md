@@ -1,5 +1,6 @@
 ---
-title: "AWS GuardDuty Setup: Route Findings to Slack & Your SIEM in 10 Minutes"
+title: "AWS GuardDuty Setup: Route Findings to Slack & Your SIEM in 10 Minutes"
+aliases: ["/posts/aws-guardduty-setup-findings-siem-integration/"]
 description: "Enable GuardDuty, filter noisy findings by severity, and wire EventBridge alerts to Slack or your SIEM — with Terraform and Console steps. Includes which finding types actually need your attention."
 summary: "Enable GuardDuty, filter noisy findings by severity, and wire EventBridge alerts to Slack or your SIEM — with Terraform and Console steps."
 date: 2025-06-24
