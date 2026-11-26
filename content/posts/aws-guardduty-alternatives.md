@@ -35,7 +35,7 @@ So the baseline you're comparing against is: zero-config, AWS-native, pay-per-vo
 - **It tells you, it doesn't fix.** GuardDuty raises findings. Remediation and response are yours to build (EventBridge → Lambda/SOAR, or a human).
 - **It's AWS-only.** If you run GCP or Azure too, GuardDuty sees none of it.
 - **You can't write your own detections.** The ruleset is managed. You can't express "alert when *this specific* thing happens in *our* environment."
-- **No posture or vulnerability context.** It detects active threats, not misconfigurations or CVEs. (That's Security Hub / Inspector / a CNAPP's job — see [GuardDuty vs Security Hub](/posts/aws-guardduty-vs-security-hub/).)
+- **No posture or vulnerability context.** It detects active threats, not misconfigurations or CVEs. (That's Security Hub / Inspector / a CNAPP's job — see [GuardDuty vs Security Hub](/posts/aws-guardduty-vs-security-hub/) and [Amazon Inspector vs GuardDuty](/posts/amazon-inspector-vs-guardduty/).)
 
 Every alternative below is really answering one of those four gaps. Which gap matters to you determines which tool is right — and whether you replace GuardDuty or add to it.
 

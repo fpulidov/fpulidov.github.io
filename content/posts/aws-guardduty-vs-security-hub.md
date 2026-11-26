@@ -52,7 +52,7 @@ GuardDuty uses machine learning, anomaly detection, and threat intelligence feed
 Security Hub is a **cloud security posture management (CSPM)** service. It does two things:
 
 1. **Runs compliance checks** against security standards (CIS Benchmarks, AWS Foundational Security Best Practices, PCI DSS, NIST 800-53)
-2. **Aggregates findings** from other AWS security services (GuardDuty, Inspector, Macie, Firewall Manager, IAM Access Analyzer) and third-party tools into a single pane
+2. **Aggregates findings** from other AWS security services (GuardDuty, Inspector, Macie, Firewall Manager, IAM Access Analyzer) and third-party tools into a single pane (if you're unsure where Inspector fits next to GuardDuty, see [Amazon Inspector vs GuardDuty](/posts/amazon-inspector-vs-guardduty/))
 
 Examples of what Security Hub catches:
 
@@ -213,4 +213,5 @@ Most teams answer yes to all three.
 - [AWS CloudTrail Log Analysis: Who Did What, and When](/posts/aws-cloudtrail-log-analysis/) — trace the activity behind a GuardDuty finding back to a principal and timestamp
 - [AWS Incident Response Scenarios](/posts/aws-incident-response-scenarios/) — once a finding is confirmed, step-by-step containment for compromised credentials, cryptomining, and public S3
 - [GuardDuty Alternatives: AWS Threat Detection Tools Compared](/posts/aws-guardduty-alternatives/) — third-party and open-source detection options, and when they replace GuardDuty vs. ingest it
+- [Amazon Inspector vs GuardDuty](/posts/amazon-inspector-vs-guardduty/) — vulnerability scanning vs. threat detection, and which to enable first
 - [Credential Exposure Monitoring](/monitoring/) — GuardDuty catches a compromised credential *being used*; this catches the leak before it ever reaches your account
