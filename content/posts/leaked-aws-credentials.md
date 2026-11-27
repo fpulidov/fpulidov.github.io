@@ -42,7 +42,7 @@ Once a credential is validated as working, it has value, and it gets handled lik
 - **Priced by access.** A key into an account with admin or billing access is worth far more than a read-only one. This is exactly why least privilege matters as *damage control*, not just hygiene.
 - **Sold or used.** It's either monetized directly (crypto mining on your EC2 quota, data theft, extortion) or bundled into a dataset and sold to someone who will.
 
-A stolen **session** — a console session cookie or a cached SSO token — is worse than a stolen key, because it can walk straight past MFA. The attacker reuses an already-authenticated session; there's no second factor to prompt. That's the scenario infostealer logs quietly enable.
+A stolen **session** — a console session cookie or a cached SSO token — is worse than a stolen key, because it can walk straight past MFA. The attacker reuses an already-authenticated session; there's no second factor to prompt. That's the scenario infostealer logs quietly enable. ([Session Hijacking: How Stolen Cookies Bypass MFA](/posts/session-hijacking-mfa-bypass/) covers how it works and how to detect it, including in CloudTrail.)
 
 ## Why long-lived keys are the root problem
 

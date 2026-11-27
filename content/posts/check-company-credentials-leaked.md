@@ -32,7 +32,7 @@ Why infostealer logs are so much worse:
 
 - The credentials are **current**, not years old — pulled straight from a working machine.
 - They're **service-specific**: the log shows exactly which sites the victim was logged into (your SSO, your admin panel, your cloud console).
-- A stolen **session cookie can bypass MFA entirely** — the attacker reuses an already-authenticated session, so there's no second factor to prompt.
+- A stolen **session cookie can bypass MFA entirely** — the attacker reuses an already-authenticated session, so there's no second factor to prompt. ([How session hijacking works, and how to catch it](/posts/session-hijacking-mfa-bypass/).)
 
 When a company gets popped through "a leaked credential," an infostealer log is very often where it started.
 
