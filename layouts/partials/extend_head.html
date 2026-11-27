@@ -68,11 +68,17 @@
 <meta name="twitter:image" content="{{ $image }}" />
 <link rel="alternate" type="application/rss+xml" title="The Hidden Port RSS Feed" href="/index.xml">
 
-<!-- Google Analytics (GA4) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-NJW0JJBT7G"></script>
+<!-- Google Analytics (GA4) — production host only, so local previews and
+     hugo server never send data. Off-host, gtag() just queues into dataLayer. -->
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-NJW0JJBT7G');
+  if (/^(www\.)?thehiddenport\.dev$/i.test(window.location.hostname)) {
+    var ga = document.createElement('script');
+    ga.async = true;
+    ga.src = 'https://www.googletagmanager.com/gtag/js?id=G-NJW0JJBT7G';
+    document.head.appendChild(ga);
+    gtag('js', new Date());
+    gtag('config', 'G-NJW0JJBT7G');
+  }
 </script>
