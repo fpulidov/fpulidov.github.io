@@ -123,6 +123,25 @@ Rare in practice. If you have no threat detection needs and only care about comp
 
 ---
 
+## Audit Manager vs Security Hub (and Why the Answer Changed in 2026)
+
+A related comparison comes up constantly when audit prep starts: **AWS Audit Manager vs Security Hub**. They were never competitors:
+
+- **Security Hub** (the CSPM side) *runs* automated security checks against standards like AWS Foundational Security Best Practices, CIS, NIST 800-53, and PCI DSS, and scores you.
+- **Audit Manager** *collects and organizes evidence* for an audit. It maps evidence to a framework's controls — including Security Hub check results, Config rule results, CloudTrail activity, and manual uploads like your incident response plan — and packages it into reports for an auditor. It doesn't judge compliance itself; it gathers the proof.
+
+So the classic answer was "Security Hub finds the problems, Audit Manager hands the evidence to the auditor." **That changed in 2026: AWS Audit Manager is no longer open to new customers.** Since April 30, 2026 it can't be set up in new accounts, and it's in maintenance mode — no new features or frameworks. Existing customers can keep using it where it's already enabled.
+
+If you're starting audit prep today, the practical stack is:
+
+- **Security Hub** for automated security checks against the standards it supports.
+- **AWS Config conformance packs** for framework-aligned rule sets — AWS's recommended path, though it's explicit that they aren't a one-to-one replacement for Audit Manager frameworks (there's no SOC 2 or GDPR pack, for example).
+- **A compliance-automation platform** (Vanta, Drata, and similar) if you need SOC 2-style evidence collection, policies, and auditor workflows in one place.
+
+For what auditors actually ask to see, [ISO 27001 for AWS: What Auditors Actually Ask For](/posts/iso-27001-aws-audit-prep/) covers it control by control.
+
+---
+
 ## When You Need Both (Most Teams)
 
 For most AWS environments, the answer is both. The setup is straightforward:
