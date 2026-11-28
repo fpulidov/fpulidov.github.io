@@ -108,6 +108,8 @@ Skip the feature matrix. Answer these in order:
 **Is your pain the GuardDuty *bill*?**
 Before switching, right-size it. GuardDuty cost is driven by data volume — CloudTrail events, VPC Flow Logs, S3 data events. Trimming S3 data event monitoring and noisy Flow Logs often cuts the bill more than any alternative would, and every alternative in the CNAPP category costs multiples more. Replacing GuardDuty to save money almost never works.
 
+> **Not sure what's driving your GuardDuty bill?** Send me last month's usage breakdown (GuardDuty console → **Usage**, by data source and account) and I'll tell you what to trim, free. **[Email me for a GuardDuty cost review](mailto:javier@thehiddenport.dev?subject=GuardDuty%20cost%20review)** — a screenshot is fine.
+
 **Do you need *custom* detections?**
 Then you need detection-as-code (Falco for runtime, Panther/SIEM for logs) — *on top of* GuardDuty, not instead of it. Keep the managed baseline, add the custom layer.
 

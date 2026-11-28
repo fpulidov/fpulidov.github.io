@@ -55,6 +55,13 @@
         cta_location: loc,
         page_path: window.location.pathname
       });
+    } else if (/^mailto:/i.test(href) && /guardduty(?:%20|[+\s])*cost(?:%20|[+\s])*review/i.test(href)) {
+      // Asking for the free GuardDuty cost review — a direct consulting lead.
+      track('cost_review_request', {
+        method: 'email',
+        cta_location: loc,
+        page_path: window.location.pathname
+      });
     } else if (/\/consulting\/?(?:[?#]|$)/.test(href)) {
       // Mid-funnel — a post CTA sending the reader to the consulting page.
       track('consulting_cta_click', {
